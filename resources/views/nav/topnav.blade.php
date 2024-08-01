@@ -9,6 +9,7 @@
     <title>CBNHS</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
       .header {
             background-color: #04508c;
             padding: 20px 60px;
@@ -21,14 +22,21 @@
         }
         .title {
             font-size: 2.8rem;
-            font-family: 'Poppins';
+            font-family: "Lato", sans-serif;
             color: #fff
             font-weight: bold;
+            font-weight: 700;
         }
         .subtitle {
+            font-size: 2rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 600;
+            color: #fff
+            
+        }
+        .subtitlesmall{
             font-size: 1rem;
             color: #fff
-            color: #6c757d;
         }
         .time {
             font-size: 0.875rem;
@@ -119,7 +127,7 @@
         <div class="col-12 col-md-8 text-center">
             <div class="title">Department of Education</div>
             <div class="subtitle">Bacoor National High School - Springville</div>
-            <div class="subtitle">"Numero Uno sa Kalidad Na Edukasyon para sa Batang Bacooreno"</div>
+            <div class="subtitlesmall">"Numero Uno sa Kalidad Na Edukasyon para sa Batang Bacooreno"</div>
         </div>
         <div class="col-12 col-md-2 d-flex justify-content-center">
             <div class="ssglogo">
