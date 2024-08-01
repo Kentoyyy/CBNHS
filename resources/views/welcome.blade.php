@@ -14,61 +14,94 @@
 }
 
 
-.slider {
-    position: relative;
-    max-width: 700px;
-    max-height: 400px;
-    margin-top: 20px;
-    margin-left: 50px;
-    overflow: hidden;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-}
 
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+.container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 20px;
+        }
 
-.slides img {
-    width: 100%;
-    border-radius: 10px;
-}
+        .slider {
+            position: relative;
+            max-width: 700px;
+            max-height: 400px;
+            margin-top: 20px;
+            margin-right: 20px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
 
-.prev, .next {
-    background-color: black;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 14px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 10px;
-    transition: 0.6s ease;
-    border-radius: 0 2px 2px 0;
-    user-select: none;
-}
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
+        .prev, .next {
+            background-color: black;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 14px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+            transition: 0.6s ease;
+            border-radius: 0 2px 2px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .schoolDivision {
+            flex: 1;
+            background-color: #d1d1d1;
+            padding: 20px;
+            border-radius: 3px;
+        }
+
+        .schoolDivision h3 {
+            margin-top: 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
 .announcement h2{
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 230px;
+    font-size: 20px;
     color: blue; 
-    font-weight: 700;
+    font-weight: 800;
 }
 .numberOne{
     margin-top: 20px;
-    margin-left: 300px;
+    margin-left: 400px;
+    font-weight: 800;
 }
 .numberOne h1{
     color: gold;
@@ -88,7 +121,7 @@
     margin-left: -15px
 }
 .prayer {
-    margin-left: 50px; 
+    margin-left: 200px; 
 }
 .footer {
     margin-top: 20px;
@@ -132,24 +165,53 @@
     font-size: 10px;
     font-weight: 1000;
 }
+.schoolDivision {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 50px;
+            border-radius: 8px;
+        }
+
+        .schoolDivision h3 {
+            margin-top: 0;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <div class="slider">
-        <div class="slides">
-            <img src="{{ asset('images/welcomeslide1.jpg') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide2.jpg') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide3.jpg') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide4.png') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide5.png') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide6.jpg') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide7.gif') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide8.jpg') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide9.jpg') }}" alt="Image 1">
-            <img src="{{ asset('images/welcomeslide10.jpg') }}" alt="Image 1">
+<div class="container">
+        <div class="slider">
+            <div class="slides">
+                <img src="{{ asset('images/welcomeslide1.jpg') }}" alt="Image 1">
+                <img src="{{ asset('images/welcomeslide2.jpg') }}" alt="Image 2">
+                <img src="{{ asset('images/welcomeslide3.jpg') }}" alt="Image 3">
+                <img src="{{ asset('images/welcomeslide4.png') }}" alt="Image 4">
+                <img src="{{ asset('images/welcomeslide5.png') }}" alt="Image 5">
+                <img src="{{ asset('images/welcomeslide6.jpg') }}" alt="Image 6">
+                <img src="{{ asset('images/welcomeslide7.gif') }}" alt="Image 7">
+                <img src="{{ asset('images/welcomeslide8.jpg') }}" alt="Image 8">
+                <img src="{{ asset('images/welcomeslide9.jpg') }}" alt="Image 9">
+                <img src="{{ asset('images/welcomeslide10.jpg') }}" alt="Image 10">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="schoolDivision">
+            <h3>SCHOOLS DIVISION SUPERINTENDENT'S CORNER</h3>
+            <p>Progress is not accomplished overnight. This is a reality that we learn through the lens of any leadership journey.</p>
+            <p>Achieving it is a tedious and laborious process that requires tenacity and resilience. Most importantly, it is a task that requires everyone’s efforts.</p>
+            <a href="#" class="read-more-btn">Read more</a>
+        </div>
     </div>
     <div class="announcement">
         <h2>ANNOUNCEMENTS</h2>
@@ -163,6 +225,7 @@
             <img src="{{ asset('images/prayer.jpg') }}" alt="">
         </div>
     </div>
+    
     <div class="footer">
         <div class="footer_cont">
             <div class="first">
