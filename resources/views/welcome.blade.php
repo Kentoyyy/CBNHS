@@ -72,7 +72,7 @@
 </head>
 <body>
 
-
+@include('nav.topnav')
     <div class="header">
         <div class="logo">
             <img src="{{ asset('images/logoschool.png') }}" id="logoschool" alt="">
