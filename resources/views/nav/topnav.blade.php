@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Navigation Bar Example</title>
+    <title>CBNHS</title>
+
+    <style>
+      .header {
+            background-color: #04508c;
+            padding: 20px 60px;
+            color: #fff
+        }
+        .logo img, .ssglogo img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 30px
+        }
+        .title {
+            font-size: 2.8rem;
+            font-family: 'Poppins';
+            color: #fff
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #fff
+            color: #6c757d;
+        }
+        .time {
+            font-size: 0.875rem;
+            font-family: 'Poppins';
+            
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -79,6 +109,37 @@
             </ul>
         </div>
     </nav>
+    <div class="header container-fluid">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-2 d-flex justify-content-center">
+            <div class="logo">
+                <img src="{{ asset('images/logoschool.png') }}" alt="Logo School">
+            </div>
+        </div>
+        <div class="col-12 col-md-8 text-center">
+            <div class="title">Department of Education</div>
+            <div class="subtitle">Bacoor National High School - Springville</div>
+            <div class="subtitle">"Numero Uno sa Kalidad Na Edukasyon para sa Batang Bacooreno"</div>
+        </div>
+        <div class="col-12 col-md-2 d-flex justify-content-center">
+            <div class="ssglogo">
+                <img src="{{ asset('images/ssg.png') }}" alt="SSG Logo">
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 text-center time">
+            Philippine Standard Time:<br> {{ \Carbon\Carbon::now()->format('l, F d, Y, h:i:s A') }}
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
