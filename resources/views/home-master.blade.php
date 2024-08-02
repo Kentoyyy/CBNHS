@@ -20,7 +20,7 @@
 </head>
     @csrf
 <body>
-    @yield('navbar')
+    @yield('nav')
 
     @yield('content')
 

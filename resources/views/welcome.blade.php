@@ -1,24 +1,24 @@
-@include('nav.topnav')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Bootstrap Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@100;300;400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@100..900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+@extends('home-master')
+
+@section('title', 'Home')
+
+@section('style')
     <style>
         body {
             font-family: "Lato", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
 
         .slider {
-        position: relative;
-        overflow: hidden;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        max-width: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #007BFF; /* Add a border color to match the theme */
+            border-radius: 10px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow for depth */
+            margin-bottom: 20px;
         }
 
         .slides {
@@ -28,35 +28,33 @@
 
         .slides img {
             width: 100%;
-            height: 400px; /* Set a fixed height for the images */
-            object-fit: cover; /* Ensure images are covered within the container */
+            height: 400px;
+            object-fit: cover;
             border-radius: 10px;
         }
 
         .slider .prev, .slider .next {
-            background-color: black;
+            background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
             cursor: pointer;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             width: auto;
-            padding: 14px;
+            padding: 10px;
             color: white;
             font-weight: bold;
-            font-size: 10px;
-            transition: 0.6s ease;
-            user-select: none;
+            font-size: 20px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
             z-index: 10;
         }
 
         .slider .prev {
-            left: 0;
-            border-radius: 0 2px 2px 0;
+            left: 10px;
         }
 
         .slider .next {
-            right: 0;
-            border-radius: 2px 0 0 2px;
+            right: 10px;
         }
 
         .slider .prev:hover, .slider .next:hover {
@@ -64,55 +62,107 @@
         }
 
         .schoolDivision {
-            background-color: #d1d1d1;
-            padding: 20px;
-            border-radius: 3px;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradient background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
 
         .schoolDivision h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 700;
+            color: #007BFF;
+            margin-bottom: 15px;
         }
 
         .read-more-btn {
             display: inline-block;
             margin-top: 10px;
-            padding: 10px 15px;
+            padding: 10px 20px;
             background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
         }
 
-        .announcement h2 {
-            color: blue;
-            font-weight: 800;
+        .read-more-btn:hover {
+            background-color: #0056b3;
         }
 
-        .numberOne h1 {
-            color: gold;
+        .news-bulletin {
+            margin-top: 30px;
         }
 
-        .numberOne h3, .numberOne h4, .numberOne h5 {
-            margin: 0;
+        .news-bulletin h2 {
+            font-size: 1.5rem;
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .prayer img {
-            max-width: 100%;
-            height: auto;
+        .news-bulletin .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .news-bulletin .card img {
+            border-radius: 10px;
+        }
+
+        .news-bulletin .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #007BFF;
+            margin-top: 10px;
+        }
+
+        .news-bulletin .card-title a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .news-bulletin .card-title a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #007BFF; /* Match the color of your card titles */
+            margin: 40px 0; /* Adjust spacing as needed */
         }
 
         .footer {
-            background-color: #efefef;
+            background-color: #007BFF;
+            color: white;
             padding: 20px 0;
+            text-align: center;
         }
 
         .footer h1, .footer p, .footer a {
             margin: 0;
         }
+
+        .footer a {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
-</head>
-<body>
+@endsection
+
+@section('content')
+@include('nav.topnav')
+@include('nav.officials-bar')
     <div class="container my-4">
         <div class="row">
             <div class="col-lg-8">
@@ -134,81 +184,88 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="schoolDivision">
-                    <h3>SCHOOLS DIVISION SUPERINTENDENT'S CORNER</h3>
-                    <p>Progress is not accomplished overnight. This is a reality that we learn through the lens of any leadership journey.</p>
-                    <p>Achieving it is a tedious and laborious process that requires tenacity and resilience. Most importantly, it is a task that requires everyone’s efforts.</p>
-                    <a href="#" class="read-more-btn">Read more</a>
-                </div>
+            <div class="schoolDivision">
+            <h3>Welcome to the Official Website of National Bacoor High School - Springville</h3><br>
+            <p>Welcome to the official website of National Bacoor High School - Springville, located in Bacoor, Cavite, Philippines. It is a public secondary school offering free and quality education managed by the Philippine Department of Education (DepEd).</p>
+            <p>The school offers Junior High School levels.  offering Grades 7 to 10 levels in Junior High School.</p>
+            <a href="#" class="read-more-btn">Read more</a>
+        </div>
             </div>
         </div>
-    </div>
-
-    <div class="container text-center my-5 announcement">
-        <h2>ANNOUNCEMENTS</h2>
-        <div class="numberOne">
-            <h1>FORTRESS</h1>
-            <h3>EDUCATION CONTINUES IN</h3>
-            <h4>SDO BACOOR CITY</h4>
-            <h5>For Victorious and Valiant Bacooreños</h5>
-        </div>
-        <div class="prayer my-4">
-            <img src="{{ asset('images/prayer.jpg') }}" alt="Prayer Image">
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
+        <hr>
+        <div class="news-bulletin">
+            <h2>NEWS BULLETIN</h2>
             <div class="row">
-                <div class="col-md-3 first">
-                    <!-- Optional content -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images//newsimage/wikangfilipino.jpg') }}" class="card-img-top" alt="News 1">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">[A] Pakikiisa sa Buwan ng Wikang Pambansa 2024</a></h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 second">
-                    <h1>REPUBLIC OF THE PHILIPPINES</h1>
-                    <p>All content is in the public domain unless otherwise stated.</p>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images//newsimage/class_schedule.jpg') }}" class="card-img-top" alt="News 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">We're excited to welcome everyone back to school! 📚✨ </a></h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 third">
-                    <h1>ABOUT CBNHS</h1>
-                    <p>Learn more about the Philippine government, its structure, how government works and the people behind it.</p>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images//newsimage/brigada.jpg') }}" class="card-img-top" alt="News 3">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">TINGNAN| IKA-LIMANG ARAW NG BRIGADA ESKWELA 2024</a></h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 fourth">
-                    <h1>LINKS</h1>
-                    <a href="#">Home</a><br>
-                    <a href="#">About</a> <br>
-                    <a href="#">Contact</a>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ asset('images//newsimage/orientation.jpg') }}" class="card-img-top" alt="News 4">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">PARENT ORIENTATION PROGRAM</a></h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+        <hr>
+    </div>
+@endsection
 
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slides img');
-        const totalSlides = slides.length;
+@section('scripts')
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides img');
+    const totalSlides = slides.length;
 
-        const showSlides = (n) => {
-            slides.forEach((slide, index) => {
-                slide.style.display = (index === n) ? 'block' : 'none';
-            });
-        };
-
-        const moveSlide = (n) => {
-            slideIndex += n;
-            if (slideIndex >= totalSlides) {
-                slideIndex = 0;
-            } else if (slideIndex < 0) {
-                slideIndex = totalSlides - 1;
-            }
-            showSlides(slideIndex);
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlides(slideIndex);
-            setInterval(() => {
-                moveSlide(1);
-            }, 5000); // Change image every 5 seconds
+    const showSlides = (n) => {
+        slides.forEach((slide, index) => {
+            slide.style.display = (index === n) ? 'block' : 'none';
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    };
+
+    const moveSlide = (n) => {
+        slideIndex += n;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        } else if (slideIndex < 0) {
+            slideIndex = totalSlides - 1;
+        }
+        showSlides(slideIndex);
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlides(slideIndex);
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000); // Change image every 5 seconds
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+@endsection
+
+@section('footer')
+    @include('partials.footer')
+@endsection
