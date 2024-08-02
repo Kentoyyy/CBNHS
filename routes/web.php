@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/mission', function () {
     return view('pages.about-mission');
 });
+
+Route::get('/teacher', function () {
+    return view('pages.dashboard-teacher');
+});
