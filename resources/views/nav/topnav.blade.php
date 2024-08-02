@@ -104,36 +104,72 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Home
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Information for Parents</a>
-                        <a class="dropdown-item" href="#">Issuance Requirements</a>
-                        <a class="dropdown-item" href="#">Job Opportunities</a>
-                        <a class="dropdown-item" href="#">School Calendar</a>
-                        <a class="dropdown-item" href="#">Terms of Use</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Admissions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Personnel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Students</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Resources</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Site Map</a>
-                </li>
-            </ul>
-        </div>
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Home
+            </a>
+            <div class="dropdown-menu" aria-labelledby="homeDropdown">
+                <a class="dropdown-item" href="#">Information for Parents</a>
+                <a class="dropdown-item" href="#">Issuance Requirements</a>
+                <a class="dropdown-item" href="#">Job Opportunities</a>
+                <a class="dropdown-item" href="#">School Calendar</a>
+                <a class="dropdown-item" href="#">Terms of Use</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+            </a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <a class="dropdown-item" href="mission">Our Mission</a>
+                <a class="dropdown-item" href="#">History</a>
+                <a class="dropdown-item" href="#">Team</a>
+                <a class="dropdown-item" href="#">Contact</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admissions
+            </a>
+            <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                <a class="dropdown-item" href="#">Application Process</a>
+                <a class="dropdown-item" href="#">Requirements</a>
+                <a class="dropdown-item" href="#">Tuition Fees</a>
+                <a class="dropdown-item" href="#">Scholarships</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="personnelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Personnel
+            </a>
+            <div class="dropdown-menu" aria-labelledby="personnelDropdown">
+                <a class="dropdown-item" href="#">Administration</a>
+                <a class="dropdown-item" href="#">Faculty</a>
+                <a class="dropdown-item" href="#">Staff</a>
+                <a class="dropdown-item" href="#">Support Services</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Students
+            </a>
+            <div class="dropdown-menu" aria-labelledby="studentsDropdown">
+                <a class="dropdown-item" href="#">Student Life</a>
+                <a class="dropdown-item" href="#">Extracurriculars</a>
+                <a class="dropdown-item" href="#">Student Support</a>
+                <a class="dropdown-item" href="#">Student Handbook</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Resources
+            </a>
+            
+        </li>
+    </ul>
+</div>
+
     </nav>
 
     <!-- Bootstrap JS and dependencies -->

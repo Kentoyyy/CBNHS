@@ -1,18 +1,17 @@
-
-<style>
-    .sticky-top {
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            top: 0;
-            z-index: 1030;
-        }
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Clock</title>
+    <style>
+        
         .header {
             position: relative;
             padding: 50px 90px;
             color: #fff;
         }
-        
+
         .header .backgroundImage {
             position: absolute;
             top: 0;
@@ -21,11 +20,9 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-          
-            filter: brightness(50%)
-
+            filter: brightness(50%);
         }
-        
+
         .logo img, .ssglogo img {
             max-width: 100%;
             height: auto;
@@ -53,8 +50,10 @@
             font-size: 0.875rem;
             font-family: 'Poppins';
         }
-</style>
-<div class="header container-fluid">
+    </style>
+</head>
+<body>
+    <div class="header container-fluid">
         <div class="homeContainer">
             <img src="{{ asset('images/test.jpg') }}" alt="Background Image" class="backgroundImage">
         </div>
@@ -77,7 +76,7 @@
         </div>
         <div class="row mt-3">
             <div class="col-12 text-center time">
-                Philippine Standard Time:<br> {{ \Carbon\Carbon::now()->format('l, F d, Y, h:i:s A') }}
+                Philippine Standard Time:<br> <div id="clock"></div>
             </div>
         </div>
     </div>
@@ -87,3 +86,31 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            // Create a formatter for the Philippine time zone
+            const options = {
+                timeZone: 'Asia/Manila',
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            const timeString = formatter.format(now);
+            
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        // Initial call to update clock and set interval
+        updateClock();
+        setInterval(updateClock, 1000); // Update every second
+    </script>
+</body>
+</html>

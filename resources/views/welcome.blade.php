@@ -14,10 +14,10 @@
         .slider {
             position: relative;
             overflow: hidden;
-            border: 2px solid #007BFF; /* Add a border color to match the theme */
+            border: 2px solid #007BFF; /* Border color to match the theme */
             border-radius: 10px;
             max-width: 100%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow for depth */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow for depth */
             margin-bottom: 20px;
         }
 
@@ -140,12 +140,18 @@
 
         .featured-videos {
             margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9; /* Light background to differentiate from news section */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .featured-videos h2 {
             font-size: 24px;
-            color: #1c4587;
+            color: #007BFF;
             margin-bottom: 20px;
+            text-align: center; /* Center-align the title */
+            font-weight: 700;
         }
 
         .featured-videos .video-card {
@@ -154,22 +160,31 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s ease; /* Smooth transition effect */
         }
 
-        .featured-videos .video-card iframe {
+        .featured-videos .video-card:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* More pronounced shadow on hover */
+        }
+
+        .featured-videos .video-card iframe,
+        .featured-videos .video-card video {
             width: 100%;
-            height: 200px;
+            height: 200px; /* Consistent height for videos */
             border: none;
+            display: block;
         }
 
         .featured-videos .video-card-body {
             padding: 15px;
+            background-color: #fff; /* White background for card body */
         }
 
         .featured-videos .video-card-title {
             font-size: 1.1rem;
             font-weight: bold;
             color: #0056b3;
+            margin-bottom: 0; /* Remove bottom margin */
         }
 
         .featured-videos .video-card-title a {
@@ -206,65 +221,6 @@
         .footer a:hover {
             text-decoration: underline;
         }
-        .featured-videos {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #f9f9f9; /* Light background to differentiate from news section */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.featured-videos h2 {
-    font-size: 24px;
-    color: #007BFF;
-    margin-bottom: 20px;
-    text-align: center; /* Center-align the title */
-    font-weight: 700;
-}
-
-.featured-videos .video-card {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease; /* Smooth transition effect */
-}
-
-.featured-videos .video-card:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* More pronounced shadow on hover */
-}
-
-.featured-videos .video-card iframe,
-.featured-videos .video-card video {
-    width: 100%;
-    height: 200px; /* Consistent height for videos */
-    border: none;
-    display: block;
-}
-
-.featured-videos .video-card-body {
-    padding: 15px;
-    background-color: #fff; /* White background for card body */
-}
-
-.featured-videos .video-card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #0056b3;
-    margin-bottom: 0; /* Remove bottom margin */
-}
-
-.featured-videos .video-card-title a {
-    color: #0056b3;
-    text-decoration: none;
-}
-
-.featured-videos .video-card-title a:hover {
-    text-decoration: underline;
-}
-
-
     </style>
 @endsection
 
@@ -293,9 +249,9 @@
             </div>
             <div class="col-lg-4">
                 <div class="schoolDivision">
-                    <h3>Welcome to the Official Website of National Bacoor High School - Springville</h3><br>
+                    <h3>Welcome to the Official Website of National Bacoor High School - Springville</h3>
                     <p>Welcome to the official website of National Bacoor High School - Springville, located in Bacoor, Cavite, Philippines. It is a public secondary school offering free and quality education managed by the Philippine Department of Education (DepEd).</p>
-                    <p>The school offers Junior High School levels. offering Grades 7 to 10 levels in Junior High School.</p>
+                    <p>The school offers Junior High School levels, offering Grades 7 to 10 levels in Junior High School.</p>
                     <a href="#" class="read-more-btn">Read more</a>
                 </div>
             </div>
@@ -316,7 +272,7 @@
                     <div class="card">
                         <img src="{{ asset('images/newsimage/class_schedule.jpg') }}" class="card-img-top" alt="News 2">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">We're excited to welcome everyone back to school! 📚✨ </a></h5>
+                            <h5 class="card-title"><a href="#">We're excited to welcome everyone back to school! 📚✨</a></h5>
                         </div>
                     </div>
                 </div>
@@ -340,42 +296,40 @@
         </div>
         <hr>
         <div class="featured-videos">
-    <h2>Featured Videos</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="video-card">
-                <video controls>
-                    <source src="{{ asset('videos/welcomeback.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-card-body">
-                    <h5 class="video-card-title"><a href="#">Welcome Back to School!! Marked the date July 29, 2024</a></h5>
+            <h2>Featured Videos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video controls>
+                            <source src="{{ asset('videos/welcomeback.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-card-body">
+                            <h5 class="video-card-title"><a href="#">Welcome Back to School!! Marked the date July 29, 2024</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video controls>
+                            <source src="{{ asset('videos/brigadavid.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-card-body">
+                            <h5 class="video-card-title"><a href="#">BRIGADA ESKWELA 2024 - Tara na, mag-Brigada na! 🙌</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+                        <div class="video-card-body">
+                            <h5 class="video-card-title"><a href="#">Video Title 3</a></h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="video-card">
-            <video controls>
-                    <source src="{{ asset('videos/brigadavid.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-card-body">
-                    <h5 class="video-card-title"><a href="#">BRIGADA ESKWELA 2024 
-                    Tara na, mag-Brigada na! 🙌</a></h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
-                <div class="video-card-body">
-                    <h5 class="video-card-title"><a href="#">Video Title 3</a></h5>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
     </div>
 @endsection
 

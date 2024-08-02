@@ -12,6 +12,7 @@
         }
         .footer h5 {
             color: #1c4587;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 20px;
         }
