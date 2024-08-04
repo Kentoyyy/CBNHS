@@ -13,3 +13,7 @@ Route::get('/mission', function () {
 Route::get('/teacher', function () {
     return view('pages.dashboard-teacher');
 });
+
+Route::get('/admission', function () {
+    return view('pages.admission');
+});

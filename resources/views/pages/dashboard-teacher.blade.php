@@ -116,6 +116,7 @@ footer {
     </nav>
     <div id="content">
        @include('pages.sub.class-list')
+       
     </div>
     <script src="script.js"></script>
 </body>

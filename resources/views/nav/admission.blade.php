@@ -116,7 +116,35 @@
         <h2>OFFERINGS</h2>
         <p>The school is offering the following courses in both Junior and Senior High School levels.</p>
         
+        <!-- Collapsible sections for Junior and Senior High School -->
+        <div>
+            <h2>
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#juniorHighSchool" aria-expanded="false" aria-controls="juniorHighSchool">
+                    Junior High School
+                </button>
+            </h2>
+            <div class="collapse" id="juniorHighSchool">
+                <ul>
+                    <li>Grade 7</li>
+                    <li>Grade 8</li>
+                    <li>Grade 9</li>
+                    <li>Grade 10</li>
+                </ul>
+            </div>
+        </div>
 
+        <div>
+            <h2>
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#seniorHighSchool" aria-expanded="false" aria-controls="seniorHighSchool">
+                    Senior High School
+                </button>
+            </h2>
+            <div class="collapse" id="seniorHighSchool">
+                <!-- Add the content for Senior High School here -->
+                <p>Content for Senior High School</p>
+            </div>
+        </div>
+        
         <h2>DEPED VISION</h2>
         <p>We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to nation-building.</p>
         <p>As a learner-centered public institution, the Department of Education continuously improves itself to better serve its stakeholders.</p>
@@ -144,7 +172,7 @@
         <!-- Add your school mission statement here -->
         <p>Our school is committed to nurturing each student's academic and personal growth, fostering a community of lifelong learners dedicated to excellence, respect, and responsibility.</p>
 
-        <h2>SCHOOL VISSION</h2>
+        <h2>SCHOOL VISION</h2>
         <!-- Add your school mission statement here -->
         <p>A caring, functional institution that transforms knowledge into actualities, nurtures intelligence with values and radiates wisdom in discovering new horizon. </p>
     </div>

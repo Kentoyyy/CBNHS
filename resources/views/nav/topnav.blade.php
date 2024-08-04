@@ -26,22 +26,21 @@
             color: #fff;
         }
 
-        .nav-link {
-            color: #fff;
-            font-size: 1em;
-            padding: 0.75rem 1rem;
-        }
-
         .navbar-brand {
             display: flex;
             align-items: center;
         }
 
         .navbar-brand img {
-            border-radius: 90%;
-            width: 50px;
-            height: 50px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
+        }
+
+        .navbar-brand span {
+            font-size: 1rem;
+            font-weight: 700;
         }
 
         .navbar-toggler {
@@ -51,6 +50,12 @@
 
         .navbar-nav {
             margin-left: auto;
+        }
+
+        .nav-link {
+            color: #fff !important; /* Ensure text color is pure white */
+            font-size: 0.875rem; /* Smaller font size */
+            padding: 0.5rem 1rem; /* Adjust padding for smaller size */
         }
 
         .nav-item.dropdown:hover .dropdown-menu {
@@ -65,16 +70,21 @@
         .dropdown-item {
             color: #fff;
             padding: 0.5rem 1rem;
+            font-size: 0.875rem; /* Smaller font size */
         }
 
-        .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Hover background color of dropdown items */
-            color: #fff; /* Text color on hover */
+        .dropdown-item:hover,
+        .dropdown-item:focus,
+        .dropdown-item:active {
+            background-color: rgba(255, 255, 255, 0.1); /* Background color on hover, focus, and active */
+            color: #8c1212; /* Text color on hover, focus, and active */
         }
 
-        .nav-link:hover {
-            color: #f8f9fa; /* Text color on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link:active {
+            color: #165fa8; /* Text color on hover, focus, and active */
+            background-color: rgba(255, 255, 255, 0.1); /* Background color on hover, focus, and active */
             border-radius: 0.25rem;
         }
 
@@ -98,78 +108,73 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('images/logoschool.png') }}" alt="Logo">
-            <span>City of Bacoor NHS Springville</span>
+            <span>City of Bacoor National High School Springville</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Home
-            </a>
-            <div class="dropdown-menu" aria-labelledby="homeDropdown">
-                <a class="dropdown-item" href="#">Information for Parents</a>
-                <a class="dropdown-item" href="#">Issuance Requirements</a>
-                <a class="dropdown-item" href="#">Job Opportunities</a>
-                <a class="dropdown-item" href="#">School Calendar</a>
-                <a class="dropdown-item" href="#">Terms of Use</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                About
-            </a>
-            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                <a class="dropdown-item" href="mission">Our Mission</a>
-                <a class="dropdown-item" href="#">History</a>
-                <a class="dropdown-item" href="#">Team</a>
-                <a class="dropdown-item" href="#">Contact</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Admissions
-            </a>
-            <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
-                <a class="dropdown-item" href="#">Application Process</a>
-                <a class="dropdown-item" href="#">Requirements</a>
-                <a class="dropdown-item" href="#">Tuition Fees</a>
-                <a class="dropdown-item" href="#">Scholarships</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="personnelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Personnel
-            </a>
-            <div class="dropdown-menu" aria-labelledby="personnelDropdown">
-                <a class="dropdown-item" href="#">Administration</a>
-                <a class="dropdown-item" href="#">Faculty</a>
-                <a class="dropdown-item" href="#">Staff</a>
-                <a class="dropdown-item" href="#">Support Services</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Students
-            </a>
-            <div class="dropdown-menu" aria-labelledby="studentsDropdown">
-                <a class="dropdown-item" href="#">Student Life</a>
-                <a class="dropdown-item" href="#">Extracurriculars</a>
-                <a class="dropdown-item" href="#">Student Support</a>
-                <a class="dropdown-item" href="#">Student Handbook</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Resources
-            </a>
-            
-        </li>
-    </ul>
-</div>
-    
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Home
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="homeDropdown">
+                        <a class="dropdown-item" href="#">Information for Parents</a>
+                        <a class="dropdown-item" href="#">Issuance Requirements</a>
+                        <a class="dropdown-item" href="#">Job Opportunities</a>
+                        <a class="dropdown-item" href="#">School Calendar</a>
+                        <a class="dropdown-item" href="#">Terms of Use</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a class="dropdown-item" href="mission">Our Mission</a>
+                        <a class="dropdown-item" href="#">History</a>
+                        <a class="dropdown-item" href="#">Team</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admissions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                        <a class="dropdown-item" href="admission">Application Process</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="personnelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Personnel
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="personnelDropdown">
+                        <a class="dropdown-item" href="#">Administration</a>
+                        <a class="dropdown-item" href="#">Faculty</a>
+                        <a class="dropdown-item" href="#">Staff</a>
+                        <a class="dropdown-item" href="#">Support Services</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Students
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="studentsDropdown">
+                        <a class="dropdown-item" href="#">Student Life</a>
+                        <a class="dropdown-item" href="#">Extracurriculars</a>
+                        <a class="dropdown-item" href="#">Student Support</a>
+                        <a class="dropdown-item" href="#">Student Handbook</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Resources
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Bootstrap JS and dependencies -->
