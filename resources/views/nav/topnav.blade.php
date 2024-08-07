@@ -133,7 +133,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="aboutDropdown">
                         <a class="dropdown-item" href="mission">Our Mission</a>
-                        <a class="dropdown-item" href="#">History</a>
+                        <a class="dropdown-item" href="intendent">Superintendent's Corner</a>
                         <a class="dropdown-item" href="#">Team</a>
                         <a class="dropdown-item" href="#">Contact</a>
                     </div>

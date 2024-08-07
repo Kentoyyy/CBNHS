@@ -17,3 +17,6 @@ Route::get('/teacher', function () {
 Route::get('/admission', function () {
     return view('pages.admission');
 });
+Route::get('/intendent', function () {
+    return view('pages.about-intendent');
+});
