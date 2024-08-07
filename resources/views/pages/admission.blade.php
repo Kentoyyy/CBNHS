@@ -8,7 +8,7 @@
 
 @section('content')
 @include('nav.topnav')
-@include('nav.mission-bar')
+@include('nav.admission')
 
 
 

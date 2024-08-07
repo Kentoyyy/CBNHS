@@ -1,7 +1,7 @@
 @extends('home-master')
 
 @section('title', 'Home')
-
+<link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 @section('style')
 
 @endsection

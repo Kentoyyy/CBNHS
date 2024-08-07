@@ -134,11 +134,7 @@
         </div>
 
         <div>
-            <h2>
-                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#seniorHighSchool" aria-expanded="false" aria-controls="seniorHighSchool">
-                    Senior High School
-                </button>
-            </h2>
+            
             <div class="collapse" id="seniorHighSchool">
                 <!-- Add the content for Senior High School here -->
                 <p>Content for Senior High School</p>
