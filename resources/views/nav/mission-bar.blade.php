@@ -100,7 +100,7 @@
     <div class="header container-fluid">
         <div class="homeContainer">
             <img src="{{ asset('images/ourmission.jpg') }}" alt="Background Image" class="backgroundImage">
-            <div class="overlay-text">ADMISSION</div>
+            <div class="overlay-text">Mission</div>
         </div>
     </div>
 
