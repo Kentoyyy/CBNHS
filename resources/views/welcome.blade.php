@@ -226,12 +226,58 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        .facebook-page iframe {
+            border: none;
+            width: 100%;
+            height: 500px;
+        }
+        .related-links {
+    background-color: transparent; /* Ensure background is transparent */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-left: 5px solid #0056b3;
+    text-align: center;
+}
+
+.related-links h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.related-links img {
+    width: 10px;
+    margin: 10px;
+}
+
+.related-links a {
+    color: #161616;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: rgb(56, 56, 56);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.related-links a:hover {
+    background-color: transparent;
+}
+
     </style>
 @endsection
 
 @section('content')
-@include('nav.topnav')
-@include('nav.officials-bar')
+    @include('nav.topnav')
+    @include('nav.officials-bar')
     <div class="container my-4">
         <div class="row">
             <div class="col-lg-8">
@@ -261,40 +307,49 @@
             </div>
         </div>
         <hr>
-        <div class="news-bulletin">
-            <h2>News Bulletin</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{{ asset('images/newsimage/wikangfilipino.jpg') }}" class="card-img-top" alt="News 1">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Pakikiisa sa Buwan ng Wikang Pambansa 2024</a></h5>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="news-bulletin">
+                    <h2>News Bulletin</h2>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{{ asset('images/newsimage/wikangfilipino.jpg') }}" class="card-img-top" alt="News 1">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#">Pakikiisa sa Buwan ng Wikang Pambansa 2024</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{{ asset('images/newsimage/class_schedule.jpg') }}" class="card-img-top" alt="News 2">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#">Welcome Back to School!</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{{ asset('images/newsimage/brigada.jpg') }}" class="card-img-top" alt="News 3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#">Brigada Eskwela 2024</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="{{ asset('images/newsimage/orientation.jpg') }}" class="card-img-top" alt="News 4">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#">Parent Orientation Program</a></h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{{ asset('images/newsimage/class_schedule.jpg') }}" class="card-img-top" alt="News 2">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Welcome Back to School!</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{{ asset('images/newsimage/brigada.jpg') }}" class="card-img-top" alt="News 3">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Brigada Eskwela 2024</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{{ asset('images/newsimage/orientation.jpg') }}" class="card-img-top" alt="News 4">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Parent Orientation Program</a></h5>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="facebook-page">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDepEdTayoCBNHSS305688&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </div>
         </div>
@@ -333,40 +388,48 @@
                     </div>
                 </div>
             </div>
+            <hr>
+            <div class="related-links">
+                <h3>Related Links</h3>
+                <a href="https://www.deped.gov.ph/" target="_blank">
+                    <img src="{{ asset('images/depedlogooo.png') }}" alt="DepEd Logo">
+                </a>
+                <a href="https://www.deped.gov.ph/" target="_blank">Visit DepEd Website</a>
+            </div>
         </div>
     </div>
 @endsection
 
 @section('scripts')
-<script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slides img');
-    const totalSlides = slides.length;
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
 
-    const showSlides = (n) => {
-        slides.forEach((slide, index) => {
-            slide.style.display = (index === n) ? 'block' : 'none';
+        const showSlides = (n) => {
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === n) ? 'block' : 'none';
+            });
+        };
+
+        const moveSlide = (n) => {
+            slideIndex += n;
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = totalSlides - 1;
+            }
+            showSlides(slideIndex);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlides(slideIndex);
+            setInterval(() => {
+                moveSlide(1);
+            }, 5000);
         });
-    };
-
-    const moveSlide = (n) => {
-        slideIndex += n;
-        if (slideIndex >= totalSlides) {
-            slideIndex = 0;
-        } else if (slideIndex < 0) {
-            slideIndex = totalSlides - 1;
-        }
-        showSlides(slideIndex);
-    };
-
-    document.addEventListener('DOMContentLoaded', () => {
-        showSlides(slideIndex);
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
 
 @section('footer')

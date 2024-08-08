@@ -147,13 +147,13 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Students
+                        Accounts
                     </a>
                     <div class="dropdown-menu" aria-labelledby="studentsDropdown">
-                        <a class="dropdown-item" href="#">Student Life</a>
-                        <a class="dropdown-item" href="#">Extracurriculars</a>
-                        <a class="dropdown-item" href="#">Student Support</a>
-                        <a class="dropdown-item" href="#">Student Handbook</a>
+                        <a class="dropdown-item" href="student">Student</a>
+                        <a class="dropdown-item" href="#">Teacher</a>
+                        <a class="dropdown-item" href="#">Administrator</a>
+                        
                     </div>
                 </li>
                 <li class="nav-item dropdown">

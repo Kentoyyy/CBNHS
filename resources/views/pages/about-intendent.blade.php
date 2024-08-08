@@ -15,44 +15,47 @@
     }
 
     .header {
-        position: relative;
-        padding: 50px 90px;
-        color: #fff;
-        height: 20vh; /* Adjust the height as needed */
-        background-color: #2a3b6b; /* Background color instead of image */
-        overflow: hidden; /* Ensure content does not overflow */
-    }
+    position: relative;
+    padding: 50px 90px;
+    color: #520d0d;
+    height: 20vh; /* Adjust the height as needed */
+    background-color: #2a3b6b; /* Background color */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    overflow: hidden; /* Ensure content does not overflow */
+}
 
-    .header .logoImage {
-        position: absolute;
-        top: 30px; /* Adjust the top position as needed */
-        left: 500px; /* Adjust the left position as needed */
-        max-width: 90px; /* Adjust the max-width as needed */
-    }
+.header .logoImage {
+    max-width: 90px; /* Adjust the max-width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
 
-    .overlay-text {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        text-align: center;
-    }
-    .overlay-text-p{
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 11px;
-       
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        text-align: center;
-    }
+.logoImage-left {
+    margin-right: auto; /* Push the logo to the left side */
+}
 
+.logoImage-right {
+    max-width: 200px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.overlay-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    flex: 1; /* Allow the text to take up remaining space */
+}
+
+.overlay-text-p {
+    font-size: 11px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 10px;
+}
     .superintendent-corner {
         max-width: 1200px;
         margin: 40px auto;
@@ -150,14 +153,13 @@
 
 @section('content')
 @include('nav.topnav')
-
 <div class="header container-fluid">
-    <div class="homeContainer">
-        <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage">
-        <div class="overlay-text">Superintendent's Corner</div>
+    <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage logoImage-left">
+    <div class="overlay-text">
+        Superintendent's Corner
         <div class="overlay-text-p">City of Bacoor National High School - Springville <br> Sy 2024-2025</div>
-        
     </div>
+    <img src="{{ asset('images/bannermatatag.png') }}" alt="Banner Image" class="logoImage logoImage-right">
 </div>
 
 <div class="superintendent-corner">

@@ -29,3 +29,9 @@ Route::get('/test', function () {
 Route::get('/resources', function () {
     return view('pages.resources');
 });
+Route::get('/student', function () {
+    return view('pages.studentportal.student-portal');
+});
+Route::get('/faqportal', function () {
+    return view('pages.studentportal.faqportal');
+});
