@@ -3,6 +3,7 @@
 @section('title', 'CBNHS')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
+
 @section('style')
 <style>
     /* Header styles */
@@ -61,7 +62,7 @@
         background-color: #083a68; /* Slightly darker blue on hover */
     }
 
-    /* Mission, Vision, and Values styles */
+    /* Admission content styles */
     .content {
         padding: 40px 15%;
         color: #333;
@@ -90,15 +91,36 @@
     .content ul li {
         margin-bottom: 10px;
     }
+
+    .step {
+        margin-bottom: 40px;
+    }
+
+    .step img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .step h3 {
+        color: #0B4F91; /* Dark blue color */
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .step p {
+        font-size: 14px;
+    }
 </style>
 @endsection
 
 @section('content')
 @include('nav.topnav')
 
-
- <!-- Header section with background image and overlay text -->
- <div class="header container-fluid">
+<!-- Header section with background image and overlay text -->
+<div class="header container-fluid">
     <div class="homeContainer">
         <img src="{{ asset('images/ourmission.jpg') }}" alt="Background Image" class="backgroundImage">
         <div class="overlay-text">ADMISSION</div>
@@ -110,85 +132,64 @@
     <button class="back-button" onclick="goBack()">Back</button>
 </div>
 
-<!-- Content section with mission, vision, and values statements -->
+<!-- Content section with admission information -->
 <div class="content">
-    <p> The school serves students residing in the nearby community. As a government-funded institution, it does not impose tuition fees or any miscellaneous charges<br> on any student. Nevertheless, there might be voluntary contributions for those who choose to participate in various school organizations.</p>
-    <br>
-    <h2>OFFERINGS</h2>
-    <p>The school is offering the following courses in both Junior and Senior High School levels.</p>
+    <p>The school serves students residing in the nearby community. As a government-funded institution, it does not impose tuition fees or any miscellaneous charges on any student. Nevertheless, there might be voluntary contributions for those who choose to participate in various school organizations.</p>
     
-    <!-- Collapsible sections for Junior and Senior High School -->
-    <div>
-        <h2>
-            <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#juniorHighSchool" aria-expanded="false" aria-controls="juniorHighSchool">
-                Junior High School
-            </button>
-        </h2>
-        <div class="collapse" id="juniorHighSchool">
+    <h2>HOW TO ENROLL IN JUNIOR HIGH SCHOOL</h2>
+    <p>Follow these steps to enroll your child in Junior High School:</p>
+    
+    <!-- Step-by-step instructions -->
+    <div class="step">
+        <img src="{{ asset('images/step1.jpg') }}" alt="Visit Admission Office">
+        <h3>Step 1: Visit the School’s Admission Office</h3>
+        <p>Go to the school's admission office or visit our official website to get the enrollment form.</p>
+    </div>
+
+    <div class="step">
+        <img src="{{ asset('images/step2.jpg') }}" alt="Fill Out Form">
+        <h3>Step 2: Fill Out the Enrollment Form</h3>
+        <p>Complete the form with accurate information about the student.</p>
+    </div>
+
+    <div class="step">
+        <img src="{{ asset('images/step3.jpg') }}" alt="Submit Documents">
+        <h3>Step 3: Submit the Required Documents</h3>
+        <p>Provide the following documents:
             <ul>
-                <li>Grade 7</li>
-                <li>Grade 8</li>
-                <li>Grade 9</li>
-                <li>Grade 10</li>
+                <li>Original and photocopy of Birth Certificate</li>
+                <li>Original and photocopy of Form 138 (Report Card)</li>
+                <li>Original and photocopy of Certificate of Good Moral Character</li>
+                <li>Recent 1x1 or 2x2 photo (usually 2 copies)</li>
+                <li>Proof of Residence (e.g., Barangay Certificate)</li>
+                <li>Additional documents may be required based on specific school requirements.</li>
             </ul>
-        </div>
+        </p>
     </div>
 
-    <div>
-        
-        <div class="collapse" id="seniorHighSchool">
-            <!-- Add the content for Senior High School here -->
-            <p>Content for Senior High School</p>
-        </div>
+    <div class="step">
+        <img src="{{ asset('images/step4.jpg') }}" alt="Attend Orientation">
+        <h3>Step 4: Attend the Scheduled Orientation</h3>
+        <p>If applicable, attend the orientation session to learn more about the school and the enrollment process.</p>
     </div>
-    
-    <h2>DEPED VISION</h2>
-    <p>We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to nation-building.</p>
-    <p>As a learner-centered public institution, the Department of Education continuously improves itself to better serve its stakeholders.</p>
-    
-    <h2>SERVICE PLEDGE</h2>
-    <p>The Department of Education is committed to providing learners with quality basic education that is accessible, inclusive, and liberating through:</p>
-    <ul>
-        <li>Proactive leadership</li>
-        <li>Shared governance</li>
-        <li>Evidence-based policies, standards, and programs</li>
-        <li>A responsive and relevant curriculum</li>
-        <li>Highly competent and committed officials, and teaching and non-teaching personnel</li>
-        <li>An enabling learning environment</li>
-    </ul>
-    
-    <h2>CORE VALUES</h2>
-    <ul>
-        <li>Maka-Diyos</li>
-        <li>Maka-tao</li>
-        <li>Makakalikasan</li>
-        <li>Makabansa</li>
-    </ul>
-    
-    <h2>SCHOOL MISSION</h2>
-    <!-- Add your school mission statement here -->
-    <p>Our school is committed to nurturing each student's academic and personal growth, fostering a community of lifelong learners dedicated to excellence, respect, and responsibility.</p>
 
-    <h2>SCHOOL VISION</h2>
-    <!-- Add your school mission statement here -->
-    <p>A caring, functional institution that transforms knowledge into actualities, nurtures intelligence with values and radiates wisdom in discovering new horizon. </p>
+    <div class="step">
+        <img src="{{ asset('images/step5.jpg') }}" alt="Complete Additional Requirements">
+        <h3>Step 5: Complete Any Additional Requirements</h3>
+        <p>Follow any additional instructions provided by the school to finalize the enrollment process.</p>
+    </div>
 </div>
-
 
 @endsection
 
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        // JavaScript function to go back to the previous page
-        function goBack() {
-            window.history.back();
-        }
-    </script>
+<script>
+    // JavaScript function to go back to the previous page
+    function goBack() {
+        window.history.back();
+    }
+</script>
 @endsection
 
 @section('footer')

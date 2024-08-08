@@ -26,7 +26,7 @@
     .header .logoImage {
         position: absolute;
         top: 30px; /* Adjust the top position as needed */
-        left: 600px; /* Adjust the left position as needed */
+        left: 500px; /* Adjust the left position as needed */
         max-width: 90px; /* Adjust the max-width as needed */
     }
 

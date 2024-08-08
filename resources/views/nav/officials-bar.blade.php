@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Clock</title>
+    
     <style>
         body {
             margin: 0;
@@ -14,7 +14,7 @@
 
         .header {
             position: relative;
-            padding: 50px 20px;
+            padding: 80px 20px;
             color: #fff;
             text-align: center;
         }
@@ -24,6 +24,7 @@
             top: 0;
             left: 0;
             width: 100%;
+           
             height: 100%;
             object-fit: cover;
             z-index: -1;
@@ -63,12 +64,12 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{ asset('images/test.jpg') }}" alt="Background Image" class="backgroundImage">
+        <img src="{{ asset('images/bannerschool.jpg') }}" alt="Background Image" class="backgroundImage">
         <div class="logo">
             <img src="{{ asset('images/logoschool.png') }}" alt="Logo School">
         </div>
         <div class="title">Department of Education</div>
-        <div class="subtitle">Bacoor National High School - Springville</div>
+        <div class="subtitle">City of Bacoor National High School - Springville</div>
         <div class="subtitlesmall">"Bukal ng Karunugan sa Springville Asahan!"</div>
         <div class="time" id="clock"></div>
     </div>

@@ -9,12 +9,13 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         .slider {
             position: relative;
             overflow: hidden;
-            border: 2px solid #007BFF;
+            border: 2px solid #0056b3;
             border-radius: 10px;
             max-width: 100%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -34,7 +35,7 @@
         }
 
         .slider .prev, .slider .next {
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.6);
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -43,7 +44,7 @@
             padding: 10px;
             color: white;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 24px;
             border-radius: 50%;
             transition: background-color 0.3s ease;
             z-index: 10;
@@ -62,17 +63,18 @@
         }
 
         .schoolDivision {
-            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            border-left: 5px solid #0056b3;
         }
 
         .schoolDivision h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #007BFF;
+            color: #0056b3;
             margin-bottom: 15px;
         }
 
@@ -80,7 +82,7 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: #0056b3;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -89,7 +91,7 @@
         }
 
         .read-more-btn:hover {
-            background-color: #0056b3;
+            background-color: #004080;
         }
 
         .news-bulletin {
@@ -97,9 +99,10 @@
         }
 
         .news-bulletin h2 {
-            font-size: 24px;
-            color: #1c4587;
+            font-size: 1.5rem;
+            color: #0056b3;
             margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .news-bulletin .card {
@@ -110,6 +113,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .news-bulletin .card img {
@@ -127,6 +131,7 @@
             font-size: 1.1rem;
             font-weight: bold;
             color: #0056b3;
+            margin-bottom: 0;
         }
 
         .news-bulletin .card-title a {
@@ -143,12 +148,12 @@
             padding: 20px;
             background-color: #f9f9f9;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .featured-videos h2 {
-            font-size: 24px;
-            color: #007BFF;
+            font-size: 1.5rem;
+            color: #0056b3;
             margin-bottom: 20px;
             text-align: center;
             font-weight: 700;
@@ -159,12 +164,12 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: box-shadow 0.3s ease;
         }
 
         .featured-videos .video-card:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
         .featured-videos .video-card iframe,
@@ -198,12 +203,12 @@
 
         hr {
             border: none;
-            border-top: 2px solid #007BFF;
+            border-top: 2px solid #0056b3;
             margin: 40px 0;
         }
 
         .footer {
-            background-color: #007BFF;
+            background-color: #0056b3;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -214,7 +219,7 @@
         }
 
         .footer a {
-            color: #f0f0f0;
+            color: #e0e0e0;
             text-decoration: none;
         }
 
@@ -257,7 +262,7 @@
         </div>
         <hr>
         <div class="news-bulletin">
-            <h2>NEWS BULLETIN</h2>
+            <h2>News Bulletin</h2>
             <div class="row">
                 <div class="col-md-3">
                     <div class="card">

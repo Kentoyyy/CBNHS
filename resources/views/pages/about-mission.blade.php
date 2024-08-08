@@ -1,6 +1,6 @@
 @extends('home-master')
 
-@section('title', 'Home')
+@section('title', 'Mission & Vission')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 @section('style')
@@ -112,10 +112,6 @@
 
     <!-- Content section with mission, vision, and values statements -->
     <div class="content">
-        <p> The school serves students residing in the nearby community. As a government-funded institution, it does not impose tuition fees or any miscellaneous charges<br> on any student. Nevertheless, there might be voluntary contributions for those who choose to participate in various school organizations.</p>
-        <br>
-        <h2>OFFERINGS</h2>
-        <p>The school is offering the following courses in both Junior and Senior High School levels.</p>
         
 
         <h2>DEPED VISION</h2>
