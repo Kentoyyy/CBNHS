@@ -20,3 +20,12 @@ Route::get('/admission', function () {
 Route::get('/intendent', function () {
     return view('pages.about-intendent');
 });
+Route::get('/personnel.admin', function () {
+    return view('pages.personnel-admin');
+});
+Route::get('/test', function () {
+    return view('nav.intendent');
+});
+Route::get('/resources', function () {
+    return view('pages.resources');
+});

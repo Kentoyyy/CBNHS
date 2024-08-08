@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Clock</title>
     <style>
-        
-        .header {
-            position: relative;
-            padding: 50px 90px;
-            color: #fff;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9fa;
         }
 
-        .header .backgroundImage {
+        .header {
+            position: relative;
+            padding: 50px 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .backgroundImage {
             position: absolute;
             top: 0;
             left: 0;
@@ -23,74 +30,52 @@
             filter: brightness(50%);
         }
 
-        .logo img, .ssglogo img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 30px;
+        .logo img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
         }
 
         .title {
-            font-size: 2.8rem;
-            font-family: "Lato", sans-serif;
-            font-weight: bold;
+            font-size: 2rem;
             font-weight: 700;
         }
 
         .subtitle {
-            font-size: 2rem;
-            font-family: "Lato", sans-serif;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
         .subtitlesmall {
             font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .time {
-            font-size: 0.875rem;
-            font-family: 'Poppins';
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <div class="header container-fluid">
-        <div class="homeContainer">
-            <img src="{{ asset('images/test.jpg') }}" alt="Background Image" class="backgroundImage">
+    <div class="header">
+        <img src="{{ asset('images/test.jpg') }}" alt="Background Image" class="backgroundImage">
+        <div class="logo">
+            <img src="{{ asset('images/logoschool.png') }}" alt="Logo School">
         </div>
-        <div class="row align-items-center">
-            <div class="col-12 col-md-2 d-flex justify-content-center">
-                <div class="logo">
-                    <img src="{{ asset('images/logoschool.png') }}" alt="Logo School">
-                </div>
-            </div>
-            <div class="col-12 col-md-8 text-center">
-                <div class="title">Department of Education</div>
-                <div class="subtitle">Bacoor National High School - Springville</div>
-                <div class="subtitlesmall">"Numero Uno sa Kalidad Na Edukasyon para sa Batang Bacooreno"</div>
-            </div>
-            <div class="col-12 col-md-2 d-flex justify-content-center">
-                <div class="ssglogo">
-                    <img src="{{ asset('images/ssg.png') }}" alt="SSG Logo">
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 text-center time">
-                Philippine Standard Time:<br> <div id="clock"></div>
-            </div>
-        </div>
+        <div class="title">Department of Education</div>
+        <div class="subtitle">Bacoor National High School - Springville</div>
+        <div class="subtitlesmall">"Bukal ng Karunugan sa Springville Asahan!"</div>
+        <div class="time" id="clock"></div>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
         function updateClock() {
             const now = new Date();
-            // Create a formatter for the Philippine time zone
             const options = {
                 timeZone: 'Asia/Manila',
                 weekday: 'long',
@@ -108,9 +93,8 @@
             document.getElementById('clock').textContent = timeString;
         }
 
-        // Initial call to update clock and set interval
         updateClock();
-        setInterval(updateClock, 1000); // Update every second
+        setInterval(updateClock, 1000);
     </script>
 </body>
 </html>

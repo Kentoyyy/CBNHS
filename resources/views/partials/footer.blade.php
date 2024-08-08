@@ -12,7 +12,7 @@
         }
         .footer h5 {
             color: #1c4587;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -21,11 +21,13 @@
         }
         .footer .contact-info p {
             color: #333;
+            font-size: 13px;
             margin-bottom: 10px;
         }
         .footer .contact-info a {
             color: #007bff;
             font-weight: bold;
+            font-size: 14px;
             text-decoration: none;
         }
         .footer .contact-info a:hover {

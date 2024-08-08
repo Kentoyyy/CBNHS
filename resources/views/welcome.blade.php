@@ -14,10 +14,10 @@
         .slider {
             position: relative;
             overflow: hidden;
-            border: 2px solid #007BFF; /* Border color to match the theme */
+            border: 2px solid #007BFF;
             border-radius: 10px;
             max-width: 100%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow for depth */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             margin-bottom: 20px;
         }
 
@@ -34,7 +34,7 @@
         }
 
         .slider .prev, .slider .next {
-            background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+            background-color: rgba(0,0,0,0.5);
             cursor: pointer;
             position: absolute;
             top: 50%;
@@ -62,7 +62,7 @@
         }
 
         .schoolDivision {
-            background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradient background */
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -141,7 +141,7 @@
         .featured-videos {
             margin-top: 50px;
             padding: 20px;
-            background-color: #f9f9f9; /* Light background to differentiate from news section */
+            background-color: #f9f9f9;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
@@ -150,7 +150,7 @@
             font-size: 24px;
             color: #007BFF;
             margin-bottom: 20px;
-            text-align: center; /* Center-align the title */
+            text-align: center;
             font-weight: 700;
         }
 
@@ -160,31 +160,31 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: box-shadow 0.3s ease; /* Smooth transition effect */
+            transition: box-shadow 0.3s ease;
         }
 
         .featured-videos .video-card:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* More pronounced shadow on hover */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
 
         .featured-videos .video-card iframe,
         .featured-videos .video-card video {
             width: 100%;
-            height: 200px; /* Consistent height for videos */
+            height: 200px;
             border: none;
             display: block;
         }
 
         .featured-videos .video-card-body {
             padding: 15px;
-            background-color: #fff; /* White background for card body */
+            background-color: #fff;
         }
 
         .featured-videos .video-card-title {
             font-size: 1.1rem;
             font-weight: bold;
             color: #0056b3;
-            margin-bottom: 0; /* Remove bottom margin */
+            margin-bottom: 0;
         }
 
         .featured-videos .video-card-title a {
@@ -198,8 +198,8 @@
 
         hr {
             border: none;
-            border-top: 2px solid #007BFF; /* Match the color of your card titles */
-            margin: 40px 0; /* Adjust spacing as needed */
+            border-top: 2px solid #007BFF;
+            margin: 40px 0;
         }
 
         .footer {
@@ -249,9 +249,8 @@
             </div>
             <div class="col-lg-4">
                 <div class="schoolDivision">
-                    <h3>Welcome to the Official Website of National Bacoor High School - Springville</h3>
+                    <h3>Welcome to NBHS - Springville</h3>
                     <p>Welcome to the official website of National Bacoor High School - Springville, located in Bacoor, Cavite, Philippines. It is a public secondary school offering free and quality education managed by the Philippine Department of Education (DepEd).</p>
-                    <p>The school offers Junior High School levels, offering Grades 7 to 10 levels in Junior High School.</p>
                     <a href="#" class="read-more-btn">Read more</a>
                 </div>
             </div>
@@ -264,7 +263,7 @@
                     <div class="card">
                         <img src="{{ asset('images/newsimage/wikangfilipino.jpg') }}" class="card-img-top" alt="News 1">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">[A] Pakikiisa sa Buwan ng Wikang Pambansa 2024</a></h5>
+                            <h5 class="card-title"><a href="#">Pakikiisa sa Buwan ng Wikang Pambansa 2024</a></h5>
                         </div>
                     </div>
                 </div>
@@ -272,7 +271,7 @@
                     <div class="card">
                         <img src="{{ asset('images/newsimage/class_schedule.jpg') }}" class="card-img-top" alt="News 2">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">We're excited to welcome everyone back to school! 📚✨</a></h5>
+                            <h5 class="card-title"><a href="#">Welcome Back to School!</a></h5>
                         </div>
                     </div>
                 </div>
@@ -280,7 +279,7 @@
                     <div class="card">
                         <img src="{{ asset('images/newsimage/brigada.jpg') }}" class="card-img-top" alt="News 3">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">TINGNAN| IKA-LIMANG ARAW NG BRIGADA ESKWELA 2024</a></h5>
+                            <h5 class="card-title"><a href="#">Brigada Eskwela 2024</a></h5>
                         </div>
                     </div>
                 </div>
@@ -288,7 +287,7 @@
                     <div class="card">
                         <img src="{{ asset('images/newsimage/orientation.jpg') }}" class="card-img-top" alt="News 4">
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">PARENT ORIENTATION PROGRAM</a></h5>
+                            <h5 class="card-title"><a href="#">Parent Orientation Program</a></h5>
                         </div>
                     </div>
                 </div>
@@ -305,7 +304,7 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-card-body">
-                            <h5 class="video-card-title"><a href="#">Welcome Back to School!! Marked the date July 29, 2024</a></h5>
+                            <h5 class="video-card-title"><a href="#">Welcome Back to School - July 29, 2024</a></h5>
                         </div>
                     </div>
                 </div>
@@ -316,7 +315,7 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-card-body">
-                            <h5 class="video-card-title"><a href="#">BRIGADA ESKWELA 2024 - Tara na, mag-Brigada na! 🙌</a></h5>
+                            <h5 class="video-card-title"><a href="#">Brigada Eskwela 2024</a></h5>
                         </div>
                     </div>
                 </div>
@@ -359,7 +358,7 @@
         showSlides(slideIndex);
         setInterval(() => {
             moveSlide(1);
-        }, 5000); // Change image every 5 seconds
+        }, 5000);
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

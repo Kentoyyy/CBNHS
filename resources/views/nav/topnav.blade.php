@@ -9,7 +9,7 @@
     <title>CBNHS</title>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
         
         .sticky-top {
             position: -webkit-sticky; /* Safari */
@@ -115,17 +115,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Home
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="homeDropdown">
-                        <a class="dropdown-item" href="#">Information for Parents</a>
-                        <a class="dropdown-item" href="#">Issuance Requirements</a>
-                        <a class="dropdown-item" href="#">Job Opportunities</a>
-                        <a class="dropdown-item" href="#">School Calendar</a>
-                        <a class="dropdown-item" href="#">Terms of Use</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -139,19 +130,16 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Admissions
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="admissionsDropdown">
-                        <a class="dropdown-item" href="admission">Application Process</a>
-                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission">Admission</a>
+                    </li>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="personnelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Personnel
                     </a>
                     <div class="dropdown-menu" aria-labelledby="personnelDropdown">
-                        <a class="dropdown-item" href="#">Administration</a>
+                        <a class="dropdown-item" href="personnel-admin">Administration</a>
                         <a class="dropdown-item" href="#">Faculty</a>
                         <a class="dropdown-item" href="#">Staff</a>
                         <a class="dropdown-item" href="#">Support Services</a>
@@ -169,9 +157,9 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Resources
-                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources">Resources</a>
+                    </li>
                 </li>
             </ul>
         </div>
