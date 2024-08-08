@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
         /* Reset default styles */
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,25 +28,15 @@
         /* Navbar styles */
         .navbar {
             background-color: #1c4587;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 15px 40px;
+            padding: 10px 20px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s;
-        }
-
-        .navbar.scrolled {
-            background-color: #163d6f;
-        }
-
-        .container {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .logo {
@@ -54,12 +45,12 @@
         }
 
         .logo-image {
-            height: 40px;
+            height: 30px;
             margin-right: 10px;
         }
 
         .logo-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
             color: #fff;
         }
@@ -69,96 +60,37 @@
             align-items: center;
         }
 
-        .nav-link, .nav-button {
-            margin-left: 18px;
+        .nav-link {
             text-decoration: none;
             color: #fff;
             font-size: 14px;
             font-weight: 400;
-            padding: 8px 20px;
-            border-radius: 7px;
+            margin-left: 20px;
+            padding: 6px 12px;
+            border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .nav-link:hover {
-            background-color: #ECF0F1;
-            color: #164e73;
+            background-color: #f0f0f0;
+            color: #000;
         }
 
         .nav-button {
-            background-color: #fff;
-            color: #1c4587;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: background-color 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1c4587;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: background-color 0.3s;
         }
 
         .nav-button:hover {
-            background-color: #fff;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background-color: #164e73;
         }
-
-        /* Slideshow styles */
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 75vh;
-            margin-top: 80px;
-            overflow: hidden;
-            border-radius: 0;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            height: 100%;
-        }
-
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Navigation arrows */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #2C3E50;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transform: translateY(-50%);
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-
-        .prev {
-            left: 20px;
-        }
-
-        .next {
-            right: 20px;
-        }
-
         /* Content styles */
         .content {
             padding: 60px 20px;
@@ -166,6 +98,42 @@
             background-color: #F4F4F9;
         }
 
+        /* Student Portal Section */
+        .student-portal-section {
+            background-color: #ffffff;
+            padding: 120px 20px;
+            text-align: center;
+        
+            margin-top: 80px; /* Adjusted margin-top for better positioning */
+        }
+
+        .student-portal-section h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #1c4587;
+        }
+
+        .student-portal-section p {
+            font-size: 16px;
+            color: #7F8C8D;
+            margin-bottom: 20px;
+        }
+
+        .student-portal-section a {
+            padding: 10px 20px;
+            background-color: #1c4587;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .student-portal-section a:hover {
+            background-color: #164e73;
+        }
+
+        /* Feature Section */
         .feature-section {
             display: flex;
             flex-wrap: wrap;
@@ -185,13 +153,7 @@
             background-color: #FFFFFF;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
             max-width: 350px;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .feature img {
@@ -223,38 +185,6 @@
             box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Learn More Section Styles */
-        .learn-more-section {
-            padding: 60px 20px;
-            background-color: #FFFFFF;
-            text-align: center;
-        }
-
-        .learn-more-section h2 {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .learn-more-section p {
-            font-size: 16px;
-            color: #7F8C8D;
-            margin-bottom: 20px;
-        }
-
-        .learn-more-section a {
-            padding: 10px 20px;
-            background-color: #1c4587;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .learn-more-section a:hover {
-            background-color: #164e73;
-        }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -277,6 +207,14 @@
             max-width: 400px;
             border-radius: 10px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #1c4587;
         }
 
         .close {
@@ -324,40 +262,27 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <!-- Logo and Name -->
-            <div class="logo">
-                <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
-                <span class="logo-name">City of Bacoor National High School</span>
-            </div>
+    <nav class="navbar">
+        <!-- Logo and Name -->
+        <div class="logo">
+            <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
+            <span class="logo-name">City of Bacoor National High School</span>
+        </div>
 
-            <!-- Navigation Links -->
-            <div class="nav-links">
-                <a href="#helpdesk" class="nav-link">Helpdesk</a>
-                <a href="faqportal" class="nav-link">FAQ</a>
-                <a href="#login" class="nav-button" id="loginBtn">Login</a>
-                <a href="/" class="nav-button">Home</a>
-            </div>
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#helpdesk" class="nav-link">Helpdesk</a>
+            <a href="faqportal" class="nav-link">FAQ</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="/" class="nav-button">Home</a>
         </div>
     </nav>
 
-    <!-- Slideshow Container -->
-    <div class="slideshow-container">
-        <div class="slides">
-            <div class="slide">
-                <img src="{{ asset('images/welcomeback.jpg') }}" alt="Slide 1">
-            </div>
-            <div class="slide">
-                <img src="{{ asset('images/welcomeback.png') }}" alt="Slide 2">
-            </div>
-            <div class="slide">
-                <img src="{{ asset('images/enrollment.png') }}" alt="Slide 3">
-            </div>
-        </div>
-        <!-- Navigation Arrows -->
-        <div class="prev">&#10094;</div>
-        <div class="next">&#10095;</div>
+    <!-- Student Portal Section -->
+    <div class="student-portal-section">
+        <h2>Welcome to the Student Portal</h2>
+        <p>The Student Portal is your gateway to academic resources, grade tracking, class schedules, and more. Easily access your assignments, connect with your teachers, and stay updated with school announcements.</p>
+        <a href="#login" id="portalLoginBtn">Access Your Portal</a>
     </div>
 
     <!-- Feature Section -->
@@ -375,95 +300,69 @@
                 <img src="{{ asset('images/activities.png') }}" alt="Interactive activities and assessments">
                 <div class="feature-title">Interactive Activities and Assessments</div>
                 <div class="feature-description">
-                    Students can test their knowledge and skills through interactive polls, quizzes, and debates, among
-                    others.
+                    Participate in interactive quizzes, and assessments, and track your progress through online exams.
+                </div>
+            </div>
+            <div class="feature">
+                <img src="{{ asset('images/connectimage.png') }}" alt="Connect with your teachers">
+                <div class="feature-title">Connect with Your Teachers</div>
+                <div class="feature-description">
+                    Students can ask questions and get real-time help from teachers and counselors.
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Learn More Section -->
-    <div class="learn-more-section">
-        <h2>Learn More About Our Programs</h2>
-        <p>Discover a wide range of programs and opportunities designed to enhance your learning experience.</p>
-        <a href="#programs">Learn More</a>
-    </div>
-
     <!-- Footer -->
     <footer>
-        &copy; 2024 City of Bacoor National High School. All Rights Reserved.
+        &copy; 2024 City of Bacoor National High School. All rights reserved.
     </footer>
 
-    <!-- Modal for Login Form -->
+    <!-- Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" id="closeBtn">&times;</span>
+            <div class="modal-header">Student Login</div>
             <form class="login-form">
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Enter your username" required>
+                <input type="password" placeholder="Enter your password" required>
                 <button type="submit">Login</button>
             </form>
         </div>
     </div>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change slide every 3 seconds
-        }
-
-        // Manual navigation
-        const prevButton = document.querySelector(".prev");
-        const nextButton = document.querySelector(".next");
-
-        prevButton.addEventListener("click", () => {
-            slideIndex = (slideIndex - 2 + slides.length) % slides.length;
-            showSlides();
-        });
-
-        nextButton.addEventListener("click", () => {
-            showSlides();
-        });
-
-        // Modal logic
+        // Get modal elements
         const modal = document.getElementById("loginModal");
-        const loginBtn = document.getElementById("loginBtn");
-        const closeBtn = document.getElementsByClassName("close")[0];
+        const portalLoginBtn = document.getElementById("portalLoginBtn");
+        const closeBtn = document.getElementById("closeBtn");
 
-        loginBtn.onclick = function () {
+        // Listen for open click
+        portalLoginBtn.addEventListener("click", openModal);
+
+        // Listen for close click
+        closeBtn.addEventListener("click", closeModal);
+
+        // Listen for outside click
+        window.addEventListener("click", outsideClick);
+
+        // Function to open modal
+        function openModal() {
             modal.style.display = "block";
         }
 
-        closeBtn.onclick = function () {
+        // Function to close modal
+        function closeModal() {
             modal.style.display = "none";
         }
 
-        window.onclick = function (event) {
-            if (event.target == modal) {
+        // Function to close modal if outside click
+        function outsideClick(e) {
+            if (e.target == modal) {
                 modal.style.display = "none";
             }
         }
-
-        // Navbar scroll effect
-        window.onscroll = function () {
-            const navbar = document.getElementById("navbar");
-            if (window.pageYOffset > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        };
     </script>
 </body>
 
 </html>
-    
