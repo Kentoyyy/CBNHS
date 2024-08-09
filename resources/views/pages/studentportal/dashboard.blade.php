@@ -6,7 +6,7 @@
     <header class="dashboard-header">
         <div class="header-content">
             <h1>Welcome, <span class="student-name">Juan Dela Cruz</span></h1>
-            <p>Your academic journey at City of Bacoor National High School starts here.</p>
+            <p>Your academic journey starts here.</p>
         </div>
         <nav class="header-links">
             <a href="{{ url('profile') }}" class="header-link">Profile</a>
@@ -52,19 +52,19 @@
     </section>
 
     <section class="announcements">
-        <h2>Latest Announcements</h2>
+        <h2>Announcements</h2>
         <ul>
-            <li><a href="#" data-details="Semester Exam Schedule Released - Details about the exam schedule will be provided here.">Semester Exam Schedule Released</a></li>
-            <li><a href="#" data-details="New Online Courses Available - Check out the new online courses that have been added to your curriculum.">New Online Courses Available</a></li>
-            <li><a href="#" data-details="Holiday Notice - Details about the upcoming holidays and breaks.">Holiday Notice</a></li>
+            <li><a href="#" data-details="Semester Exam Schedule Released.">Semester Exam Schedule Released</a></li>
+            <li><a href="#" data-details="New Online Courses Available.">New Online Courses Available</a></li>
+            <li><a href="#" data-details="Holiday Notice.">Holiday Notice</a></li>
         </ul>
     </section>
 
     <div id="announcements-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>Announcement Details</h2>
-            <p id="announcement-details">Details of the selected announcement will appear here.</p>
+            <h2>Details</h2>
+            <p id="announcement-details">Details will appear here.</p>
         </div>
     </div>
 @endsection
@@ -75,7 +75,7 @@
         font-family: 'Helvetica Neue', Arial, sans-serif;
         background-color: #f5f7fa;
         margin: 0;
-        color: #34495e;
+        color: #1c4587;
     }
 
     .dashboard {
@@ -86,67 +86,67 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .header-content h1 {
-        font-size: 24px;
+        font-size: 20px;
         margin: 0;
         font-weight: 600;
     }
 
     .header-content p {
-        font-size: 14px;
+        font-size: 12px;
         color: #7f8c8d;
     }
 
     .header-links .header-link {
         text-decoration: none;
-        color: #083a68;
-        margin-left: 15px;
+        color: #1c4587;
+        margin-left: 10px;
         font-weight: 500;
     }
 
     .header-links .header-link:hover {
-        color: #083a68;
+        color: #2c3e50;
     }
 
     .quick-links {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 15px;
-        margin-bottom: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
     }
 
     .card {
         background-color: #ffffff;
-        border-radius: 8px;
-        padding: 15px;
+        border-radius: 6px;
+        padding: 10px;
         text-align: center;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         text-decoration: none;
         color: #2c3e50;
     }
 
     .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .card i {
-        font-size: 30px;
-        color: #083a68;
-        margin-bottom: 10px;
+        font-size: 24px;
+        color: #1c4587;
+        margin-bottom: 5px;
     }
 
     .card h3 {
-        font-size: 15px;
+        font-size: 14px;
         margin: 0;
     }
 
     .calendar {
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .calendar-header {
@@ -158,28 +158,28 @@
     }
 
     .calendar-title {
-        font-size: 18px;
-        margin: 0 10px;
+        font-size: 16px;
+        margin: 0 5px;
         color: #2c3e50;
     }
 
     .nav-button {
         background: none;
         border: none;
-        font-size: 18px;
+        font-size: 16px;
         cursor: pointer;
-        color: #3498db;
+        color: #1c4587;
         transition: color 0.3s;
     }
 
     .nav-button:hover {
-        color: #083a68;
+        color: #2c3e50;
     }
 
     .calendar-container {
         background-color: #ffffff;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         border: 1px solid #e1e1e1;
     }
@@ -190,13 +190,13 @@
         gap: 1px;
         background-color: #f5f7fa;
         color: #2c3e50;
-        padding: 10px 0;
+        padding: 5px 0;
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .calendar-days span {
-        padding: 8px;
+        padding: 5px;
         border-bottom: 1px solid #e1e1e1;
     }
 
@@ -210,9 +210,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 50px;
+        height: 40px;
         background-color: #ffffff;
-        font-size: 14px;
+        font-size: 12px;
         border: 1px solid #e1e1e1;
         transition: background-color 0.3s;
     }
@@ -222,19 +222,19 @@
     }
 
     .calendar-day.today {
-        background-color: #083a68;
+        background-color: #1c4587;
         color: #ffffff;
         font-weight: bold;
         border: 1px solid #fafafa;
     }
 
     .announcements {
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .announcements h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
     .announcements ul {
@@ -244,12 +244,12 @@
     }
 
     .announcements ul li {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .announcements ul li a {
         text-decoration: none;
-        color: #3f3f3f;
+        color: #2c3e50;
         font-weight: 500;
     }
 
@@ -258,7 +258,7 @@
     }
 
     .student-name {
-        color: #2a1987;
+        color: #3498db;
     }
 
     .modal {
@@ -276,19 +276,19 @@
 
     .modal-content {
         background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
+        margin: 10% auto;
+        padding: 15px;
         border: 1px solid #888;
         width: 80%;
-        max-width: 600px;
-        border-radius: 8px;
+        max-width: 500px;
+        border-radius: 6px;
         position: relative;
     }
 
     .close-button {
         color: #aaa;
         float: right;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
     }
 

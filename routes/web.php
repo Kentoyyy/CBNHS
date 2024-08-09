@@ -55,6 +55,10 @@ Route::get('/announcement', function () {
 Route::get('/profile', function () {
     return view('pages.studentportal.profile');
 });
+Route::get('/schedule', function () {
+    return view('pages.studentportal.class-schedule');
+});
+
 
 
 
