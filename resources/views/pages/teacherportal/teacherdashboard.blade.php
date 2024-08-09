@@ -2,247 +2,173 @@
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 
 @section('content')
-<div class="dashboard">
-    <h1>Attendance for Juan Dela Cruz</h1>
-    <p>School Year: 2024-2025</p>
+<div class="dashboard-content">
+    <h2>Good Morning, Mr. Cruz!</h2>
+    <p>Today is {{ \Carbon\Carbon::now()->toFormattedDateString() }}</p>
 
-    <!-- Attendance Table -->
-    <div class="attendance-container">
-        <h2>Daily Attendance</h2>
-        <table class="attendance-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Shift</th>
-                    <th>Teacher</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2024-08-01</td>
-                    <td>Present</td>
-                    <td>AM</td>
-                    <td>Teacher 1</td>
-                </tr>
-                <tr>
-                    <td>2024-08-01</td>
-                    <td>Absent</td>
-                    <td>PM</td>
-                    <td>Teacher 2</td>
-                </tr>
-                <tr>
-                    <td>2024-08-02</td>
-                    <td>Present</td>
-                    <td>AM</td>
-                    <td>Teacher 1</td>
-                </tr>
-                <tr>
-                    <td>2024-08-02</td>
-                    <td>Absent</td>
-                    <td>PM</td>
-                    <td>Teacher 3</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <button class="btn-action">Mark Attendance</button>
+        <button class="btn-action">Grade Submissions</button>
+        <button class="btn-action">View Schedule</button>
     </div>
 
-    <!-- Monthly Summary Table -->
-    <div class="monthly-summary">
-        <h2>Monthly Attendance Summary</h2>
-        <table class="summary-table">
-            <thead>
-                <tr>
-                    <th>Month</th>
-                    <th>Total Days</th>
-                    <th>Days Present</th>
-                    <th>Days Absent</th>
-                    <th>Attendance %</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>August 2024</td>
-                    <td>22</td>
-                    <td>18</td>
-                    <td>4</td>
-                    <td>81.8%</td>
-                </tr>
-                <tr>
-                    <td>September 2024</td>
-                    <td>20</td>
-                    <td>19</td>
-                    <td>1</td>
-                    <td>95%</td>
-                </tr>
-                <!-- Add more rows for other months -->
-            </tbody>
-        </table>
+    <div class="notifications">
+        <h3>Recent Notifications</h3>
+        <ul>
+            <li>New message from Maria Santos (Student Query)</li>
+            <li>Assignment: Math Test due in 2 days</li>
+            <li>System Update: New attendance feature added</li>
+        </ul>
     </div>
 
-    <!-- Detailed Attendance Log -->
-    <div class="detailed-log">
-        <h2>Detailed Attendance Log</h2>
-        <table class="detailed-log-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Shift</th>
-                    <th>Teacher</th>
-                    <th>Reason</th>
-                    <th>Remarks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2024-08-01</td>
-                    <td>Absent</td>
-                    <td>AM</td>
-                    <td>Teacher 1</td>
-                    <td>Sick</td>
-                    <td>Medical Certificate Submitted</td>
-                </tr>
-                <tr>
-                    <td>2024-08-02</td>
-                    <td>Present</td>
-                    <td>PM</td>
-                    <td>Teacher 2</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    <div class="class-overview">
+        <h3>Class Overview</h3>
+        <p>Next Class: Science, 10:00 AM - Room 204</p>
+        <p>Recent Assessment: Math Quiz - Average Score: 85%</p>
     </div>
 
-    <!-- Attendance by Subject -->
-    <div class="subject-attendance">
-        <h2>Attendance by Subject</h2>
-        <table class="subject-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Subject</th>
-                    <th>Status</th>
-                    <th>Shift</th>
-                    <th>Teacher</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2024-08-01</td>
-                    <td>Mathematics</td>
-                    <td>Present</td>
-                    <td>AM</td>
-                    <td>Teacher 1</td>
-                </tr>
-                <tr>
-                    <td>2024-08-01</td>
-                    <td>English</td>
-                    <td>Absent</td>
-                    <td>PM</td>
-                    <td>Teacher 2</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    <div class="calendar">
+        <h3>Calendar</h3>
+        <!-- Insert calendar widget here -->
     </div>
 
-    <!-- Export Button -->
-  
+    <div class="resources">
+        <h3>Teaching Materials</h3>
+        <button class="btn-action">Upload New Material</button>
+        <ul>
+            <li>Physics Lesson Plan - Last Modified: 2 days ago</li>
+            <li>Math Worksheet - Last Modified: 5 days ago</li>
+        </ul>
+    </div>
+
+    <div class="student-highlights">
+        <h3>Student Highlights</h3>
+        <p>Top Performer: John Doe - 98% in Science</p>
+        <p>Students Requiring Attention: Jane Smith (Attendance: 60%)</p>
+    </div>
+
+    <div class="messages">
+        <h3>Messages</h3>
+        <p>New Messages: 3</p>
+        <button class="btn-action">Go to Inbox</button>
+    </div>
+
+    <div class="professional-development">
+        <h3>Professional Development</h3>
+        <p>Upcoming Workshop: Advanced Teaching Techniques - August 15, 2024</p>
+    </div>
+
+    <div class="support">
+        <h3>Support</h3>
+        <button class="btn-action">Contact Support</button>
+    </div>
 </div>
 
 <style>
 /* Dashboard Styling */
-.dashboard {
-    padding: 20px;
-    background-color: #f4f4f4;
+.dashboard-content {
+    padding: 30px;
+    background-color: #ffffff;
     color: #333;
-    font-family: 'Arial', sans-serif;
-    max-width: 1200px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1100px;
     margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #222;
-    font-weight: 700;
+.dashboard-content h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
 }
 
-.dashboard p {
-    font-size: 16px;
-    color: #666;
+.dashboard-content p {
+    font-size: 14px;
+    color: #777;
     margin-bottom: 30px;
 }
 
-/* General Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-thead {
-    background-color: #f0f0f0;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    color: #444;
-    font-weight: 600;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #e1e1e1;
-}
-
-/* Container Styling */
-.attendance-container, .monthly-summary, .detailed-log, .subject-attendance {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 22px;
+/* Section Heading Styling */
+.dashboard-content h3 {
+    font-size: 20px;
     margin-bottom: 15px;
-    color: #333;
-    font-weight: 600;
-    border-bottom: 1px solid #ddd;
+    color: #444;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
 
-/* Export Button Styling */
-.export-container {
-    margin-top: 20px;
+/* Quick Actions Styling */
+.quick-actions {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
 }
 
-.export-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+.btn-action {
+    padding: 12px 24px;
+    font-size: 14px;
     color: #fff;
-    background-color: #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
+    background-color: #1e90ff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.export-button:hover {
-    background-color: #0056b3;
+.btn-action:hover {
+    background-color: #0b6abf;
 }
+
+/* Notifications Styling */
+.notifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notifications ul li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* General Styling for Sections */
+[class*='-overview'], .calendar, .resources, .student-highlights, .messages, .professional-development, .support {
+    margin-bottom: 30px;
+}
+
+[class*='-overview'] p, .resources ul li, .student-highlights p, .messages p, .professional-development p, .support p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Resources Styling */
+.resources ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resources ul li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Support Styling */
+.support .btn-action {
+    background-color: #28a745;
+}
+
+.support .btn-action:hover {
+    background-color: #218838;
+}
+
 </style>
 @endsection
