@@ -10,101 +10,104 @@
     <style>
         /* Body Styles */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #2C3E50;
-            background-color: #FAFAFA;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+            /* Body Styles */
+            body {
+                font-family: 'Roboto', sans-serif;
+                color: #2C3E50;
+                background-color: #FAFAFA;
+                overflow-x: hidden;
+                line-height: 1.6;
+            }
 
-        /* Navbar styles */
-        .navbar {
-            background-color: #1c4587;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            /* Navbar styles */
+            .navbar {
+                background-color: #1c4587;
+                padding: 10px 20px;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+            .logo {
+                display: flex;
+                align-items: center;
+            }
 
-        .logo-image {
-            height: 30px;
-            margin-right: 10px;
-        }
+            .logo-image {
+                height: 30px;
+                margin-right: 10px;
+            }
 
-        .logo-name {
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-        }
+            .logo-name {
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+            }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
+            .nav-links {
+                display: flex;
+                align-items: center;
+            }
 
-        .nav-link {
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 400;
-            margin-left: 20px;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-            border-bottom: 2px solid transparent;
-        }
+            .nav-link {
+                text-decoration: none;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 20px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                transition: background-color 0.3s, color 0.3s;
+                border-bottom: 2px solid transparent;
+            }
 
-        .nav-link:hover {
-            background-color: #f0f0f0;
-            color: #000;
-            border-bottom: 2px solid #fff;
-        }
+            .nav-link:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                border-bottom: 2px solid #fff;
+            }
 
-        .nav-button {
-            text-decoration: none;
-            color: #000;
-            background-color: #fdfdfd;
-            padding: 6px 25px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-left: 20px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-        }
+            .nav-button {
+                text-decoration: none;
+                color: #000;
+                background-color: #fdfdfd;
+                padding: 6px 25px;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 500;
+                margin-left: 20px;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
 
-        .nav-button:hover {
-            background-color: #476ca9;
-        }
+            .nav-button:hover {
+                background-color: #476ca9;
+            }
+
 
         .card-header h3 {
-            font-size: 1.125rem;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .card-body h5 {
-            font-size: 1rem;
+            font-size: 0.875rem;
             font-weight: 500;
         }
 
         .card-body p,
         .card-body ul {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
         }
 
         .card-body ul {
@@ -121,12 +124,12 @@
 
         /* Adjusting the FAQ heading position */
         .faq-heading {
-            margin-top: 20px; /* Increased margin to ensure it clears the navbar */
+            margin-top: 80px; /* Margin to ensure it clears the navbar */
         }
 
-        /* Alternative fallback */
+        /* Container padding */
         .container {
-            padding-top: 100px; /* Added padding to the container as a fallback */
+            padding-top: 80px; /* Added padding to the container */
         }
     </style>
 </head>
@@ -134,7 +137,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ asset('images/logoschool.png') }}" alt="Laravel Logo" class="logo-image">
+            <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
             <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
         </div>
         <div class="nav-links">
@@ -145,8 +148,7 @@
         </div>
     </nav>
 
-    <div class="container mt-5 position-relative">
-        <!-- Adjusted CBNHS FAQ Section -->
+    <div class="container">
         <h1 class="text-center faq-heading mb-4">CBNHS Frequently Asked Questions</h1>
 
         <!-- Students Section -->
