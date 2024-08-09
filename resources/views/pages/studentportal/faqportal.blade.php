@@ -1,5 +1,3 @@
-<!-- resources/views/faq.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +15,6 @@
             box-sizing: border-box;
         }
 
-        /* Body Styles */
         body {
             font-family: 'Roboto', sans-serif;
             color: #2C3E50;
@@ -121,6 +118,16 @@
         a:hover {
             text-decoration: underline;
         }
+
+        /* Adjusting the FAQ heading position */
+        .faq-heading {
+            margin-top: 20px; /* Increased margin to ensure it clears the navbar */
+        }
+
+        /* Alternative fallback */
+        .container {
+            padding-top: 100px; /* Added padding to the container as a fallback */
+        }
     </style>
 </head>
 
@@ -138,9 +145,9 @@
         </div>
     </nav>
 
-    <div class="container mt-5 position-relative" style="min-height: 100vh;">
-        <!-- CBNHS FAQ Section -->
-        <h1 class="text-center mb-4">CBNHS Frequently Asked Questions</h1>
+    <div class="container mt-5 position-relative">
+        <!-- Adjusted CBNHS FAQ Section -->
+        <h1 class="text-center faq-heading mb-4">CBNHS Frequently Asked Questions</h1>
 
         <!-- Students Section -->
         <div class="card mb-4">
@@ -149,25 +156,26 @@
             </div>
             <div class="card-body">
                 <h5>I don’t know my login credentials</h5>
-                <p>You can access the Student Portal, eLearning Management System (eLMS), and Office 365 using your school-provided email address. The format is as follows:</p>
+                <p>You can login to your Microsoft Office 365, eLearning Management System (eLMS), and One STI Student Portal accounts using your STI Microsoft O365 email address.</p>
+                <p><strong>Login credentials format:</strong></p>
                 <ul>
-                    <li><strong>Username:</strong> [Last name].[Last six digits of student number]@school.edu.ph</li>
-                    <li><strong>Password:</strong> [Last name][Birthdate in YYYYMMDD format]</li>
+                    <li><strong>Username:</strong> [Last name . last six digits of student number@campus.edu.ph]</li>
+                    <li><strong>Password:</strong> Last name + birthdate (YYYYMMDD)</li>
                 </ul>
-                <p><strong>Example:</strong></p>
+                <p><strong>Sample:</strong></p>
                 <ul>
-                    <li><strong>Username:</strong> delacruz.123456@school.edu.ph</li>
-                    <li><strong>Password:</strong> Delacruz20010515</li>
+                    <li><strong>Username:</strong> delacruz.873612@cbnhs.edu.ph</li>
+                    <li><strong>Password:</strong> Delacruz19900422</li>
                 </ul>
-                <p><em>Note: Passwords are case-sensitive, so ensure the first letter of your last name is capitalized.</em></p>
-                <p>If you’re new and unable to log in using these credentials, please contact your school to activate your account.</p>
-                <p>For further assistance, visit the Student Support link: <a href="https://www.school.edu/support" target="_blank">https://www.school.edu/support</a></p>
+                <p><em>Passwords are case sensitive, so make sure you enter it with the first letter of your last name in UPPERCASE.</em></p>
+                <p>If you're a new student and you can't login using the Microsoft Office 365 login credentials from your RAF, please contact your school to term activate your account.</p>
+                <p>CBNHS Student Support link: <a href="#" target="_blank">Bacoor National High School Support</a></p>
 
                 <h5 class="mt-4">I forgot my password</h5>
-                <p>You can reset your password by clicking the ‘Forgot password?’ link on the login page. For issues related to Office 365 credentials, email support at <a href="mailto:elms@school.edu.ph">elms@school.edu.ph</a>.</p>
+                <p>You can reset forgotten passwords via ‘Forgot password?’ in the login page. For other related concerns, you may contact <a href="#">Admin in the school</a>.</p>
 
                 <h5 class="mt-4">I have missing subjects</h5>
-                <p>Notify your school to update your class assignment. Alternatively, email <a href="mailto:elms@school.edu.ph">elms@school.edu.ph</a> for assistance.</p>
+                <p>Please inform your school to update your class assignment. Further, you may send an email at <a href="mailto:elms@sti.edu">CBNHS Email</a>.</p>
             </div>
         </div>
 
