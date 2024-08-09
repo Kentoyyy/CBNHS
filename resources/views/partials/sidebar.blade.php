@@ -5,7 +5,7 @@
 
         .sidebar {
             width: 220px;
-            background-color: #2c3e50;
+            background-color: #083a68;
             color: #ecf0f1;
             padding: 15px;
             display: flex;
@@ -58,6 +58,23 @@
             margin-right: 10px;
             font-size: 18px;
         }
+
+        .logout-button {
+            margin-top: auto;
+            background-color: #2b24b4;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .logout-button:hover {
+            background-color: #241e95;
+        }
     </style>
     <div class="sidebar-header">
         <img src="{{ asset('images/logoschool.png') }}" alt="Logo">
@@ -73,4 +90,8 @@
         <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
         <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
     </ul>
+    <button class="logout-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+    
 </div>

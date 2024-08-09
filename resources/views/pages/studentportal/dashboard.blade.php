@@ -104,13 +104,13 @@
 
     .header-links .header-link {
         text-decoration: none;
-        color: #2980b9;
+        color: #083a68;
         margin-left: 15px;
         font-weight: 500;
     }
 
     .header-links .header-link:hover {
-        color: #3498db;
+        color: #083a68;
     }
 
     /* Quick Links Section */
@@ -139,7 +139,7 @@
 
     .card i {
         font-size: 30px;
-        color: #3498db;
+        color: #083a68;
         margin-bottom: 10px;
     }
 
@@ -155,23 +155,28 @@
 
     .calendar-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         margin-bottom: 10px;
+        font-weight: 600;
     }
 
     .calendar-title {
         font-size: 20px;
-        margin: 0;
-        font-weight: 600;
+        margin: 0 15px;
     }
 
     .nav-button {
         background: none;
         border: none;
-        font-size: 20px;
+        font-size: 18px;
         cursor: pointer;
         color: #3498db;
+        transition: color 0.3s;
+    }
+
+    .nav-button:hover {
+        color: #083a68;
     }
 
     .calendar-container {
@@ -185,11 +190,11 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 1px;
-        background-color: #3498db;
+        background-color: #083a68;
         color: #ffffff;
         padding: 10px 0;
         text-align: center;
-        font-weight: 600;
+        font-size: 14px;
     }
 
     .calendar-days span {
@@ -211,6 +216,11 @@
         font-size: 14px;
         border: 1px solid #e1e1e1;
         box-sizing: border-box;
+        transition: background-color 0.3s;
+    }
+
+    .calendar-day:hover {
+        background-color: #dfe6e9;
     }
 
     /* Announcements Section */
@@ -235,7 +245,7 @@
 
     .announcements ul li a {
         text-decoration: none;
-        color: #2980b9;
+        color: #3f3f3f;
         font-weight: 500;
     }
 
