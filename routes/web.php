@@ -42,13 +42,19 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard', function () {
     return view('pages.studentportal.dashboard');
 });
-Route::get('/course', function () {
-    return view('pages.studentportal.course');
-});
+
 Route::get('/grades', function () {
     return view('pages.studentportal.grades');
 });
 Route::get('/attendance', function () {
     return view('pages.studentportal.attendance');
 });
+Route::get('/announcement', function () {
+    return view('pages.studentportal.announcement');
+});
+Route::get('/profile', function () {
+    return view('pages.studentportal.profile');
+});
+
+
 

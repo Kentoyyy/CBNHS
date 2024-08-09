@@ -1,4 +1,3 @@
-<!-- resources/views/partials/sidebar.blade.php -->
 <div class="sidebar">
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
@@ -47,11 +46,16 @@
             align-items: center;
             padding: 10px;
             transition: background 0.3s;
+            border-radius: 4px;
         }
 
-        .sidebar-menu a:hover {
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
             background-color: #34495e;
-            border-radius: 4px;
+        }
+
+        .sidebar-menu a.active {
+            background-color: #3925ab;
         }
 
         .sidebar-menu i {
@@ -81,17 +85,13 @@
         <span>Student Portal</span>
     </div>
     <ul class="sidebar-menu">
-        <li><a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-        <li><a href="course"><i class="fas fa-book"></i> Courses</a></li>
-        <li><a href="grades"><i class="fas fa-graduation-cap"></i> Grades</a></li>
-        <li><a href="attendance"><i class="fas fa-calendar-check"></i> Attendance</a></li>
-        <li><a href="#"><i class="fas fa-pencil-alt"></i> Examinations</a></li>
-        <li><a href="#"><i class="fas fa-book-reader"></i> Library</a></li>
-        <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
+        <li><a href="{{ url('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="{{ url('grades') }}" class="{{ Request::is('grades') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Grades</a></li>
+        <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
+        <li><a href="{{ url('examinations') }}" class="{{ Request::is('examinations') ? 'active' : '' }}"><i class="fas fa-pencil-alt"></i> Examinations</a></li>
+        <li><a href="{{ url('library') }}" class="{{ Request::is('library') ? 'active' : '' }}"><i class="fas fa-book-reader"></i> Library</a></li>
+        <li><a href="{{ url('profile') }}" class="{{ Request::is('profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a href="{{ url('support') }}" class="{{ Request::is('support') ? 'active' : '' }}"><i class="fas fa-headset"></i> Support</a></li>
     </ul>
-    <button class="logout-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        <i class="fas fa-sign-out-alt"></i> Logout
-    </button>
     
 </div>

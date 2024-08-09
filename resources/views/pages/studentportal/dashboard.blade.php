@@ -3,7 +3,6 @@
 
 @section('content')
 <div class="dashboard">
-    <!-- Header Section -->
     <header class="dashboard-header">
         <div class="header-content">
             <h1>Welcome, <span class="student-name">Juan Dela Cruz</span></h1>
@@ -15,12 +14,7 @@
         </nav>
     </header>
 
-    <!-- Quick Links Section -->
     <section class="quick-links">
-        <a href="{{ url('course') }}" class="card">
-            <i class="fas fa-book"></i>
-            <h3>My Courses</h3>
-        </a>
         <a href="{{ url('/schedule') }}" class="card">
             <i class="fas fa-calendar-alt"></i>
             <h3>Class Schedule</h3>
@@ -35,7 +29,6 @@
         </a>
     </section>
 
-    <!-- Calendar Section -->
     <section class="calendar">
         <div class="calendar-header">
             <button class="nav-button" id="prev-month">&lt;</button>
@@ -58,20 +51,26 @@
         </div>
     </section>
 
-    <!-- Announcements Section -->
     <section class="announcements">
         <h2>Latest Announcements</h2>
         <ul>
-            <li><a href="{{ url('/announcements/1') }}">Semester Exam Schedule Released</a></li>
-            <li><a href="{{ url('/announcements/2') }}">New Online Courses Available</a></li>
-            <li><a href="{{ url('/announcements/3') }}">Holiday Notice</a></li>
+            <li><a href="#" data-details="Semester Exam Schedule Released - Details about the exam schedule will be provided here.">Semester Exam Schedule Released</a></li>
+            <li><a href="#" data-details="New Online Courses Available - Check out the new online courses that have been added to your curriculum.">New Online Courses Available</a></li>
+            <li><a href="#" data-details="Holiday Notice - Details about the upcoming holidays and breaks.">Holiday Notice</a></li>
         </ul>
     </section>
+
+    <div id="announcements-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Announcement Details</h2>
+            <p id="announcement-details">Details of the selected announcement will appear here.</p>
+        </div>
+    </div>
 @endsection
 
 @section('styles')
 <style>
-    /* General Styles */
     body {
         font-family: 'Helvetica Neue', Arial, sans-serif;
         background-color: #f5f7fa;
@@ -83,7 +82,6 @@
         padding: 20px;
     }
 
-    /* Header Section */
     .dashboard-header {
         display: flex;
         justify-content: space-between;
@@ -113,7 +111,6 @@
         color: #083a68;
     }
 
-    /* Quick Links Section */
     .quick-links {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -144,11 +141,10 @@
     }
 
     .card h3 {
-        font-size: 18px;
+        font-size: 15px;
         margin: 0;
     }
 
-    /* Calendar Section */
     .calendar {
         margin-top: 30px;
     }
@@ -162,8 +158,9 @@
     }
 
     .calendar-title {
-        font-size: 20px;
-        margin: 0 15px;
+        font-size: 18px;
+        margin: 0 10px;
+        color: #2c3e50;
     }
 
     .nav-button {
@@ -181,24 +178,26 @@
 
     .calendar-container {
         background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        border: 1px solid #e1e1e1;
     }
 
     .calendar-days {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 1px;
-        background-color: #083a68;
-        color: #ffffff;
+        background-color: #f5f7fa;
+        color: #2c3e50;
         padding: 10px 0;
         text-align: center;
         font-size: 14px;
     }
 
     .calendar-days span {
-        padding: 10px;
+        padding: 8px;
+        border-bottom: 1px solid #e1e1e1;
     }
 
     .calendar-body {
@@ -211,19 +210,24 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 60px;
-        background-color: #f5f7fa;
+        height: 50px;
+        background-color: #ffffff;
         font-size: 14px;
         border: 1px solid #e1e1e1;
-        box-sizing: border-box;
         transition: background-color 0.3s;
     }
 
     .calendar-day:hover {
-        background-color: #dfe6e9;
+        background-color: #f0f0f0;
     }
 
-    /* Announcements Section */
+    .calendar-day.today {
+        background-color: #083a68;
+        color: #ffffff;
+        font-weight: bold;
+        border: 1px solid #fafafa;
+    }
+
     .announcements {
         margin-top: 30px;
     }
@@ -256,6 +260,48 @@
     .student-name {
         color: #2a1987;
     }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        transition: opacity 0.3s;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-content h2 {
+        margin-top: 0;
+    }
 </style>
 @endsection
 
@@ -267,6 +313,8 @@
         const calendarBody = document.getElementById('calendar-body');
         const prevMonthBtn = document.getElementById('prev-month');
         const nextMonthBtn = document.getElementById('next-month');
+        const modal = document.getElementById('announcements-modal');
+        const closeButton = document.querySelector('.close-button');
 
         let currentMonth = new Date().getMonth();
         let currentYear = new Date().getFullYear();
@@ -274,6 +322,10 @@
         function renderCalendar(month, year) {
             const firstDay = new Date(year, month).getDay();
             const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const today = new Date();
+            const todayMonth = today.getMonth();
+            const todayDate = today.getDate();
+            const todayYear = today.getFullYear();
             let daysHtml = '';
 
             for (let i = 0; i < firstDay; i++) {
@@ -281,7 +333,8 @@
             }
 
             for (let i = 1; i <= daysInMonth; i++) {
-                daysHtml += `<div class="calendar-day">${i}</div>`;
+                const isToday = (month === todayMonth && i === todayDate && year === todayYear) ? 'today' : '';
+                daysHtml += `<div class="calendar-day ${isToday}">${i}</div>`;
             }
 
             calendarBody.innerHTML = daysHtml;
@@ -308,7 +361,29 @@
             updateCalendar(1);
         });
 
-        // Initialize calendar
+        function openModal(details) {
+            document.getElementById('announcement-details').innerText = details;
+            modal.style.display = 'block';
+        }
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        document.querySelectorAll('.announcements ul li a').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const announcementDetails = this.getAttribute('data-details');
+                openModal(announcementDetails);
+            });
+        });
+
         renderCalendar(currentMonth, currentYear);
     });
 </script>
