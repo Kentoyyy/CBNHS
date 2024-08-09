@@ -35,3 +35,10 @@ Route::get('/student', function () {
 Route::get('/faqportal', function () {
     return view('pages.studentportal.faqportal');
 });
+// routes/web.php
+Route::get('/dashboard', function () {
+    return view('layouts.portal-layout');
+});
+Route::get('/course', function () {
+    return view('pages.studentportal.course');
+});

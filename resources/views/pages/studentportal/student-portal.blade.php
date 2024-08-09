@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
-        /* Reset default styles */
+        
         /* Reset default styles */
         * {
             margin: 0;
@@ -78,9 +78,9 @@
 
         .nav-button {
             text-decoration: none;
-            color: #fff;
-            background-color: #1c4587;
-            padding: 6px 12px;
+            color: #000;
+            background-color: #fdfdfd;
+            padding: 6px 25px;
             border-radius: 4px;
             font-size: 14px;
             font-weight: 500;
@@ -89,7 +89,7 @@
         }
 
         .nav-button:hover {
-            background-color: #164e73;
+            background-color: #476ca9;
         }
         /* Content styles */
         .content {
