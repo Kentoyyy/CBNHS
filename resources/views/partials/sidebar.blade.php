@@ -66,8 +66,8 @@
     <ul class="sidebar-menu">
         <li><a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
         <li><a href="course"><i class="fas fa-book"></i> Courses</a></li>
-        <li><a href="#"><i class="fas fa-graduation-cap"></i> Grades</a></li>
-        <li><a href="#"><i class="fas fa-calendar-check"></i> Attendance</a></li>
+        <li><a href="grades"><i class="fas fa-graduation-cap"></i> Grades</a></li>
+        <li><a href="attendance"><i class="fas fa-calendar-check"></i> Attendance</a></li>
         <li><a href="#"><i class="fas fa-pencil-alt"></i> Examinations</a></li>
         <li><a href="#"><i class="fas fa-book-reader"></i> Library</a></li>
         <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>

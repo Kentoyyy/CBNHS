@@ -39,6 +39,16 @@ Route::get('/faqportal', function () {
 Route::get('/dashboard', function () {
     return view('layouts.portal-layout');
 });
+Route::get('/dashboard', function () {
+    return view('pages.studentportal.dashboard');
+});
 Route::get('/course', function () {
     return view('pages.studentportal.course');
 });
+Route::get('/grades', function () {
+    return view('pages.studentportal.grades');
+});
+Route::get('/attendance', function () {
+    return view('pages.studentportal.attendance');
+});
+

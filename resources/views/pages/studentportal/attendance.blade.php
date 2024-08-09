@@ -3,7 +3,7 @@
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 @section('content')
 <div class="dashboard">
-    <h1>Welcome to the Student Portal Course</h1>
+    <h1>Welcome to the Student Portal Attendance</h1>
     <p>This is the main content of your portal dashboard.</p>
     <!-- Add your portal dashboard-specific content here -->
 </div>
