@@ -1,98 +1,52 @@
-<div class="sidebar">
+<!-- resources/views/layouts/portal-layout.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBNHS Teacher Portal</title>
     <style>
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-        .sidebar {
-            width: 220px;
-            background-color: #083a68;
-            color: #ecf0f1;
-            padding: 15px;
+        .container {
             display: flex;
-            flex-direction: column;
             height: 100vh;
         }
 
-        .sidebar-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 30px;
-            font-weight: bold;
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+            overflow-y: auto;
         }
 
-        .sidebar-header img {
-            max-width: 40px;
-            max-height: 40px;
-            margin-right: 10px;
+        .dashboard {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .sidebar-menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            flex-grow: 1;
-        }
-
-        .sidebar-menu li {
-            margin-bottom: 20px;
-        }
-
-        .sidebar-menu a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            transition: background 0.3s;
-            border-radius: 4px;
-        }
-
-        .sidebar-menu a:hover,
-        .sidebar-menu a.active {
-            background-color: #34495e;
-        }
-
-        .sidebar-menu a.active {
-            background-color: #3925ab;
-        }
-
-        .sidebar-menu i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        .logout-button {
-            margin-top: auto;
-            background-color: #2b24b4;
-            border: none;
-            color: #ffffff;
-            font-size: 16px;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            text-align: center;
-        }
-
-        .logout-button:hover {
-            background-color: #241e95;
+        .dashboard h1 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #2c3e50;
         }
     </style>
-    <div class="sidebar-header">
-        <img src="{{ asset('images/logoschool.png') }}" alt="Logo">
-        <span>Teacher Portal</span>
+    @yield('styles')
+</head>
+<body>
+    <div class="container">
+        @include('partials.sidebarteacher')
+        <div class="main-content">
+            @yield('content')
+        </div>
     </div>
-    <ul class="sidebar-menu">
-        <li><a href="{{ url('teacherdashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-        <li><a href="{{ url('manage-students') }}" class="{{ Request::is('manage-students') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
-        <li><a href="{{ url('grades') }}" class="{{ Request::is('grades') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Manage Grades</a></li>
-        <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
-        <li><a href="{{ url('schedule') }}" class="{{ Request::is('schedule') ? 'active' : '' }}"><i class="fas fa-book-open"></i> Class Schedule</a></li>
-        <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Teaching Resources</a></li>
-        <li><a href="{{ url('profile') }}" class="{{ Request::is('profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="{{ url('support') }}" class="{{ Request::is('support') ? 'active' : '' }}"><i class="fas fa-headset"></i> Support</a></li>
-    </ul>
-    
-</div>
+    @yield('scripts')
+</body>
+</html>
