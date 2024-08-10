@@ -59,7 +59,9 @@ Route::get('/schedule', function () {
     return view('pages.studentportal.class-schedule');
 });
 
-
+Route::get('/teacherportallanding', function () {
+    return view('pages.teacherportal.teacher-portal-landing');
+});
 Route::get('/teacherdashboard', function () {
     return view('layouts.teacherportal-layout');
 });
