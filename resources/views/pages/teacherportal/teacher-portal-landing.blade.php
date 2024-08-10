@@ -6,91 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
     <title>Teacher Portal</title>
+    <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
+        /* Reset default styles */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #2C3E50;
-            background-color: #FAFAFA;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+            /* Body Styles */
+            body {
+                font-family: 'Roboto', sans-serif;
+                color: #2C3E50;
+                background-color: #FAFAFA;
+                overflow-x: hidden;
+                line-height: 1.6;
+            }
 
-        .navbar {
-            background-color: #1c4587;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            /* Navbar styles */
+            .navbar {
+                background-color: #1c4587;
+                padding: 10px 20px;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+            .logo {
+                display: flex;
+                align-items: center;
+            }
 
-        .logo-image {
-            height: 30px;
-            margin-right: 10px;
-        }
+            .logo-image {
+                height: 30px;
+                margin-right: 10px;
+            }
 
-        .logo-name {
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-        }
+            .logo-name {
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+            }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
+            .nav-links {
+                display: flex;
+                align-items: center;
+            }
 
-        .nav-link {
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 400;
-            margin-left: 20px;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-            border-bottom: 2px solid transparent;
-        }
+            .nav-link {
+                text-decoration: none;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 20px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                transition: background-color 0.3s, color 0.3s;
+                border-bottom: 2px solid transparent;
+            }
 
-        .nav-link:hover {
-            background-color: #f0f0f0;
-            color: #000;
-            border-bottom: 2px solid #fff;
-        }
+            .nav-link:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                border-bottom: 2px solid #fff;
+            }
 
-        .nav-button {
-            text-decoration: none;
-            color: #000;
-            background-color: #fdfdfd;
-            padding: 6px 25px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-left: 20px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-        }
+            .nav-button {
+                text-decoration: none;
+                color: #000;
+                background-color: #fdfdfd;
+                padding: 6px 25px;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 500;
+                margin-left: 20px;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
 
-        .nav-button:hover {
-            background-color: #476ca9;
-        }
+            .nav-button:hover {
+                background-color: #476ca9;
+            }
 
+
+
+        /* Teacher Portal Section */
         .teacher-portal-section {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('path_to_your_hero_image.jpg') no-repeat center center;
             background-size: cover;
@@ -135,7 +142,29 @@
             background-color: #164e73;
             transform: scale(1.05);
         }
+        /* Adjusted styles for welcome section with logo */
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between logo and text */
+}
 
+.welcome-logo {
+    width: 50px; /* Adjust the size of the logo as needed */
+    height: auto;
+    animation: fadeInDown 1s ease-out;
+}
+
+.teacher-portal-section h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    animation: fadeInDown 1s ease-out;
+}
+
+        /* Announcement Section */
         .announcement-section {
             background-color: #1c4587;
             color: white;
@@ -152,6 +181,7 @@
             font-size: 16px;
         }
 
+        /* Additional Content Below Announcements */
         .additional-content-section {
             background-color: #164e73;
             color: white;
@@ -165,7 +195,6 @@
             margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
 
         .additional-content-section p {
@@ -173,6 +202,7 @@
             margin-bottom: 20px;
         }
 
+        /* Features Section */
         .features-section {
             display: flex;
             flex-wrap: wrap;
@@ -226,7 +256,16 @@
             color: #7F8C8D;
             line-height: 1.5;
         }
+        .additional-content-section img {
+    max-width: 100%;  /* Ensures the image scales down to fit the container, but not larger than its original size */
+    height: auto;     /* Maintains the aspect ratio of the image */
+    width: 300px;     /* Sets a specific width for the image */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
 
+        /* Footer Styles */
         footer {
             padding: 20px;
             background-color: #ffffff;
@@ -248,6 +287,7 @@
             text-decoration: underline;
         }
 
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -348,62 +388,114 @@
 </head>
 
 <body>
-
-    <header class="navbar">
+    <!-- Navbar -->
+    <nav class="navbar">
         <div class="logo">
-            <img class="logo-image" src="path_to_your_logo.png" alt="School Logo">
-            <span class="logo-name">Teacher Portal</span>
+            <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
+            <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
         </div>
-        <nav class="nav-links">
-            <a href="#features" class="nav-link">Features</a>
-            <a href="#contact" class="nav-link">Contact Us</a>
-            <a href="path_to_login" class="nav-button">Login</a>
-        </nav>
-    </header>
+        <div class="nav-links">
+            <a href="student" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="faqportal" class="nav-link">FAQ & Help</a>
+            <a href="/" class="nav-button">Home Website</a>
+        </div>
+    </nav>
 
+    <!-- Teacher Portal Section -->
     <section class="teacher-portal-section">
-        <h2>Welcome to the Teacher Portal</h2>
-        <p>Manage your classes, communicate with students, and access teaching resources with ease.</p>
+        <div class="welcome-container">
+            <img src="{{ asset('images/logoschool.png') }}" alt="School Logo" class="welcome-logo">
+            <h2>Welcome to the Teacher Portal</h2>
+        </div>
+        <p>Your gateway to essential resources and updates</p>
         <div class="portal-buttons">
             <a href="#features">Explore Features</a>
-            <a href="path_to_registration">Register Now</a>
+            <a href="#loginModal" id="loginBtn">Login to Your Account</a>
         </div>
     </section>
 
+    <!-- Announcement Section -->
     <section class="announcement-section">
-        <h3>Announcements</h3>
-        <p>Stay updated with the latest news and updates from the school administration.</p>
+        <h3>Important Updates</h3>
+        <p>Stay informed with the latest news and announcements</p>
     </section>
 
+    <!-- Additional Content Section -->
     <section class="additional-content-section">
-        <img src="path_to_additional_content_image.jpg" alt="Additional Content Image">
-        <p>Explore additional resources and tools to enhance your teaching experience.</p>
+        <img src="{{ asset('images/discoverimage.png') }}" alt="Engaging Image">
+        <p>Discover new tools and resources available for your classroom.</p>
     </section>
 
-    <section id="features" class="features-section">
-        <div class="feature">
-            <img src="path_to_feature_image_1.png" alt="Feature 1">
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="feature" id="feature1">
+            <img src="{{ asset('images/plan.png') }}" alt="Lesson Plans">
             <h4 class="feature-title">Lesson Plans</h4>
-            <p class="feature-description">Create, manage, and share lesson plans with your students effortlessly.</p>
+            <p class="feature-description">Access a wide range of lesson plans tailored to different subjects and grades.</p>
         </div>
-        <div class="feature">
-            <img src="path_to_feature_image_2.png" alt="Feature 2">
+        <div class="feature" id="feature2">
+            <img src="{{ asset('images/meetings.png') }}" alt="Online Meetings">
             <h4 class="feature-title">Online Meetings</h4>
-            <p class="feature-description">Schedule and conduct online meetings with students and parents.</p>
+            <p class="feature-description">Easily schedule and conduct online meetings with students and parents.</p>
         </div>
-        <div class="feature">
-            <img src="path_to_feature_image_3.png" alt="Feature 3">
+        <div class="feature" id="feature3">
+            <img src="{{ asset('images/interactive.png') }}" alt="Teacher Resources">
             <h4 class="feature-title">Teacher Resources</h4>
-            <p class="feature-description">Access a wide range of teaching materials and resources.</p>
+            <p class="feature-description">Explore an extensive collection of resources to enhance your teaching experience.</p>
         </div>
     </section>
 
-    <footer id="contact">
-        <a href="mailto:contact@school.com">Email Us</a>
-        <a href="tel:+1234567890">Call Us</a>
-        <a href="path_to_privacy_policy">Privacy Policy</a>
+    <!-- Footer -->
+    <footer>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-service">Terms of Service</a>
+        <a href="#contact">Contact Us</a>
     </footer>
 
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">Teacher Login</div>
+            <form class="login-form">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Script -->
+    <script>
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("loginBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Feature Animation on Scroll
+        document.addEventListener('scroll', function () {
+            var features = document.querySelectorAll('.feature');
+            features.forEach(function (feature) {
+                if (feature.getBoundingClientRect().top < window.innerHeight) {
+                    feature.classList.add('in-view');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
