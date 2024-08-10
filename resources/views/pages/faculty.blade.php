@@ -86,7 +86,7 @@
     }
 
     .faculty-member img {
-        max-width: 150px;
+        max-width: 100px;
         border-radius: 50%;
         margin-right: 20px;
         transition: transform 0.3s ease;
@@ -102,7 +102,7 @@
 
     .faculty-info h3 {
         margin: 0 0 10px;
-        font-size: 22px;
+        font-size: 20px;
         color: #333;
     }
 
@@ -115,6 +115,17 @@
     .faculty-info p strong {
         font-size: 16px;
         color: #444;
+    }
+
+    .faculty-category {
+        margin-bottom: 50px;
+    }
+
+    .faculty-category h3 {
+        font-size: 24px;
+        color: #2a3b6b;
+        margin-bottom: 20px;
+        font-weight: bold;
     }
 
     .facebook-page {
@@ -180,44 +191,95 @@
 
 <div class="faculty-section">
     <div class="faculty-content">
-        <h2>Meet Our Faculty</h2>
-        <div class="faculty-member">
-            <img src="{{ asset('images/faculty.png') }}" alt="Teacher Image">
-            <div class="faculty-info">
-                <h3>John Doe</h3>
-                <p><strong>Title:</strong> Senior Mathematics Teacher</p>
-                <p><strong>Subject:</strong> Mathematics</p>
-                <p>John Doe has been teaching Mathematics for over 15 years and is dedicated to helping students achieve academic excellence.</p>
+        <h2>Our Faculty Team</h2>
+
+        <!-- Head of the Faculty -->
+        <div class="faculty-category">
+            <h3>Head of the Faculty</h3>
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultygirl.png') }}" alt="Head of Faculty Image">
+                <div class="faculty-info">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p><strong>Position:</strong> Head of Faculty</p>
+                    <p>Dr. Sarah Johnson oversees the academic programs and ensures the highest standards of education are maintained across all departments.</p>
+                </div>
             </div>
         </div>
 
-        <div class="faculty-member">
-            <img src="{{ asset('images/faculty.png') }}" alt="Teacher Image">
-            <div class="faculty-info">
-                <h3>Jane Smith</h3>
-                <p><strong>Title:</strong> English Language Arts Teacher</p>
-                <p><strong>Subject:</strong> English</p>
-                <p>Jane Smith brings a passion for literature and writing into her classroom, inspiring students to develop their communication skills.</p>
+        <!-- Department Leaders -->
+        <div class="faculty-category">
+            <h3>Department Leaders</h3>
+
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultyboy.png') }}" alt="Leader Image">
+                <div class="faculty-info">
+                    <h3>Mr. Robert Smith</h3>
+                    <p><strong>Position:</strong> Mathematics Department Leader</p>
+                    <p>Mr. Robert Smith leads the Mathematics Department, focusing on innovative teaching methods and curriculum development.</p>
+                </div>
+            </div>
+
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultygirl.png') }}" alt="Leader Image">
+                <div class="faculty-info">
+                    <h3>Ms. Emily Brown</h3>
+                    <p><strong>Position:</strong> English Department Leader</p>
+                    <p>Ms. Emily Brown heads the English Department, guiding students in critical thinking and effective communication.</p>
+                </div>
+            </div>
+
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultyboy.png') }}" alt="Leader Image">
+                <div class="faculty-info">
+                    <h3>Dr. Michael Davis</h3>
+                    <p><strong>Position:</strong> Science Department Leader</p>
+                    <p>Dr. Michael Davis oversees the Science Department, promoting hands-on learning and scientific inquiry.</p>
+                </div>
             </div>
         </div>
 
-        <div class="faculty-member">
-            <img src="{{ asset('images/faculty.png') }}" alt="Teacher Image">
-            <div class="faculty-info">
-                <h3>Mark Johnson</h3>
-                <p><strong>Title:</strong> Science Teacher</p>
-                <p><strong>Subject:</strong> Physics</p>
-                <p>Mark Johnson's hands-on approach to teaching Physics encourages students to explore the wonders of the natural world.</p>
-            </div>
-        </div>
+        <!-- Regular Teachers -->
+        <div class="faculty-category">
+            <h3>Our Dedicated Teachers</h3>
 
-        <div class="faculty-member">
-            <img src="{{ asset('images/faculty.png') }}" alt="Teacher Image">
-            <div class="faculty-info">
-                <h3>Emily Davis</h3>
-                <p><strong>Title:</strong> History Teacher</p>
-                <p><strong>Subject:</strong> World History</p>
-                <p>Emily Davis's deep knowledge of history and engaging teaching style helps students connect with the past to better understand the present.</p>
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultyboy.png') }}" alt="Teacher Image">
+                <div class="faculty-info">
+                    <h3>John Doe</h3>
+                    <p><strong>Title:</strong> Senior Mathematics Teacher</p>
+                    <p><strong>Subject:</strong> Mathematics</p>
+                    <p>John Doe has been teaching Mathematics for over 15 years and is dedicated to helping students achieve academic excellence.</p>
+                </div>
+            </div>
+
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultygirl.png') }}" alt="Teacher Image">
+                <div class="faculty-info">
+                    <h3>Jane Smith</h3>
+                    <p><strong>Title:</strong> English Language Arts Teacher</p>
+                    <p><strong>Subject:</strong> English</p>
+                    <p>Jane Smith brings a passion for literature and writing into her classroom, inspiring students to develop their communication skills.</p>
+                </div>
+            </div>
+
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultyboy.png') }}" alt="Teacher Image">
+                <div class="faculty-info">
+                    <h3>Mark Johnson</h3>
+                    <p><strong>Title:</strong> Science Teacher</p>
+                    <p><strong>Subject:</strong> Physics</p>
+                    <p>Mark Johnson's hands-on approach to teaching Physics encourages students to explore the wonders of the natural world.</p>
+                </div>
+            </div>
+
+            <div class="faculty-member">
+                <img src="{{ asset('images/facultygirl.png') }}" alt="Teacher Image">
+                <div class="faculty-info">
+                    <h3>Emily Davis</h3>
+                    <p><strong>Title:</strong> History Teacher</p>
+                    <p><strong>Subject:</strong> World History</p>
+                    <p>Emily Davis's deep knowledge of history and engaging teaching style helps students connect with the past to better understand the present.</p>
+                </div>
             </div>
         </div>
     </div>
