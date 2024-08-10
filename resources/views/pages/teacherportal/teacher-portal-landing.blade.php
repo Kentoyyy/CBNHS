@@ -398,17 +398,17 @@
     <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="feature" id="feature1">
-            <img src="{{ asset('images/icons8-book-100.png') }}" alt="Lesson Plans">
+            <img src="{{ asset('images/plan.png') }}" alt="Lesson Plans">
             <h4 class="feature-title">Lesson Plans</h4>
             <p class="feature-description">Access a wide range of lesson plans tailored to different subjects and grades.</p>
         </div>
         <div class="feature" id="feature2">
-            <img src="{{ asset('images/icons8-video-conference-100.png') }}" alt="Online Meetings">
+            <img src="{{ asset('images/meetings.png') }}" alt="Online Meetings">
             <h4 class="feature-title">Online Meetings</h4>
             <p class="feature-description">Easily schedule and conduct online meetings with students and parents.</p>
         </div>
         <div class="feature" id="feature3">
-            <img src="{{ asset('images/icons8-teacher-100.png') }}" alt="Teacher Resources">
+            <img src="{{ asset('images/interactive.png') }}" alt="Teacher Resources">
             <h4 class="feature-title">Teacher Resources</h4>
             <p class="feature-description">Explore an extensive collection of resources to enhance your teaching experience.</p>
         </div>
