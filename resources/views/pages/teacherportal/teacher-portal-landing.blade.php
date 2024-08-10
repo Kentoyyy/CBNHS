@@ -4,104 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
     <title>Teacher Portal</title>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
         /* Reset default styles */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        /* Body Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #2C3E50;
-            background-color: #FAFAFA;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+            /* Body Styles */
+            body {
+                font-family: 'Roboto', sans-serif;
+                color: #2C3E50;
+                background-color: #FAFAFA;
+                overflow-x: hidden;
+                line-height: 1.6;
+            }
 
-        /* Navbar styles */
-        .navbar {
-            background-color: #1c4587;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            /* Navbar styles */
+            .navbar {
+                background-color: #1c4587;
+                padding: 10px 20px;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+            .logo {
+                display: flex;
+                align-items: center;
+            }
 
-        .logo-image {
-            height: 30px;
-            margin-right: 10px;
-        }
+            .logo-image {
+                height: 30px;
+                margin-right: 10px;
+            }
 
-        .logo-name {
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-        }
+            .logo-name {
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+            }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
+            .nav-links {
+                display: flex;
+                align-items: center;
+            }
 
-        .nav-link {
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 400;
-            margin-left: 20px;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-            border-bottom: 2px solid transparent;
-        }
+            .nav-link {
+                text-decoration: none;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 20px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                transition: background-color 0.3s, color 0.3s;
+                border-bottom: 2px solid transparent;
+            }
 
-        .nav-link:hover {
-            background-color: #f0f0f0;
-            color: #000;
-            border-bottom: 2px solid #fff;
-        }
+            .nav-link:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                border-bottom: 2px solid #fff;
+            }
 
-        .nav-button {
-            text-decoration: none;
-            color: #000;
-            background-color: #fdfdfd;
-            padding: 6px 25px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-left: 20px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-        }
+            .nav-button {
+                text-decoration: none;
+                color: #000;
+                background-color: #fdfdfd;
+                padding: 6px 25px;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 500;
+                margin-left: 20px;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
 
-        .nav-button:hover {
-            background-color: #476ca9;
-        }
+            .nav-button:hover {
+                background-color: #476ca9;
+            }
+
+
 
         /* Teacher Portal Section */
         .teacher-portal-section {
-            background: url('path_to_your_hero_image.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('path_to_your_hero_image.jpg') no-repeat center center;
             background-size: cover;
             padding: 120px 20px;
             text-align: center;
             color: #fff;
             margin-top: 80px;
+            position: relative;
         }
 
         .teacher-portal-section h2 {
@@ -109,25 +113,72 @@
             font-weight: 600;
             margin-bottom: 20px;
             color: #fff;
+            animation: fadeInDown 1s ease-out;
         }
 
         .teacher-portal-section p {
             font-size: 18px;
             margin-bottom: 20px;
             color: #fff;
+            animation: fadeInUp 1s ease-out;
         }
 
-        .teacher-portal-section a {
+        .teacher-portal-section .portal-buttons {
+            margin-top: 20px;
+        }
+
+        .teacher-portal-section .portal-buttons a {
             padding: 10px 20px;
             background-color: #1c4587;
             color: white;
             border-radius: 5px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            margin: 10px 10px;
         }
 
-        .teacher-portal-section a:hover {
+        .teacher-portal-section .portal-buttons a:hover {
             background-color: #164e73;
+            transform: scale(1.05);
+        }
+
+        /* Announcement Section */
+        .announcement-section {
+            background-color: #1c4587;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .announcement-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .announcement-section p {
+            font-size: 16px;
+        }
+
+        /* Additional Content Below Announcements */
+        .additional-content-section {
+            background-color: #164e73;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .additional-content-section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .additional-content-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
         /* Features Section */
@@ -278,35 +329,30 @@
         }
 
         .login-form button:hover {
-            background-color: #164e73;
+            background-color: #476ca9;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
             }
 
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
             }
 
-            .nav-button {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-
-            .features-section {
-                flex-direction: column;
-            }
-
-            footer {
-                flex-direction: column;
-            }
-
-            footer a {
-                margin-top: 5px;
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -316,42 +362,64 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ asset('images/logoschool.png') }}" alt="Laravel Logo" class="logo-image">
-            <span class="logo-name">City of Bacoor National High School Springville Teacher Portal</span>
+            <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
+            <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
         </div>
         <div class="nav-links">
-            <a href="#" class="nav-link">Home</a>
+            <a href="student" class="nav-link">Home</a>
             <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">FAQ & Help</a>
+            <a href="faqportal" class="nav-link">FAQ & Help</a>
             <a href="/" class="nav-button">Home Website</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Teacher Portal Section -->
     <section class="teacher-portal-section">
         <h2>Welcome to the Teacher Portal</h2>
-        <p>Manage your classes, track student progress, and access teaching resources.</p>
-        <a href="#" id="login-button">Login to Your Account</a>
+        <p>Your gateway to essential resources and updates</p>
+        <div class="portal-buttons">
+            <a href="#features">Explore Features</a>
+            <a href="#loginModal" id="loginBtn">Login to Your Account</a>
+        </div>
+    </section>
+
+    <!-- Announcement Section -->
+    <section class="announcement-section">
+        <h3>Important Updates</h3>
+        <p>Stay informed with the latest news and announcements</p>
+    </section>
+
+    <!-- Additional Content Section -->
+    <section class="additional-content-section">
+        <img src="{{ asset('images/discoverimage.png') }}" alt="Engaging Image">
+        <p>Discover new tools and resources available for your classroom.</p>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section">
-        <div class="feature">
-            <img src="{{ asset('images/grade.png') }}" alt="Grade Management Icon">
-            <h3 class="feature-title">Grade Management</h3>
-            <p class="feature-description">Easily manage and submit grades for your students with our intuitive tools.</p>
+    <section class="features-section" id="features">
+        <div class="feature" id="feature1">
+            <img src="{{ asset('images/icons8-book-100.png') }}" alt="Lesson Plans">
+            <h4 class="feature-title">Lesson Plans</h4>
+            <p class="feature-description">Access a wide range of lesson plans tailored to different subjects and grades.</p>
         </div>
-        <div class="feature">
-            <img src="{{ asset('images/attendance.png') }}" alt="Attendance Tracking Icon">
-            <h3 class="feature-title">Attendance Tracking</h3>
-            <p class="feature-description">Track student attendance seamlessly with our integrated system.</p>
+        <div class="feature" id="feature2">
+            <img src="{{ asset('images/icons8-video-conference-100.png') }}" alt="Online Meetings">
+            <h4 class="feature-title">Online Meetings</h4>
+            <p class="feature-description">Easily schedule and conduct online meetings with students and parents.</p>
         </div>
-        <div class="feature">
-            <img src="{{ asset('images/resources.png') }}" alt="Teaching Resources Icon">
-            <h3 class="feature-title">Teaching Resources</h3>
-            <p class="feature-description">Access a wealth of teaching resources to support your curriculum planning.</p>
+        <div class="feature" id="feature3">
+            <img src="{{ asset('images/icons8-teacher-100.png') }}" alt="Teacher Resources">
+            <h4 class="feature-title">Teacher Resources</h4>
+            <p class="feature-description">Explore an extensive collection of resources to enhance your teaching experience.</p>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-service">Terms of Service</a>
+        <a href="#contact">Contact Us</a>
+    </footer>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
@@ -359,24 +427,17 @@
             <span class="close">&times;</span>
             <div class="modal-header">Teacher Login</div>
             <form class="login-form">
-                <input type="email" placeholder="Email Address" required>
-                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
                 <button type="submit">Login</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Contact Us</a>
-    </footer>
-
+    <!-- Modal Script -->
     <script>
-        // Modal Logic
         var modal = document.getElementById("loginModal");
-        var btn = document.getElementById("login-button");
+        var btn = document.getElementById("loginBtn");
         var span = document.getElementsByClassName("close")[0];
 
         btn.onclick = function () {
@@ -392,6 +453,16 @@
                 modal.style.display = "none";
             }
         }
+
+        // Feature Animation on Scroll
+        document.addEventListener('scroll', function () {
+            var features = document.querySelectorAll('.feature');
+            features.forEach(function (feature) {
+                if (feature.getBoundingClientRect().top < window.innerHeight) {
+                    feature.classList.add('in-view');
+                }
+            });
+        });
     </script>
 </body>
 
