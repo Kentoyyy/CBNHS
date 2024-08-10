@@ -99,11 +99,11 @@
 
         /* Teacher Portal Section */
         .teacher-portal-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('path_to_your_hero_image.jpg') no-repeat center center;
+            background-color: #f3f3f3;
             background-size: cover;
             padding: 120px 20px;
             text-align: center;
-            color: #fff;
+            color: #000;
             margin-top: 80px;
             position: relative;
         }
@@ -112,14 +112,14 @@
             font-size: 36px;
             font-weight: 600;
             margin-bottom: 20px;
-            color: #fff;
+            color: #000;
             animation: fadeInDown 1s ease-out;
         }
 
         .teacher-portal-section p {
             font-size: 18px;
             margin-bottom: 20px;
-            color: #fff;
+            color: #000;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -406,7 +406,7 @@
     <section class="teacher-portal-section">
         <div class="welcome-container">
             <img src="{{ asset('images/logoschool.png') }}" alt="School Logo" class="welcome-logo">
-            <h2>Welcome to the Teacher Portal</h2>
+            <h2 style="color: #000;">Welcome to the Teacher Portal</h2>
         </div>
         <p>Your gateway to essential resources and updates</p>
         <div class="portal-buttons">
