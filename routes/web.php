@@ -60,6 +60,23 @@ Route::get('/schedule', function () {
 });
 
 
+Route::get('/teacherdashboard', function () {
+    return view('layouts.teacherportal-layout');
+});
+
+Route::get('/teacherdashboard', function () {
+    return view('pages.teacherportal.teacherdashboard');
+});
+Route::get('/managestudent', function () {
+    return view('pages.teacherportal.teacher-students');
+});
+Route::get('/gradestudent', function () {
+    return view('pages.teacherportal.teacher-grades');
+});
+
+
+
+
 
 
 
