@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal</title>
+    <title>Teacher Portal</title>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
@@ -94,28 +94,30 @@
             background-color: #476ca9;
         }
 
-        /* Student Portal Section */
-        .student-portal-section {
+        /* Teacher Portal Section */
+        .teacher-portal-section {
             background: url('path_to_your_hero_image.jpg') no-repeat center center;
             background-size: cover;
             padding: 120px 20px;
             text-align: center;
-            color: #000;
+            color: #fff;
             margin-top: 80px;
         }
 
-        .student-portal-section h2 {
-            font-size: 32px;
+        .teacher-portal-section h2 {
+            font-size: 36px;
             font-weight: 600;
             margin-bottom: 20px;
+            color: #fff;
         }
 
-        .student-portal-section p {
+        .teacher-portal-section p {
             font-size: 18px;
             margin-bottom: 20px;
+            color: #fff;
         }
 
-        .student-portal-section a {
+        .teacher-portal-section a {
             padding: 10px 20px;
             background-color: #1c4587;
             color: white;
@@ -124,26 +126,19 @@
             transition: background-color 0.3s;
         }
 
-        .student-portal-section a:hover {
+        .teacher-portal-section a:hover {
             background-color: #164e73;
         }
 
-        /* Content styles */
-        .content {
-            background: linear-gradient(to right, #f4f4f9, #ffffff);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        /* Feature Section */
-        .feature-section {
+        /* Features Section */
+        .features-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
             align-items: flex-start;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 0;
+            padding: 60px 20px;
             gap: 40px;
         }
 
@@ -188,60 +183,6 @@
             font-size: 16px;
             color: #7F8C8D;
             line-height: 1.5;
-        }
-
-        /* Testimonial Section */
-        .testimonial-section {
-            background-color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 18px;
-            font-style: italic;
-            color: #2C3E50;
-            margin-top: 40px;
-        }
-
-        .testimonial-section p {
-            opacity: 0;
-            animation: fadeIn 5s ease-in-out infinite;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Statistics Section */
-        .statistics-section {
-            display: flex;
-            justify-content: space-around;
-            background-color: #F4F4F9;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat h3 {
-            font-size: 36px;
-            color: #1c4587;
-            margin-bottom: 10px;
-        }
-
-        .stat p {
-            font-size: 16px;
-            color: #7F8C8D;
         }
 
         /* Footer Styles */
@@ -356,13 +297,8 @@
                 margin-top: 10px;
             }
 
-            .feature-section {
+            .features-section {
                 flex-direction: column;
-            }
-
-            .stat {
-                flex-basis: 100%;
-                margin-bottom: 20px;
             }
 
             footer {
@@ -381,115 +317,81 @@
     <nav class="navbar">
         <div class="logo">
             <img src="{{ asset('images/logoschool.png') }}" alt="Laravel Logo" class="logo-image">
-            <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
+            <span class="logo-name">City of Bacoor National High School Springville Teacher Portal</span>
         </div>
         <div class="nav-links">
             <a href="#" class="nav-link">Home</a>
             <a href="#" class="nav-link">About</a>
-            <a href="faqportal" class="nav-link">FAQ & Help</a>
+            <a href="#" class="nav-link">FAQ & Help</a>
             <a href="/" class="nav-button">Home Website</a>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <section class="student-portal-section">
-        <h2>Welcome to the Student Portal</h2>
-        <p>Your one-stop destination for academic resources and support.</p>
-        <a href="#" class="enter-button">Enter Portal</a>
+    <section class="teacher-portal-section">
+        <h2>Welcome to the Teacher Portal</h2>
+        <p>Manage your classes, track student progress, and access teaching resources.</p>
+        <a href="#" id="login-button">Login to Your Account</a>
     </section>
 
-    <!-- Feature Section -->
-    <section class="content">
-        <div class="feature-section">
-            <div class="feature">
-                <img src="{{ asset('images/interactive.png') }}" alt="Feature 1">
-                <h3 class="feature-title">Interactive Learning</h3>
-                <p class="feature-description">Engage with our interactive learning materials designed to make studying fun and effective.</p>
-            </div>
-            <div class="feature">
-                <img src="{{ asset('images/connectimage.png') }}" alt="Feature 2">
-                <h3 class="feature-title">Student Support</h3>
-                <p class="feature-description">Access a wide range of support services to help you succeed academically and personally.</p>
-            </div>
-            <div class="feature">
-                <img src="{{ asset('images/profilestudent.png') }}" alt="Feature 3">
-                <h3 class="feature-title">Resource Center</h3>
-                <p class="feature-description">Explore our comprehensive resource center for all your academic needs.</p>
-            </div>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="feature">
+            <img src="{{ asset('images/grade.png') }}" alt="Grade Management Icon">
+            <h3 class="feature-title">Grade Management</h3>
+            <p class="feature-description">Easily manage and submit grades for your students with our intuitive tools.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ asset('images/attendance.png') }}" alt="Attendance Tracking Icon">
+            <h3 class="feature-title">Attendance Tracking</h3>
+            <p class="feature-description">Track student attendance seamlessly with our integrated system.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ asset('images/resources.png') }}" alt="Teaching Resources Icon">
+            <h3 class="feature-title">Teaching Resources</h3>
+            <p class="feature-description">Access a wealth of teaching resources to support your curriculum planning.</p>
         </div>
     </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonial-section">
-        <p>"The student portal has been a game-changer in my academic journey. Highly recommend it!"</p>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="statistics-section">
-        <div class="stat">
-            <h3>95%</h3>
-            <p>Student Satisfaction</p>
-        </div>
-        <div class="stat">
-            <h3>54+</h3>
-            <p>Courses Available</p>
-        </div>
-        <div class="stat">
-            <h3>3k+</h3>
-            <p>Active Users</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Contact Us</a>
-    </footer>
-
-    <!-- Modal -->
+    <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <div class="modal-header">Student Login</div>
+            <div class="modal-header">Teacher Login</div>
             <form class="login-form">
-                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email Address" required>
                 <input type="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </footer>
+
     <script>
-        // Modal JavaScript
+        // Modal Logic
         var modal = document.getElementById("loginModal");
-        var btn = document.querySelector(".enter-button");
+        var btn = document.getElementById("login-button");
         var span = document.getElementsByClassName("close")[0];
 
-        btn.onclick = function() {
+        btn.onclick = function () {
             modal.style.display = "block";
         }
 
-        span.onclick = function() {
+        span.onclick = function () {
             modal.style.display = "none";
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
-
-        // Feature animation on scroll
-        window.addEventListener('scroll', function() {
-            var features = document.querySelectorAll('.feature');
-            features.forEach(function(feature) {
-                var rect = feature.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    feature.classList.add('in-view');
-                }
-            });
-        });
     </script>
 </body>
 
