@@ -61,66 +61,65 @@
 
     <div class="support">
         <h3>Support</h3>
-        <button class="btn-action">Contact Support</button>
+        <button class="btn-action support-btn">Contact Support</button>
     </div>
 </div>
 
 <style>
 /* Dashboard Styling */
 .dashboard-content {
-    padding: 30px;
-    background-color: #ffffff;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    max-width: 1100px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #2e2e2e;
+    font-family: 'Helvetica Neue', sans-serif;
+    max-width: 900px;
     margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .dashboard-content h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 10px;
     color: #333;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .dashboard-content p {
     font-size: 14px;
-    color: #777;
-    margin-bottom: 30px;
+    color: #555;
+    margin-bottom: 20px;
 }
 
 /* Section Heading Styling */
 .dashboard-content h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
     color: #444;
-    font-weight: 500;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
 }
 
 /* Quick Actions Styling */
 .quick-actions {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .btn-action {
-    padding: 12px 24px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 13px;
     color: #fff;
-    background-color: #1e90ff;
-    border-radius: 8px;
+    background-color: #007bff;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .btn-action:hover {
-    background-color: #0b6abf;
+    background-color: #0056b3;
 }
 
 /* Notifications Styling */
@@ -132,20 +131,20 @@
 
 .notifications ul li {
     font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
 /* General Styling for Sections */
 [class*='-overview'], .calendar, .resources, .student-highlights, .messages, .professional-development, .support {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 [class*='-overview'] p, .resources ul li, .student-highlights p, .messages p, .professional-development p, .support p {
     font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
+    color: #555;
+    margin-bottom: 8px;
 }
 
 /* Resources Styling */
@@ -157,18 +156,17 @@
 
 .resources ul li {
     font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
+    color: #444;
+    margin-bottom: 8px;
 }
 
-/* Support Styling */
-.support .btn-action {
+/* Support Button Styling */
+.support-btn {
     background-color: #28a745;
 }
 
-.support .btn-action:hover {
+.support-btn:hover {
     background-color: #218838;
 }
-
 </style>
 @endsection

@@ -85,9 +85,9 @@
         <span>Teacher Portal</span>
     </div>
     <ul class="sidebar-menu">
-        <li><a href="{{ url('teacherdashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-        <li><a href="{{ url('managestudent') }}" class="{{ Request::is('manage-students') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
-        <li><a href="{{ url('gradestudent') }}" class="{{ Request::is('grades') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Manage Grades</a></li>
+        <li><a href="{{ url('teacherdashboard') }}" class="{{ Request::is('teacherdashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="{{ url('managestudent') }}" class="{{ Request::is('managestudent') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+        <li><a href="{{ url('teachergradestudent') }}" class="{{ Request::is('teachergradestudent') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Manage Grades</a></li>
         <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
         <li><a href="{{ url('schedule') }}" class="{{ Request::is('schedule') ? 'active' : '' }}"><i class="fas fa-book-open"></i> Class Schedule</a></li>
         <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Teaching Resources</a></li>

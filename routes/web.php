@@ -75,7 +75,7 @@ Route::get('/teacherdashboard', function () {
 Route::get('/managestudent', function () {
     return view('pages.teacherportal.teacher-students');
 });
-Route::get('/gradestudent', function () {
+Route::get('/teachergradestudent', function () {
     return view('pages.teacherportal.teacher-grades');
 });
 
