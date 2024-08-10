@@ -235,6 +235,14 @@
             color: #7F8C8D;
             line-height: 1.5;
         }
+        .additional-content-section img {
+    max-width: 100%;  /* Ensures the image scales down to fit the container, but not larger than its original size */
+    height: auto;     /* Maintains the aspect ratio of the image */
+    width: 300px;     /* Sets a specific width for the image */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
 
         /* Footer Styles */
         footer {
