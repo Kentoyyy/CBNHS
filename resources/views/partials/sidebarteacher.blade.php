@@ -92,7 +92,7 @@
         <li><a href="{{ url('schedule') }}" class="{{ Request::is('schedule') ? 'active' : '' }}"><i class="fas fa-book-open"></i> Class Schedule</a></li>
         <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Teaching Resources</a></li>
         <li><a href="{{ url('teacherprofile') }}" class="{{ Request::is('teacherprofile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="{{ url('support') }}" class="{{ Request::is('support') ? 'active' : '' }}"><i class="fas fa-headset"></i> Support</a></li>
+       
     </ul>
     
 </div>

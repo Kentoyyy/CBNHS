@@ -3,95 +3,102 @@
 
 @section('title', 'My Profile')
 @section('content')
-<div class="teacher-profile">
-    <h1>Teacher Profile</h1>
-
-    <div class="profile-info">
-        <div class="profile-picture">
-            <img src="{{ asset('images/profile-placeholder.png') }}" alt="Profile Picture">
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="{{ asset('images/facultyboy.png') }}" alt="Profile Picture" class="profile-picture">
+        <div class="profile-info">
+            <h1>John Doe</h1>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Department:</strong> Mathematics</p>
+            <p><strong>Position:</strong> Senior Teacher</p>
+            <p><strong>Years of Experience:</strong> 12</p>
+            <p><strong>Qualifications:</strong> MSc in Mathematics, B.Ed.</p>
         </div>
-        <div class="profile-details">
-            <h2>{{ $teacher->name }}</h2>
-            <p><strong>Email:</strong> {{ $teacher->email }}</p>
-            <p><strong>Phone:</strong> {{ $teacher->phone }}</p>
-            <p><strong>Department:</strong> {{ $teacher->department }}</p>
-            <p><strong>Position:</strong> {{ $teacher->position }}</p>
-            <p><strong>Bio:</strong> {{ $teacher->bio }}</p>
-        </div>
+        <button class="btn-edit">Edit Profile</button>
     </div>
-
-    <div class="edit-profile">
-        <button class="btn-action">Edit Profile</button>
+    <div class="profile-bio">
+        <h2>Biography</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Curabitur nec felis nec lorem posuere luctus et vel tortor. Sed euismod purus at nisl varius, a posuere arcu fermentum. Suspendisse potenti.</p>
     </div>
 </div>
 
 <style>
-.teacher-profile {
-    padding: 20px;
-    background-color: #f9fafb;
-    color: #2d3748;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 8px;
+.profile-container {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.teacher-profile h1 {
-    font-size: 24px;
+.profile-header {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
-    font-weight: 700;
-    color: #1a202c;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+}
+
+.profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid #3182ce;
 }
 
 .profile-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.profile-picture img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile-details {
     flex: 1;
 }
 
-.profile-details h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.profile-info h1 {
+    font-size: 26px;
+    margin: 0;
     color: #2d3748;
 }
 
-.profile-details p {
-    font-size: 14px;
+.profile-info p {
+    font-size: 16px;
     margin: 5px 0;
+    color: #4a5568;
 }
 
-.profile-details strong {
-    color: #3182ce;
-}
-
-.edit-profile {
-    text-align: center;
-}
-
-.btn-action {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: #ffffff;
+.btn-edit {
     background-color: #3182ce;
-    border-radius: 6px;
+    color: white;
     border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
 }
 
-.btn-action:hover {
+.btn-edit:hover {
     background-color: #2c5282;
+    transform: scale(1.05);
+}
+
+.profile-bio {
+    margin-top: 20px;
+}
+
+.profile-bio h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+
+.profile-bio p {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.6;
 }
 </style>
 @endsection
