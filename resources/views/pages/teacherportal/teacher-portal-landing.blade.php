@@ -391,7 +391,9 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
+            <a href="/" class="logo-link">
+                <img src="{{ asset('images/logoschool.png') }}" alt="City of Bacoor National High School Logo" class="logo-image">
+            </a>
             <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
         </div>
         <div class="nav-links">
