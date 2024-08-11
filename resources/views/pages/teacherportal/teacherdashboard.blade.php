@@ -1,6 +1,7 @@
 @extends('layouts.teacherportal-layout')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 
+
 @section('content')
 <div class="dashboard-content">
     <h2>Good Morning, Mr. Cruz!</h2>
@@ -89,8 +90,9 @@
     background-color: #f1f5f9;
     color: #2d3748;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     border-radius: 12px;
 }
 
