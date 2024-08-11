@@ -6,167 +6,164 @@
     <h2>Good Morning, Mr. Cruz!</h2>
     <p>Today is {{ \Carbon\Carbon::now()->toFormattedDateString() }}</p>
 
-    <div class="quick-actions">
-        <h3>Quick Actions</h3>
-        <button class="btn-action">Mark Attendance</button>
-        <button class="btn-action">Grade Submissions</button>
-        <button class="btn-action">View Schedule</button>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        <!-- Quick Actions -->
+        <div class="quick-actions bg-white shadow-lg rounded-lg p-6">
+            <h3>Quick Actions</h3>
+            <button class="btn-action">Mark Attendance</button>
+            <button class="btn-action">Grade Submissions</button>
+            <button class="btn-action">View Schedule</button>
+        </div>
+
+        <!-- Notifications -->
+        <div class="notifications bg-white shadow-lg rounded-lg p-6">
+            <h3>Recent Notifications</h3>
+            <ul>
+                <li>New message from Maria Santos (Student Query)</li>
+                <li>Assignment: Math Test due in 2 days</li>
+                <li>System Update: New attendance feature added</li>
+            </ul>
+        </div>
+
+        <!-- Class Overview -->
+        <div class="class-overview bg-white shadow-lg rounded-lg p-6">
+            <h3>Class Overview</h3>
+            <p>Next Class: Science, 10:00 AM - Room 204</p>
+            <p>Recent Assessment: Math Quiz - Average Score: 85%</p>
+        </div>
     </div>
 
-    <div class="notifications">
-        <h3>Recent Notifications</h3>
-        <ul>
-            <li>New message from Maria Santos (Student Query)</li>
-            <li>Assignment: Math Test due in 2 days</li>
-            <li>System Update: New attendance feature added</li>
-        </ul>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Calendar -->
+        <div class="calendar bg-white shadow-lg rounded-lg p-6">
+            <h3>Calendar</h3>
+            <!-- Insert calendar widget here -->
+        </div>
+
+        <!-- Resources -->
+        <div class="resources bg-white shadow-lg rounded-lg p-6">
+            <h3>Teaching Materials</h3>
+            <button class="btn-action">Upload New Material</button>
+            <ul>
+                <li>Physics Lesson Plan - Last Modified: 2 days ago</li>
+                <li>Math Worksheet - Last Modified: 5 days ago</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="class-overview">
-        <h3>Class Overview</h3>
-        <p>Next Class: Science, 10:00 AM - Room 204</p>
-        <p>Recent Assessment: Math Quiz - Average Score: 85%</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+        <!-- Student Highlights -->
+        <div class="student-highlights bg-white shadow-lg rounded-lg p-6">
+            <h3>Student Highlights</h3>
+            <p>Top Performer: John Doe - 98% in Science</p>
+            <p>Students Requiring Attention: Jane Smith (Attendance: 60%)</p>
+        </div>
+
+        <!-- Messages -->
+        <div class="messages bg-white shadow-lg rounded-lg p-6">
+            <h3>Messages</h3>
+            <p>New Messages: 3</p>
+            <button class="btn-action">Go to Inbox</button>
+        </div>
     </div>
 
-    <div class="calendar">
-        <h3>Calendar</h3>
-        <!-- Insert calendar widget here -->
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+        <!-- Professional Development -->
+        <div class="professional-development bg-white shadow-lg rounded-lg p-6">
+            <h3>Professional Development</h3>
+            <p>Upcoming Workshop: Advanced Teaching Techniques - August 15, 2024</p>
+        </div>
 
-    <div class="resources">
-        <h3>Teaching Materials</h3>
-        <button class="btn-action">Upload New Material</button>
-        <ul>
-            <li>Physics Lesson Plan - Last Modified: 2 days ago</li>
-            <li>Math Worksheet - Last Modified: 5 days ago</li>
-        </ul>
-    </div>
-
-    <div class="student-highlights">
-        <h3>Student Highlights</h3>
-        <p>Top Performer: John Doe - 98% in Science</p>
-        <p>Students Requiring Attention: Jane Smith (Attendance: 60%)</p>
-    </div>
-
-    <div class="messages">
-        <h3>Messages</h3>
-        <p>New Messages: 3</p>
-        <button class="btn-action">Go to Inbox</button>
-    </div>
-
-    <div class="professional-development">
-        <h3>Professional Development</h3>
-        <p>Upcoming Workshop: Advanced Teaching Techniques - August 15, 2024</p>
-    </div>
-
-    <div class="support">
-        <h3>Support</h3>
-        <button class="btn-action support-btn">Contact Support</button>
+        <!-- Support -->
+        <div class="support bg-white shadow-lg rounded-lg p-6">
+            <h3>Support</h3>
+            <button class="btn-action support-btn">Contact Support</button>
+        </div>
     </div>
 </div>
 
 <style>
-/* Dashboard Styling */
+/* General Dashboard Styling */
 .dashboard-content {
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #2e2e2e;
-    font-family: 'Helvetica Neue', sans-serif;
-    max-width: 900px;
+    padding: 30px;
+    background-color: #f1f5f9;
+    color: #2d3748;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
     margin: 0 auto;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
+/* Headings */
 .dashboard-content h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1a202c;
 }
 
 .dashboard-content p {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
     margin-bottom: 20px;
+    color: #4a5568;
 }
 
-/* Section Heading Styling */
+/* Section Headings */
 .dashboard-content h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #444;
-    font-weight: 400;
-    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2d3748;
+    border-bottom: 2px solid #edf2f7;
     padding-bottom: 5px;
 }
 
-/* Quick Actions Styling */
-.quick-actions {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-}
-
+/* Quick Actions and Other Buttons */
 .btn-action {
-    padding: 10px 18px;
-    font-size: 13px;
-    color: #fff;
-    background-color: #007bff;
-    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #3182ce;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .btn-action:hover {
-    background-color: #0056b3;
+    background-color: #2c5282;
 }
 
-/* Notifications Styling */
+/* Notifications */
 .notifications ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 .notifications ul li {
     font-size: 14px;
-    color: #444;
-    margin-bottom: 8px;
-    line-height: 1.4;
+    color: #4a5568;
+    margin-bottom: 10px;
 }
 
-/* General Styling for Sections */
-[class*='-overview'], .calendar, .resources, .student-highlights, .messages, .professional-development, .support {
-    margin-bottom: 20px;
+/* General Sections */
+.grid div {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-[class*='-overview'] p, .resources ul li, .student-highlights p, .messages p, .professional-development p, .support p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
-}
-
-/* Resources Styling */
-.resources ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.resources ul li {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 8px;
-}
-
-/* Support Button Styling */
+/* Support Button */
 .support-btn {
-    background-color: #28a745;
+    background-color: #38a169;
 }
 
 .support-btn:hover {
-    background-color: #218838;
+    background-color: #2f855a;
 }
 </style>
 @endsection
