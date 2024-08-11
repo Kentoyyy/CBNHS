@@ -39,7 +39,7 @@ Route::get('/faqportal', function () {
     return view('pages.studentportal.faqportal');
 });
 // routes/web.php
-Route::get('/dashboard', function () {
+Route::get('/dashboardlayout', function () {
     return view('layouts.portal-layout');
 });
 Route::get('/dashboard', function () {

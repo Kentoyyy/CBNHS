@@ -1,5 +1,7 @@
 <!-- resources/views/pages/studentportal/dashboard.blade.php -->
 @extends('layouts.portal-layout')
+<link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
+@section('title', 'Student Dashboard')
 
 @section('content')
 <div class="dashboard">
@@ -71,7 +73,7 @@
 
 @section('styles')
 <style>
-    body {
+   body {
         font-family: 'Helvetica Neue', Arial, sans-serif;
         background-color: #f5f7fa;
         margin: 0;
@@ -306,8 +308,11 @@
 @endsection
 
 @section('scripts')
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
+    src="https://kit.fontawesome.com/a076d05399.js"
+
+
+
     document.addEventListener('DOMContentLoaded', function() {
         const calendarTitle = document.getElementById('calendar-title');
         const calendarBody = document.getElementById('calendar-body');

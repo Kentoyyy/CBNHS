@@ -1,5 +1,6 @@
 @extends('layouts.portal-layout')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
+@section('title', 'Grades')
 
 @section('content')
 <div class="dashboard">
