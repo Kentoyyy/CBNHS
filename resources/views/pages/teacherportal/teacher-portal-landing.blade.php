@@ -398,7 +398,7 @@
         </div>
         <div class="nav-links">
             <a href="student" class="nav-link">Home</a>
-            <a href="#" class="nav-link">About</a>
+           
             <a href="faqportal" class="nav-link">FAQ & Help</a>
             <a href="/" class="nav-button">Home Website</a>
         </div>
