@@ -2,6 +2,7 @@
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 
 
+@section('title', 'My Dashboard')
 @section('content')
 <div class="dashboard-content">
     <h2>Good Morning, Mr. Cruz!</h2>

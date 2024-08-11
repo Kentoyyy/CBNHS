@@ -1,5 +1,6 @@
 @extends('layouts.teacherportal-layout')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
+@section('title', 'Manage Grades')
 
 @section('content')
 <div class="dashboard">
