@@ -18,65 +18,66 @@
 
     .header {
         position: relative;
-        padding: 40px 20px;
+        padding: 60px 20px;
         color: #fff;
         background-color: #2a3b6b;
         text-align: center;
+        border-bottom: 5px solid #d9534f;
     }
 
     .header .logoImage {
-        max-width: 80px;
+        max-width: 100px;
         margin-bottom: 15px;
     }
 
     .overlay-text {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: bold;
         color: white;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .overlay-text-p {
-        font-size: 1rem;
+        font-size: 1.2rem;
         color: white;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .resources-container {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 40px;
         margin: 30px auto;
-        max-width: 700px;
+        max-width: 800px;
     }
 
     .resources-title {
-        font-size: 28px;
+        font-size: 30px;
         color: #2a3b6b;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         font-weight: 600;
         text-align: center;
-        border-bottom: 2px solid #d9534f;
+        border-bottom: 3px solid #d9534f;
         padding-bottom: 10px;
-        display: inline-block;
     }
 
     .resource-button {
         display: block;
-        padding: 12px 24px;
-        margin: 10px 0;
-        font-size: 16px;
+        padding: 15px 25px;
+        margin: 15px 0;
+        font-size: 18px;
         text-decoration: none;
         color: #fff;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
         transition: background-color 0.3s ease, transform 0.3s ease;
         text-align: center;
+        font-weight: 500;
     }
 
     .resource-button i {
-        margin-right: 8px;
+        margin-right: 10px;
     }
 
     .pdf-button {
@@ -85,7 +86,7 @@
 
     .pdf-button:hover {
         background-color: #c9302c;
-        transform: scale(1.03);
+        transform: scale(1.05);
     }
 
     .excel-button {
@@ -94,17 +95,20 @@
 
     .excel-button:hover {
         background-color: #31b0d5;
-        transform: scale(1.03);
+        transform: scale(1.05);
     }
 
     .facebook-page {
-        margin-top: 20px;
+        margin-top: 30px;
+        text-align: center;
     }
 
     .facebook-page iframe {
         width: 100%;
+        max-width: 600px;
         height: 400px;
         border: none;
+        border-radius: 8px;
     }
 
     @media (max-width: 576px) {
@@ -114,8 +118,8 @@
         }
 
         .resource-button {
-            padding: 10px 20px;
-            font-size: 14px;
+            padding: 12px 20px;
+            font-size: 16px;
         }
     }
 </style>
@@ -127,7 +131,7 @@
 <div class="header container-fluid">
     <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage">
     <div class="overlay-text">Resources</div>
-    <div class="overlay-text-p">City of Bacoor National High School - Springville <br> Sy 2024-2025</div>
+    <div class="overlay-text-p">City of Bacoor National High School - Springville <br> SY 2024-2025</div>
 </div>
 
 <div class="container resources-container">
