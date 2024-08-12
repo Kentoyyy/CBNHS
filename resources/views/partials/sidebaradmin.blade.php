@@ -85,7 +85,7 @@
         <span>Teacher Portal</span>
     </div>
     <ul class="sidebar-menu">
-        <li><a href="{{ url('teacherdashboard') }}" class="{{ Request::is('teacherdashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="{{ url('admindashboard') }}" class="{{ Request::is('admindashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
         <li><a href="{{ url('managestudent') }}" class="{{ Request::is('managestudent') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
         <li><a href="{{ url('teachergradestudent') }}" class="{{ Request::is('teachergradestudent') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Manage Grades</a></li>
         <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
