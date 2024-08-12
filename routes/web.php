@@ -85,6 +85,10 @@ Route::get('/teacherschedule', function () {
     return view('pages.teacherportal.teacher-schedule');
 });
 
+Route::get('/adminlayout', function () {
+    return view('layouts.admin-layout');
+});
+
 
 
 
