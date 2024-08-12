@@ -88,6 +88,10 @@ Route::get('/teacherschedule', function () {
 Route::get('/adminlayout', function () {
     return view('layouts.admin-layout');
 });
+Route::get('/admindashboard', function () {
+    return view('pages.admin.dashboard');
+});
+
 
 
 
