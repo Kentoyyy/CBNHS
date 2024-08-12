@@ -51,31 +51,46 @@
                 </thead>
                 <tbody>
                     <!-- Example of user row -->
-                    <tr>
+                    <tr class="user-row">
                         <th scope="row">1</th>
                         <td>John Doe</td>
                         <td>john.doe@example.com</td>
                         <td>Teacher</td>
                         <td><span class="badge badge-success">Active</span></td>
                         <td class="text-center">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
-                            <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="user-row">
                         <th scope="row">2</th>
-                        <td>John Diw</td>
-                        <td>john.doe@example.com</td>
-                        <td>Teacher</td>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@example.com</td>
+                        <td>Student</td>
                         <td><span class="badge badge-success">Active</span></td>
                         <td class="text-center">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
-                            <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
                         </td>
                     </tr>
                     <!-- Repeat for each user -->
                 </tbody>
             </table>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -182,6 +197,7 @@
 
     .table-hover tbody tr:hover {
         background-color: #f1f3f5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .badge-success {
@@ -216,6 +232,49 @@
     .btn-outline-danger:hover {
         background-color: #dc3545;
         color: #fff;
+    }
+
+    .user-row {
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .user-row:hover {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: #f1f3f5;
+    }
+
+    .pagination {
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
+    }
+
+    .pagination .page-link {
+        border-radius: 4px;
+        padding: 8px 12px;
+        text-align: center;
+        color: #007bff;
+        border: 1px solid #ddd;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        cursor: not-allowed;
+        color: #6c757d;
+        border-color: #ddd;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+    }
+
+    .pagination .page-link:hover {
+        background-color: #e9ecef;
+        color: #0056b3;
+        border-color: #ddd;
     }
 </style>
 @endsection
