@@ -23,6 +23,9 @@ Route::get('/intendent', function () {
 Route::get('/administrator', function () {
     return view('pages.administrator');
 });
+Route::get('/staff', function () {
+    return view('pages.staff');
+});
 
 Route::get('/supportservices', function () {
     return view('pages.supportservices');
