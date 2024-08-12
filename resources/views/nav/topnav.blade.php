@@ -126,7 +126,7 @@
                         <a class="dropdown-item" href="mission">Our Mission</a>
                         <a class="dropdown-item" href="intendent">Superintendent's Corner</a>
                         <a class="dropdown-item" href="#">Team</a>
-                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href="events">Events</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

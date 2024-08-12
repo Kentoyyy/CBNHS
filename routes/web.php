@@ -14,6 +14,9 @@ Route::get('/teacher', function () {
     return view('pages.dashboard-teacher');
 });
 
+Route::get('/events', function () {
+    return view('pages.events');
+});
 Route::get('/admission', function () {
     return view('pages.admission');
 });

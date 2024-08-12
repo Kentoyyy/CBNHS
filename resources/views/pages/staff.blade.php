@@ -83,8 +83,8 @@
     }
 
     .staff-member img {
-        width: 100%;
-        height: auto;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         margin-bottom: 15px;
     }
@@ -96,6 +96,43 @@
 
     .staff-member p {
         margin: 0;
+    }
+
+    .staff-member .bio {
+        text-align: left;
+        color: #555;
+    }
+
+    .related-content {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f4f7fa;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-content h3 {
+        color: #2a3b6b;
+        margin-bottom: 20px;
+    }
+
+    .related-content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .related-content li {
+        margin-bottom: 15px;
+    }
+
+    .related-content a {
+        color: #2a3b6b;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .related-content a:hover {
+        text-decoration: underline;
     }
 
     @media (max-width: 800px) {
@@ -125,31 +162,51 @@
 </div>
 
 <div class="content-container">
-    <p>At City of Bacoor National High School - Springville, we are proud to introduce our dedicated and talented staff members who play a crucial role in delivering quality education and supporting our students. Each member brings a unique set of skills and expertise to our school community. Below, you can learn more about our team and their contributions to our school.</p>
+    <p>At City of Bacoor National High School - Springville, our dedicated staff members are at the heart of our educational success. Each staff member brings unique skills and experience to ensure our students receive the highest quality education and support. Learn more about our talented team below.</p>
 
     <div class="staff-section">
         <div class="staff-member">
-            <img src="{{ asset('images/staff1.jpg') }}" alt="Staff Member 1">
+            <img src="{{ asset('images/facultygirl.png') }}" alt="Ms. Jane Doe">
             <h4>Ms. Jane Doe</h4>
-            <p>Head of Mathematics Department</p>
-            <p>Ms. Doe has been with the school for over 10 years, leading the Mathematics Department with a focus on innovative teaching methods and student engagement.</p>
+            <p><strong>Head of Mathematics Department</strong></p>
+            <div class="bio">
+                <p>Ms. Doe holds a Master’s Degree in Mathematics Education from XYZ University and has over 10 years of experience in teaching and curriculum development. She is known for her innovative teaching methods that engage students and foster a deep understanding of mathematical concepts.</p>
+                <p>Achievements: Implemented a new math curriculum that improved student performance by 20% and led several professional development workshops for teachers.</p>
+            </div>
         </div>
 
         <div class="staff-member">
-            <img src="{{ asset('images/staff2.jpg') }}" alt="Staff Member 2">
+            <img src="{{ asset('images/facultyboy.png') }}" alt="Mr. John Smith">
             <h4>Mr. John Smith</h4>
-            <p>Science Teacher</p>
-            <p>Mr. Smith is passionate about the sciences and has a background in research. He aims to inspire students with hands-on experiments and real-world applications.</p>
+            <p><strong>Science Teacher</strong></p>
+            <div class="bio">
+                <p>Mr. Smith earned his Bachelor’s Degree in Chemistry and a Master’s Degree in Environmental Science. He brings a wealth of research experience to the classroom, aiming to spark curiosity and enthusiasm for science among students.</p>
+                <p>Achievements: Developed an interactive science lab that has become a model for hands-on learning and secured funding for student research projects.</p>
+            </div>
         </div>
 
         <div class="staff-member">
-            <img src="{{ asset('images/staff3.jpg') }}" alt="Staff Member 3">
+            <img src="{{ asset('images/facultygirl.png') }}" alt="Ms. Emily Johnson">
             <h4>Ms. Emily Johnson</h4>
-            <p>Guidance Counselor</p>
-            <p>Ms. Johnson provides support and counseling to students, helping them navigate academic and personal challenges with compassion and expertise.</p>
+            <p><strong>Guidance Counselor</strong></p>
+            <div class="bio">
+                <p>Ms. Johnson holds a Master’s Degree in Counseling Psychology and is dedicated to supporting students' emotional and academic growth. She provides individual and group counseling, and works closely with parents and teachers to address student needs.</p>
+                <p>Achievements: Established a peer mentoring program and organized a series of workshops on mental health awareness and academic success strategies.</p>
+            </div>
         </div>
 
         <!-- Add more staff members as needed -->
+    </div>
+
+    <!-- Related Content Section -->
+    <div class="related-content">
+        <h3>Related Resources</h3>
+        <ul>
+            <li><a href="{{ url('/about-us') }}">About Us</a> - Learn more about our school's mission and values.</li>
+            <li><a href="{{ url('/faculty') }}">Faculty</a> - Meet the faculty members who make a difference in our students' education.</li>
+            <li><a href="{{ url('/events') }}">Upcoming Events</a> - Check out upcoming events and activities at our school.</li>
+            <li><a href="{{ url('/contact') }}">Contact Us</a> - Get in touch with our school administration and support staff.</li>
+        </ul>
     </div>
 </div>
 
