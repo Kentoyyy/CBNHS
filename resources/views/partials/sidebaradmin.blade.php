@@ -82,15 +82,15 @@
     </style>
     <div class="sidebar-header">
         <img src="{{ asset('images/logoschool.png') }}" alt="Logo">
-        <span>Teacher Portal</span>
+        <span>Admin Portal</span>
     </div>
     <ul class="sidebar-menu">
         <li><a href="{{ url('admindashboard') }}" class="{{ Request::is('admindashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-        <li><a href="{{ url('managestudent') }}" class="{{ Request::is('managestudent') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
-        <li><a href="{{ url('teachergradestudent') }}" class="{{ Request::is('teachergradestudent') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Manage Grades</a></li>
-        <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
-        <li><a href="{{ url('teacherschedule') }}" class="{{ Request::is('teacherschedule') ? 'active' : '' }}"><i class="fas fa-book-open"></i> Class Schedule</a></li>
-        <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Teaching Resources</a></li>
+        <li><a href="{{ url('adminusermanagement') }}" class="{{ Request::is('adminusermanagement') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> User Management</a></li>
+        <li><a href="{{ url('teachergradestudent') }}" class="{{ Request::is('teachergradestudent') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Subject Management</a></li>
+        <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Communication Tools</a></li>
+        <li><a href="{{ url('teacherschedule') }}" class="{{ Request::is('teacherschedule') ? 'active' : '' }}"><i class="fas fa-book-open"></i> Permission  & Roles</a></li>
+        <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Content Management</a></li>
         <li><a href="{{ url('teacherprofile') }}" class="{{ Request::is('teacherprofile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
        
     </ul>

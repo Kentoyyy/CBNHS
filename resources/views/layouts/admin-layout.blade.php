@@ -42,7 +42,7 @@
 </head>
 <body>
     <div class="container">
-        @include('partials.sidebar')
+        @include('partials.sidebaradmin')
         <div class="main-content">
             @yield('content')
         </div>

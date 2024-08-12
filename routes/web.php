@@ -88,9 +88,22 @@ Route::get('/teacherschedule', function () {
 Route::get('/adminlayout', function () {
     return view('layouts.admin-layout');
 });
+
+Route::get('/adminlanding', function () {
+    return view('pages.admin.landing');
+});
 Route::get('/admindashboard', function () {
     return view('pages.admin.dashboard');
 });
+
+
+Route::get('/adminusermanagement', function () {
+    return view('pages.admin.usermanagement');
+
+});
+
+
+
 
 
 
