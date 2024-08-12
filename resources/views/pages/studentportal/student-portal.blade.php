@@ -399,7 +399,7 @@
             <a href="/" class="logo-link">
                 <img src="{{ asset('images/logoschool.png') }}" alt="City of Bacoor National High School Logo" class="logo-image">
             </a>
-            <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
+            <span class="logo-name">City of Bacoor National High School Springville</span>
         </div>
         <div class="nav-links">
             <a href="#" class="nav-link">Home</a>
