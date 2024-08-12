@@ -68,7 +68,7 @@
 
     .events-section {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 20px;
     }
 
@@ -78,13 +78,16 @@
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
         text-align: center;
+        width: calc(33.333% - 20px);
         position: relative;
+        box-sizing: border-box;
     }
 
     .event-card img {
         max-width: 100%;
         height: auto;
         border-radius: 8px;
+        margin-bottom: 10px;
     }
 
     .event-card h4 {
@@ -94,6 +97,22 @@
 
     .event-card p {
         margin: 10px 0;
+    }
+
+    .event-card a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4267b2;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    .event-card a:hover {
+        background-color: #365899;
     }
 
     .facebook-events {
@@ -112,13 +131,13 @@
 
     @media (max-width: 800px) {
         .event-card {
-            padding: 15px;
+            width: calc(50% - 20px);
         }
     }
 
     @media (max-width: 500px) {
         .event-card {
-            padding: 10px;
+            width: 100%;
         }
     }
 </style>
@@ -130,7 +149,7 @@
 <div class="header container-fluid">
     <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage logoImage-left">
     <div class="overlay-text">
-        Upcoming Events
+        Upcoming Events - 2024-2025
         <div class="overlay-text-p">City of Bacoor National High School - Springville <br> SY 2024-2025</div>
     </div>
     <img src="{{ asset('images/bannermatatag.png') }}" alt="Banner Image" class="logoImage logoImage-right">
@@ -140,7 +159,7 @@
     <h3>Upcoming Events</h3>
     <div class="events-section">
         <div class="event-card">
-            <img src="{{ asset('images/science-fair.jpg') }}" alt="Annual Science Fair">
+            <img src="{{ asset('images/kuwento.jpg') }}" alt="Annual Science Fair">
             <h4>Annual Science Fair</h4>
             <p><strong>Date:</strong> September 15, 2024</p>
             <p><strong>Location:</strong> School Auditorium</p>
@@ -148,7 +167,7 @@
         </div>
 
         <div class="event-card">
-            <img src="{{ asset('images/parent-teacher-conference.jpg') }}" alt="Parent-Teacher Conference">
+            <img src="{{ asset('images/timpalak.jpg') }}" alt="Parent-Teacher Conference">
             <h4>Parent-Teacher Conference</h4>
             <p><strong>Date:</strong> October 10, 2024</p>
             <p><strong>Location:</strong> Classroom Building</p>
@@ -156,11 +175,36 @@
         </div>
 
         <div class="event-card">
-            <img src="{{ asset('images/winter-concert.jpg') }}" alt="Winter Concert">
+            <img src="{{ asset('images/magbasa.jpg') }}" alt="Winter Concert">
             <h4>Winter Concert</h4>
             <p><strong>Date:</strong> December 20, 2024</p>
             <p><strong>Location:</strong> School Gymnasium</p>
             <p>Enjoy an evening of music and performances as our students present their Winter Concert. Don’t miss this festive event! <a href="https://example.com/winter-concert" target="_blank">Learn more</a></p>
+        </div>
+
+        <!-- Additional Event Cards -->
+        <div class="event-card">
+            <img src="{{ asset('images/debate.jpg') }}" alt="Fun Fair">
+            <h4>Fun Fair</h4>
+            <p><strong>Date:</strong> November 5, 2024</p>
+            <p><strong>Location:</strong> School Grounds</p>
+            <p>Join us for a day of games, food, and entertainment at our annual Fun Fair. Bring your family and friends for a day full of excitement! <a href="https://example.com/fun-fair" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="event-card">
+            <img src="{{ asset('images/pagkukuwento.jpg') }}" alt="Book Fair">
+            <h4>Book Fair</h4>
+            <p><strong>Date:</strong> November 20, 2024</p>
+            <p><strong>Location:</strong> School Library</p>
+            <p>Explore a wide range of books at our annual Book Fair. Find your next great read and support our library. <a href="https://example.com/book-fair" target="_blank">Learn more</a></p>
+        </div>
+
+        <div class="event-card">
+            <img src="{{ asset('images/pagbigkas.jpg') }}" alt="Sports Day">
+            <h4>Sports Day</h4>
+            <p><strong>Date:</strong> January 15, 2025</p>
+            <p><strong>Location:</strong> School Sports Field</p>
+            <p>Cheer on our students as they compete in various athletic events. It’s a day full of sportsmanship and school spirit! <a href="https://example.com/sports-day" target="_blank">Learn more</a></p>
         </div>
     </div>
 
