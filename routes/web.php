@@ -81,6 +81,10 @@ Route::get('/teachergradestudent', function () {
 Route::get('/teacherprofile', function () {
     return view('pages.teacherportal.teacher-profile');
 });
+Route::get('/teacherschedule', function () {
+    return view('pages.teacherportal.teacher-schedule');
+});
+
 
 
 
