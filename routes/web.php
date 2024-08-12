@@ -20,8 +20,8 @@ Route::get('/admission', function () {
 Route::get('/intendent', function () {
     return view('pages.about-intendent');
 });
-Route::get('/personnel.admin', function () {
-    return view('pages.personnel-admin');
+Route::get('/administrator', function () {
+    return view('pages.administrator');
 });
 
 Route::get('/supportservices', function () {

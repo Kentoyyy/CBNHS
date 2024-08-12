@@ -139,7 +139,7 @@
                         Personnel
                     </a>
                     <div class="dropdown-menu" aria-labelledby="personnelDropdown">
-                        <a class="dropdown-item" href="personnel-admin">Administration</a>
+                        <a class="dropdown-item" href="administrator">Administration</a>
                         <a class="dropdown-item" href="faculty">Faculty</a>
                         <a class="dropdown-item" href="#">Staff</a>
                         <a class="dropdown-item" href="supportservices">Support Services</a>
