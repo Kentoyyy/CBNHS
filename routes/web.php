@@ -111,6 +111,10 @@ Route::get('/adminusermanagement', function () {
     return view('pages.admin.usermanagement');
 
 });
+Route::get('/adminsubjectmanagement', function () {
+    return view('pages.admin.subjectmanagement');
+
+});
 
 
 
