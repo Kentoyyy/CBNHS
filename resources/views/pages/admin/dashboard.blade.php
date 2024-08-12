@@ -90,7 +90,7 @@
 
     .card-icon {
         font-size: 40px;
-        color: #3498db;
+        color: #2a3b6b;
         margin-right: 15px;
     }
 

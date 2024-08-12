@@ -116,7 +116,7 @@
     .page-title {
         font-size: 24px;
         font-weight: 600;
-        color: #007bff;
+        color: #2a3b6b;
         margin-bottom: 20px;
     }
 
@@ -136,8 +136,8 @@
     }
 
     .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #2a3b6b;
+        border-color: #000000;
         color: #fff;
         padding: 8px 12px;
         border-radius: 4px;
@@ -166,7 +166,7 @@
 
     .stat-item p {
         font-size: 1.5rem;
-        color: #007bff;
+        color: #2a3b6b;
         font-weight: 600;
     }
 
@@ -215,8 +215,8 @@
     }
 
     .btn-outline-primary {
-        border-color: #007bff;
-        color: #007bff;
+        border-color: #2a3b6b;
+        color: #2a3b6b;
     }
 
     .btn-outline-primary:hover {

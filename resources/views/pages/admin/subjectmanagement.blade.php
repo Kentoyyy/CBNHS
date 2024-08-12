@@ -110,7 +110,7 @@
     .page-title {
         font-size: 24px;
         font-weight: 600;
-        color: #007bff;
+        color: #2a3b6b;
         margin-bottom: 20px;
     }
 
@@ -130,8 +130,8 @@
     }
 
     .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #2a3b6b;
+        border-color: #000000;
         color: #fff;
         padding: 8px 12px;
         border-radius: 4px;
@@ -160,7 +160,7 @@
 
     .stat-item p {
         font-size: 1.5rem;
-        color: #007bff;
+        color: #2a3b6b;
         font-weight: 600;
     }
 
@@ -201,7 +201,7 @@
     }
 
     .btn-outline-primary {
-        border-color: #007bff;
+        border-color: #2a3b6b;
         color: #007bff;
     }
 
@@ -240,7 +240,7 @@
         border-radius: 4px;
         padding: 8px 12px;
         text-align: center;
-        color: #007bff;
+        color: #2a3b6b;
         border: 1px solid #ddd;
         transition: background-color 0.2s, color 0.2s;
     }
@@ -252,14 +252,14 @@
     }
 
     .pagination .page-item.active .page-link {
-        background-color: #007bff;
+        background-color: #2a3b6b;
         color: #fff;
         border-color: #007bff;
     }
 
     .pagination .page-link:hover {
         background-color: #e9ecef;
-        color: #0056b3;
+        color: #2a3b6b;
         border-color: #ddd;
     }
 </style>
