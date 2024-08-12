@@ -431,7 +431,35 @@
             </form>
         </div>
     </div>
+    <script>
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("loginBtn");
+        var span = document.getElementsByClassName("close")[0];
 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Feature Animation on Scroll
+        document.addEventListener('scroll', function () {
+            var features = document.querySelectorAll('.feature');
+            features.forEach(function (feature) {
+                if (feature.getBoundingClientRect().top < window.innerHeight) {
+                    feature.classList.add('in-view');
+                }
+            });
+        });
+    </script>
   
 </body>
 
