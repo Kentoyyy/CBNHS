@@ -74,6 +74,10 @@ Route::get('/profile', function () {
 Route::get('/schedule', function () {
     return view('pages.studentportal.class-schedule');
 });
+Route::get('/guideenrollment', function () {
+    return view('pages.studentportal.guideenrollment');
+});
+
 
 Route::get('/teacherportal', function () {
     return view('pages.teacherportal.teacher-portal-landing');

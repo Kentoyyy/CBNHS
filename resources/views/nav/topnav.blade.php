@@ -157,6 +157,17 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Insuances
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="studentsDropdown">
+                        <a class="dropdown-item" href="/">Regional Memo</a>
+                        <a class="dropdown-item" href="/">Deped Memo</a>
+                        <a class="dropdown-item" href="/">School Memo</a>
+                        
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
                     <li class="nav-item">
                         <a class="nav-link" href="resources">Resources</a>
                     </li>
