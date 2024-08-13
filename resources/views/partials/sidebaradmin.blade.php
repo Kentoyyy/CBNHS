@@ -86,10 +86,10 @@
     </div>
     <ul class="sidebar-menu">
         <li><a href="{{ url('admindashboard') }}" class="{{ Request::is('admindashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-        <li><a href="{{ url('adminusermanagement') }}" class="{{ Request::is('adminusermanagement') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> User Management</a></li>
+        <li><a href="{{ url('adminusermanagement') }}" class="{{ Request::is('adminusermanagement') ? 'active' : '' }}"><i cla  ss="fas fa-user-graduate"></i> User Management</a></li>
         <li><a href="{{ url('adminsubjectmanagement') }}" class="{{ Request::is('adminsubjectmanagement') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Subject Management</a></li>
         <li><a href="{{ url('postmanagement') }}" class="{{ Request::is('postmanagement') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Post Management</a></li>
-        <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Account Management</a></li>
+        <li><a href="{{ url('accountmanagement') }}" class="{{ Request::is('accountmanagement') ? 'active' : '' }}"><i class="fas fa-folder"></i> Account Management</a></li>
         <li><a href="{{ url('teacherprofile') }}" class="{{ Request::is('teacherprofile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
        
     </ul>

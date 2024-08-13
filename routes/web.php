@@ -122,7 +122,10 @@ Route::get('/postmanagement', function () {
     return view('pages.admin.postmanagement');
 
 });
+Route::get('/accountmanagement', function () {
+    return view('pages.admin.accountmanagement');
 
+});
 
 
 
