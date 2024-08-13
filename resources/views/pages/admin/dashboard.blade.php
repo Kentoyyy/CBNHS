@@ -8,7 +8,7 @@
 <!-- Welcome Announcement -->
 <div class="announcement">
     <h2>Welcome Back, Admin!</h2>
-    <p>We're glad to see you again. Here's what's happening today:</p>
+    <p>We’re glad to see you again. Here’s what’s happening today:</p>
 </div>
 
 <h1 class="dashboard-title">Admin Dashboard</h1>
@@ -55,6 +55,15 @@
     </div>
 </div>
 
+<div class="content-section">
+    <h3>Recent Activity</h3>
+    <ul>
+        <li>New student registrations: <strong>25</strong></li>
+        <li>Teachers on leave today: <strong>3</strong></li>
+        <li>Pending approvals: <strong>12</strong></li>
+    </ul>
+</div>
+
 <style>
     body {
         font-family: 'Arial', sans-serif;
@@ -73,18 +82,19 @@
     }
 
     .announcement h2 {
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 8px;
     }
 
     .announcement p {
-        font-size: 16px;
+        font-size: 14px;
+        margin: 0;
     }
 
     .dashboard-title {
         text-align: center;
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 500;
         color: #333;
         margin: 20px 0;
@@ -99,67 +109,97 @@
 
     .card {
         background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         width: 22%;
-        padding: 25px;
+        padding: 15px;
         margin: 10px;
         display: flex;
         align-items: center;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         position: relative;
         overflow: hidden;
     }
 
     .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .card-icon {
-        font-size: 45px;
+        font-size: 40px;
         color: #2a3b6b;
-        margin-right: 20px;
+        margin-right: 15px;
     }
 
     .card-details h2 {
         margin: 0;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 500;
         color: #333;
     }
 
     .card-details p {
-        margin: 8px 0 0;
-        font-size: 28px;
+        margin: 5px 0 0;
+        font-size: 24px;
         font-weight: bold;
         color: #2a3b6b;
     }
 
-    /* Add background animation to card */
     .card::before {
         content: "";
         position: absolute;
-        top: -75px;
-        right: -75px;
-        width: 150px;
-        height: 150px;
+        top: -60px;
+        right: -60px;
+        width: 120px;
+        height: 120px;
         background-color: rgba(42, 59, 107, 0.1);
         border-radius: 50%;
         transition: all 0.3s ease;
     }
 
     .card:hover::before {
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
+        top: -40px;
+        right: -40px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-section {
+        margin: 30px auto;
+        width: 80%;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-section h3 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #2a3b6b;
+        margin-bottom: 15px;
+    }
+
+    .content-section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .content-section li {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #333;
     }
 
     /* Responsive Design */
     @media (max-width: 992px) {
         .card {
             width: 45%;
+        }
+
+        .content-section {
+            width: 90%;
         }
     }
 
@@ -168,7 +208,8 @@
             width: 90%;
         }
 
-        .announcement {
+        .announcement,
+        .content-section {
             width: 90%;
         }
     }
@@ -178,7 +219,8 @@
             width: 100%;
         }
 
-        .announcement {
+        .announcement,
+        .content-section {
             width: 100%;
         }
     }
