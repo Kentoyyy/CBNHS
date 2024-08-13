@@ -134,9 +134,10 @@
 
         img.step-image {
             display: block;
-            max-width: 100%;
+            max-width: 30%;
             height: auto;
-            margin: 15px 0;
+            margin: 10px 0;
+            border-radius: 8px;
         }
 
         a {

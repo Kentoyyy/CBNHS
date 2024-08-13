@@ -3,25 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrollment Procedure</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
+    <title>Student Portal</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
-        /* Body Styles */
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body Styles */
         body {
             font-family: 'Roboto', sans-serif;
             color: #2C3E50;
             background-color: #FAFAFA;
+            overflow-x: hidden;
             line-height: 1.6;
         }
 
+        /* Navbar styles */
         .navbar {
             background-color: #1c4587;
             padding: 10px 20px;
@@ -91,146 +95,425 @@
             background-color: #476ca9;
         }
 
-        .container {
-            padding-top: 80px;
-            max-width: 700px;
-            margin: 0 auto;
+        /* Student Portal Section */
+        .student-portal-section {
+            background: url('path_to_your_hero_image.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 120px 20px;
+            text-align: center;
+            color: #000;
+            margin-top: 80px;
         }
 
-        .step {
-            margin-bottom: 30px;
+        .student-portal-section h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .step-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+        .student-portal-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
-        .step-number {
-            font-size: 24px;
-            font-weight: bold;
+        .student-portal-section a {
+            padding: 10px 20px;
             background-color: #1c4587;
-            color: #fff;
-            border-radius: 50%;
-            height: 40px;
-            width: 40px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .student-portal-section a:hover {
+            background-color: #164e73;
+        }
+
+        /* Content styles */
+        .content {
+            background: linear-gradient(to right, #f4f4f9, #ffffff);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            gap: 40px;
+        }
+
+        .feature {
+            flex: 1;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            max-width: 350px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .feature.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover img {
+            transform: scale(1.1);
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #2C3E50;
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #7F8C8D;
+            line-height: 1.5;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            color: #2C3E50;
+            margin-top: 40px;
+        }
+
+        .testimonial-section p {
+            opacity: 0;
+            animation: fadeIn 5s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Statistics Section */
+        .statistics-section {
+            display: flex;
+            justify-content: space-around;
+            background-color: #F4F4F9;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 36px;
+            color: #1c4587;
+            margin-bottom: 10px;
+        }
+
+        .stat p {
+            font-size: 16px;
+            color: #7F8C8D;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 20px;
+            background-color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            color: #95A5A6;
+            box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin-right: 15px;
+            gap: 15px;
         }
 
-        .step-title {
-            font-size: 18px;
-            font-weight: 500;
+        footer a {
+            color: #1c4587;
+            text-decoration: none;
         }
 
-        .step-description {
-            margin-left: 55px;
-            font-size: 14px;
-            color: #2C3E50;
-        }
-
-        img.step-image {
-            display: block;
-            max-width: 50%;
-            height: auto;
-            margin: 10px 0;
-            border-radius: 8px;
-        }
-
-        a {
-            color: #007bff;
-        }
-
-        a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #1c4587;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            padding: 10px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-form button:hover {
+            background-color: #164e73;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-button {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .feature-section {
+                flex-direction: column;
+            }
+
+            .stat {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+
+            footer a {
+                margin-top: 5px;
+            }
+        }
+
+        /* Facebook iframe styles */
+        .facebook-iframe-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .facebook-iframe {
+            border: none;
+            overflow: hidden;
+            width: 340px; /* Adjust width as needed */
+            height: 400px; /* Adjust height as needed */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logo-image">
-            <span class="logo-name">City of Bacoor National High School Springville Student Portal</span>
+            <a href="/" class="logo-link">
+                <img src="{{ asset('images/logoschool.png') }}" alt="City of Bacoor National High School Logo" class="logo-image">
+            </a>
+            <span class="logo-name">City of Bacoor National High School Springville</span>
         </div>
         <div class="nav-links">
-            <a href="student" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Home</a>
             <a href="guideenrollment" class="nav-link">How to Enroll?</a>
             <a href="faqportal" class="nav-link">FAQ & Help</a>
             <a href="/" class="nav-button">Home Website</a>
         </div>
     </nav>
 
-    <div class="container">
-        <h1 class="text-center faq-heading mb-4">Enrollment Procedure for Junior High School</h1>
+    <!-- Main Content -->
+    <section class="student-portal-section">
+        <h2>Welcome to the Student Portal</h2>
+        <p>Your one-stop destination for academic resources and support.</p>
+        <a href="#" class="enter-button">Enter Portal</a>
+    </section>
 
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">1</div>
-                <div class="step-title">Gather Required Documents</div>
+    <!-- Feature Section -->
+    <section class="content">
+        <div class="feature-section">
+            <div class="feature">
+                <img src="{{ asset('images/interactive.png') }}" alt="Feature 1">
+                <h3 class="feature-title">Interactive Learning</h3>
+                <p class="feature-description">Engage with our interactive learning materials designed to make studying fun and effective.</p>
             </div>
-            <div class="step-description">
-                <p>Before visiting the school, make sure you have the following documents:</p>
-                <ul>
-                    <li>Birth Certificate (Original & Photocopy)</li>
-                    <li>Form 138 (Report Card)</li>
-                    <li>Good Moral Certificate</li>
-                    <li>2x2 ID Photo (2 copies)</li>
-                </ul>
-                <img src="{{ asset('images/document.png') }}" alt="Required Documents" class="step-image">
+            <div class="feature">
+                <img src="{{ asset('images/connectimage.png') }}" alt="Feature 2">
+                <h3 class="feature-title">Student Support</h3>
+                <p class="feature-description">Access a wide range of support services to help you succeed academically and personally.</p>
+            </div>
+            <div class="feature">
+                <img src="{{ asset('images/profilestudent.png') }}" alt="Feature 3">
+                <h3 class="feature-title">Resource Center</h3>
+                <p class="feature-description">Explore our comprehensive resource center for all your academic needs.</p>
             </div>
         </div>
+    </section>
 
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">2</div>
-                <div class="step-title">Visit the School's Admission Office</div>
-            </div>
-            <div class="step-description">
-                <p>Go to the school's admission office to submit the required documents. The staff will guide you through the process of filling out the enrollment form.</p>
-                <img src="{{ asset('images/office.png') }}" alt="Admission Office" class="step-image">
-            </div>
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <p>"The student portal has been a game-changer in my academic journey. Highly recommend it!"</p>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="stat">
+            <h3>95%</h3>
+            <p>Student Satisfaction</p>
         </div>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">3</div>
-                <div class="step-title">Pay Enrollment Fees</div>
-            </div>
-            <div class="step-description">
-                <p>After submitting your documents, proceed to the school's cashier to pay the necessary enrollment fees. Keep the receipt as proof of payment.</p>
-                <img src="{{ asset('images/payment.png') }}" alt="Payment" class="step-image">
-            </div>
+        <div class="stat">
+            <h3>54+</h3>
+            <p>Courses Available</p>
         </div>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">4</div>
-                <div class="step-title">Attend the Orientation</div>
-            </div>
-            <div class="step-description">
-                <p>Once you've completed the enrollment process, you will be scheduled to attend an orientation session where you will receive important information about the school year, class schedules, and other relevant details.</p>
-                <img src="{{ asset('images/orientation.png') }}" alt="Orientation" class="step-image">
-            </div>
+        <div class="stat">
+            <h3>3k+</h3>
+            <p>Active Users</p>
         </div>
+    </section>
 
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">5</div>
-                <div class="step-title">Receive Your Class Schedule</div>
-            </div>
-            <div class="step-description">
-                <p>After the orientation, you will receive your class schedule. Make sure to review it and familiarize yourself with your class locations and teachers.</p>
-                <img src="{{ asset('images/schedule.png') }}" alt="Class Schedule" class="step-image">
-            </div>
+    <!-- Facebook Section -->
+    <section class="facebook-iframe-container">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDepEdTayoCBNHSS305688&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+    </footer>
+
+    <!-- Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">Student Login</div>
+            <form class="login-form">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Modal JavaScript
+        var modal = document.getElementById("loginModal");
+        var btn = document.querySelector(".enter-button");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Feature animation on scroll
+        window.addEventListener('scroll', function() {
+            var features = document.querySelectorAll('.feature');
+            features.forEach(function(feature) {
+                var rect = feature.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    feature.classList.add('in-view');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
