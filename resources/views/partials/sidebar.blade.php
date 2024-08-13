@@ -87,11 +87,11 @@
     <ul class="sidebar-menu">
         <li><a href="{{ url('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
         <li><a href="{{ url('grades') }}" class="{{ Request::is('grades') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Grades</a></li>
-        <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
-        <li><a href="{{ url('examinations') }}" class="{{ Request::is('examinations') ? 'active' : '' }}"><i class="fas fa-pencil-alt"></i> Examinations</a></li>
-        <li><a href="{{ url('schedule') }}" class="{{ Request::is('schedule') ? 'active' : '' }}"><i class="fas fa-book-reader"></i> Class Schedule</a></li>
+
+
+
         <li><a href="{{ url('profile') }}" class="{{ Request::is('profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="{{ url('support') }}" class="{{ Request::is('support') ? 'active' : '' }}"><i class="fas fa-headset"></i> Support</a></li>
+       
     </ul>
     
 </div>

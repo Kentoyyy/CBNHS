@@ -59,8 +59,8 @@ Route::get('/dashboard', function () {
 Route::get('/grades', function () {
     return view('pages.studentportal.grades');
 });
-Route::get('/attendance', function () {
-    return view('pages.studentportal.attendance');
+Route::get('/announcement', function () {
+    return view('pages.studentportal.announcement');
 });
 Route::get('/announcement', function () {
     return view('pages.studentportal.announcement');

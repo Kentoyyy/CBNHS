@@ -88,9 +88,6 @@
         <li><a href="{{ url('teacherdashboard') }}" class="{{ Request::is('teacherdashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
         <li><a href="{{ url('managestudent') }}" class="{{ Request::is('managestudent') ? 'active' : '' }}"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
         <li><a href="{{ url('teachergradestudent') }}" class="{{ Request::is('teachergradestudent') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Manage Grades</a></li>
-        <li><a href="{{ url('attendance') }}" class="{{ Request::is('attendance') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Attendance</a></li>
-        <li><a href="{{ url('teacherschedule') }}" class="{{ Request::is('teacherschedule') ? 'active' : '' }}"><i class="fas fa-book-open"></i> Class Schedule</a></li>
-        <li><a href="{{ url('resources') }}" class="{{ Request::is('resources') ? 'active' : '' }}"><i class="fas fa-folder"></i> Teaching Resources</a></li>
         <li><a href="{{ url('teacherprofile') }}" class="{{ Request::is('teacherprofile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
        
     </ul>
