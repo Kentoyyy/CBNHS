@@ -13,11 +13,11 @@
             <div class="card-body">
                 <div class="profile-header mb-4">
                     <div class="profile-avatar">
-                        <img src="{{ asset('images/admin-avatar.png') }}" alt="Admin Avatar">
+                        <img src="{{ asset('images/facultyboy.png') }}" alt="Admin Avatar">
                     </div>
                     <div class="profile-details">
-                        <h2>{{ Auth::user()->name }}</h2>
-                        <p class="text-muted">{{ Auth::user()->email }}</p>
+                        <h2>John Doe</h2>
+                        <p class="text-muted">johndoe@example.com</p>
                         <p class="text-muted">Role: Admin</p>
                     </div>
                 </div>
@@ -25,11 +25,11 @@
                 <form class="profile-edit-form">
                     <div class="form-group mb-3">
                         <label for="edit-name">Name</label>
-                        <input type="text" id="edit-name" class="form-control" value="{{ Auth::user()->name }}" placeholder="Enter your name">
+                        <input type="text" id="edit-name" class="form-control" value="John Doe" placeholder="Enter your name">
                     </div>
                     <div class="form-group mb-3">
                         <label for="edit-email">Email</label>
-                        <input type="email" id="edit-email" class="form-control" value="{{ Auth::user()->email }}" placeholder="Enter your email">
+                        <input type="email" id="edit-email" class="form-control" value="johndoe@example.com" placeholder="Enter your email">
                     </div>
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </form>
