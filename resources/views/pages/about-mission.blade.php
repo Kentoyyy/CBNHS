@@ -22,7 +22,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: #0B4F91;
+      
     }
 
     .header .backgroundImage {
@@ -154,7 +154,7 @@
 
 <!-- Header section with background image and overlay text -->
 <div class="header container-fluid">
-    <img src="{{ asset('images/ourmission.jpg') }}" alt="Mission Background Image" class="backgroundImage">
+    <img src="{{ asset('images/bannerschool.jpg') }}" alt="Mission Background Image" class="backgroundImage">
     <div class="overlay-text">Mission & Vision</div>
 </div>
 
@@ -180,10 +180,15 @@
 
     <!-- School Vision Section -->
     <div class="text-image-container">
-        <img src="{{ asset('images/vision.jpg') }}" alt="Vision Image">
+        <img src="{{ asset('images/mision.png') }}" alt="Vision Image">
         <div class="text">
-            <h2>SCHOOL VISION</h2>
-            <p>A caring, functional institution that transforms knowledge into actualities, nurtures intelligence with values, and radiates wisdom in discovering new horizons.</p>
+            <h2>DEPED MISSION</h2>
+            <p>To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where:
+
+                Students learn in a child-friendly, gender-sensitive, safe, and motivating environment.
+                Teachers facilitate learning and constantly nurture every learner.
+                Administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen.
+                Family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.</p>
         </div>
     </div>
 
