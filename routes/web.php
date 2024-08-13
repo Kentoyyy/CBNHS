@@ -62,6 +62,9 @@ Route::get('/grades', function () {
 Route::get('/announcement', function () {
     return view('pages.studentportal.announcement');
 });
+Route::get('/examination', function () {
+    return view('pages.studentportal.examination');
+});
 Route::get('/announcement', function () {
     return view('pages.studentportal.announcement');
 });

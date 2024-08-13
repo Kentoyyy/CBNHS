@@ -17,17 +17,17 @@
     </header>
 
     <section class="quick-links">
-        <a href="{{ url('/schedule') }}" class="card">
+        <a href="{{ url('/grades') }}" class="card">
             <i class="fas fa-calendar-alt"></i>
-            <h3>Class Schedule</h3>
-        </a>
-        <a href="{{ url('grades') }}" class="card">
-            <i class="fas fa-graduation-cap"></i>
             <h3>My Grades</h3>
         </a>
-        <a href="{{ url('/resources') }}" class="card">
+        <a href="{{ url('examination') }}" class="card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>My Examination</h3>
+        </a>
+        <a href="{{ url('/profile') }}" class="card">
             <i class="fas fa-folder-open"></i>
-            <h3>Learning Resources</h3>
+            <h3>My Profile</h3>
         </a>
     </section>
 

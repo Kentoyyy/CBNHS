@@ -87,8 +87,7 @@
     <ul class="sidebar-menu">
         <li><a href="{{ url('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
         <li><a href="{{ url('grades') }}" class="{{ Request::is('grades') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Grades</a></li>
-
-
+        <li><a href="{{ url('examination') }}" class="{{ Request::is('examination') ? 'active' : '' }}"><i class="fas fa-pencil-alt"></i> Examinations</a></li>
 
         <li><a href="{{ url('profile') }}" class="{{ Request::is('profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
        
