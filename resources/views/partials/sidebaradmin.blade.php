@@ -90,7 +90,7 @@
         <li><a href="{{ url('adminsubjectmanagement') }}" class="{{ Request::is('adminsubjectmanagement') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Subject Management</a></li>
         <li><a href="{{ url('postmanagement') }}" class="{{ Request::is('postmanagement') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Post Management</a></li>
         <li><a href="{{ url('accountmanagement') }}" class="{{ Request::is('accountmanagement') ? 'active' : '' }}"><i class="fas fa-folder"></i> Account Management</a></li>
-        <li><a href="{{ url('teacherprofile') }}" class="{{ Request::is('teacherprofile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a href="{{ url('adminprofile') }}" class="{{ Request::is('adminprofile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
        
     </ul>
     

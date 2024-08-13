@@ -126,6 +126,11 @@ Route::get('/accountmanagement', function () {
     return view('pages.admin.accountmanagement');
 
 });
+Route::get('/adminprofile', function () {
+    return view('pages.admin.profile');
+
+});
+
 
 
 
