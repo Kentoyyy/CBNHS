@@ -118,6 +118,10 @@ Route::get('/adminsubjectmanagement', function () {
     return view('pages.admin.subjectmanagement');
 
 });
+Route::get('/postmanagement', function () {
+    return view('pages.admin.postmanagement');
+
+});
 
 
 
