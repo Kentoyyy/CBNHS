@@ -23,7 +23,7 @@
     }
 
     .header .logoImage {
-        max-width: 90px;
+        max-width: 80px;
         height: auto;
         display: inline-block;
         vertical-align: middle;
@@ -99,7 +99,7 @@
 <div class="header container-fluid">
     <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage">
     <span class="overlay-text">Deped Memorandum</span>
-    <img src="{{ asset('images/bannermatatag.png') }}" alt="Banner Image" class="logoImage">
+    <img src="{{ asset('images/depeedlogo.png') }}" alt="Banner Image" class="logoImage">
 </div>
 
 <div class="content-container">
