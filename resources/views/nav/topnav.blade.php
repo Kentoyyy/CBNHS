@@ -129,10 +129,8 @@
                         <a class="dropdown-item" href="events">Events</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <li class="nav-item">
-                        <a class="nav-link" href="admission">Admission</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admission">Admission</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="personnelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -153,27 +151,22 @@
                         <a class="dropdown-item" href="student">Student</a>
                         <a class="dropdown-item" href="teacherportal">Teacher</a>
                         <a class="dropdown-item" href="adminlanding">Administrator</a>
-                        
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Insuances
+                    <a class="nav-link dropdown-toggle" href="#" id="issuancesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Issuances
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="studentsDropdown">
-                        <a class="dropdown-item" href="/">Regional Memo</a>
-                        <a class="dropdown-item" href="deped-memo">Deped Memo</a>
-                        <a class="dropdown-item" href="advisories">Deped Advisories</a>
-                        <a class="dropdown-item" href="orders">Deped Orders</a>
-                        <a class="dropdown-item" href="/">School Memo</a>
-                         <a class="dropdown-item" href="/">School Memo</a>
-                        
+                    <div class="dropdown-menu" aria-labelledby="issuancesDropdown">
+                        <a class="dropdown-item" href="deped-issuances">DepEd Issuances</a>
+                        <a class="dropdown-item" href="deped-memo">DepEd Memo</a>
+                        <a class="dropdown-item" href="advisories">DepEd Advisories</a>
+                        <a class="dropdown-item" href="orders">DepEd Orders</a>
+                        <a class="dropdown-item" href="school-memo">School Memo</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <li class="nav-item">
-                        <a class="nav-link" href="resources">Resources</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resources">Resources</a>
                 </li>
             </ul>
         </div>

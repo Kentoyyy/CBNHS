@@ -1,6 +1,6 @@
 @extends('home-master')
 
-@section('title', 'Deped Memorandum')
+@section('title', 'Deped Advisories')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 
 @section('style')
