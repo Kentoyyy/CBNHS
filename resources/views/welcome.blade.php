@@ -226,7 +226,7 @@ hr {
 }
 
 .related-links img {
-    width: 24px;
+    width: 100px; /* Increase the logo size */
     margin: 10px;
 }
 
