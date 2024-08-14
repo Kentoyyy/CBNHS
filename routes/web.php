@@ -29,6 +29,10 @@ Route::get('/administrator', function () {
 Route::get('/staff', function () {
     return view('pages.staff');
 });
+Route::get('/deped-memo', function () {
+    return view('pages.deped-memo');
+});
+
 
 Route::get('/supportservices', function () {
     return view('pages.supportservices');

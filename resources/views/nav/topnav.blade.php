@@ -162,7 +162,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="studentsDropdown">
                         <a class="dropdown-item" href="/">Regional Memo</a>
-                        <a class="dropdown-item" href="/">Deped Memo</a>
+                        <a class="dropdown-item" href="deped-memo">Deped Memo</a>
+                        <a class="dropdown-item" href="/">Division Memo</a>
                         <a class="dropdown-item" href="/">School Memo</a>
                         
                     </div>
