@@ -39,6 +39,12 @@ Route::get('/orders', function () {
     return view('pages.deped-orders');
 });
 
+Route::get('/inssuances', function () {
+    return view('pages.inssuances');
+});
+
+
+
 
 
 

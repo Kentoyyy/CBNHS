@@ -158,7 +158,7 @@
                         Issuances
                     </a>
                     <div class="dropdown-menu" aria-labelledby="issuancesDropdown">
-                        <a class="dropdown-item" href="deped-issuances">DepEd Issuances</a>
+                        <a class="dropdown-item" href="inssuances">DepEd Issuances</a>
                         <a class="dropdown-item" href="deped-memo">DepEd Memo</a>
                         <a class="dropdown-item" href="advisories">DepEd Advisories</a>
                         <a class="dropdown-item" href="orders">DepEd Orders</a>
