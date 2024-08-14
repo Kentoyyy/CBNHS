@@ -43,6 +43,11 @@ Route::get('/inssuances', function () {
     return view('pages.inssuances');
 });
 
+Route::get('/inssuances23', function () {
+    return view('pages.issuancesitems.2023');
+});
+
+
 
 
 

@@ -1,6 +1,6 @@
 @extends('home-master')
 
-@section('title', 'DepEd Issuances')
+@section('title', 'DepEd Issuances - 2023')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -170,7 +170,7 @@
                     <a href="#">2024</a>
                 </div>
                 <div class="nav-item">
-                    <a href="inssuances23">2023</a>
+                    <a href="#">2022</a>
                 </div>
                 <div class="nav-item">
                     <a href="#">2022</a>
@@ -185,6 +185,7 @@
         </div>
 
         <!-- Issuances Table -->
+        <h2>Issuances 2024</h2>
         <table class="issuances-table">
             <thead>
                 <tr>
@@ -196,16 +197,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="{{ asset('documents/DM_No_413_s_2024.pdf') }}" target="_blank">DM No. 413, s. 2024</a></td>
+                    <td><a href="{{ asset('documents/DM_No_413_s_2023.pdf') }}" target="_blank">DM No. 413, s. 2023</a></td>
                     <td>Memorandum</td>
-                    <td>Distribution of Special Needs Education (SNED) Supplies and Equipment 2024 from the Local Government Unit (LGU)</td>
-                    <td>08/13/2024</td>
+                    <td>Distribution of Special Needs Education (SNED) Supplies and Equipment 2023 from the Local Government Unit (LGU)</td>
+                    <td>08/13/2023</td>
                 </tr>
                 <tr>
-                    <td><a href="{{ asset('documents/DM_No_412_s_2024.pdf') }}" target="_blank">DM No. 412, s. 2024</a></td>
+                    <td><a href="{{ asset('documents/DM_No_412_s_2023.pdf') }}" target="_blank">DM No. 412, s. 2023</a></td>
                     <td>Memorandum</td>
                     <td>Submission of Application for Special Education Teacher I (SPET) in the City Schools Division of Bacoor</td>
-                    <td>08/13/2024</td>
+                    <td>08/13/2023</td>
                 </tr>
                 <!-- Add more rows as needed -->
             </tbody>
