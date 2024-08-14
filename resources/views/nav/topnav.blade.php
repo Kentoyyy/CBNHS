@@ -164,7 +164,9 @@
                         <a class="dropdown-item" href="/">Regional Memo</a>
                         <a class="dropdown-item" href="deped-memo">Deped Memo</a>
                         <a class="dropdown-item" href="advisories">Deped Advisories</a>
+                        <a class="dropdown-item" href="orders">Deped Orders</a>
                         <a class="dropdown-item" href="/">School Memo</a>
+                         <a class="dropdown-item" href="/">School Memo</a>
                         
                     </div>
                 </li>

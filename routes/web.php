@@ -35,6 +35,10 @@ Route::get('/deped-memo', function () {
 Route::get('/advisories', function () {
     return view('pages.deped-advisories');
 });
+Route::get('/orders', function () {
+    return view('pages.deped-orders');
+});
+
 
 
 
