@@ -16,7 +16,7 @@
 
     .header {
         position: relative;
-        padding: 50px 90px;
+        padding: 40px 80px;
         color: #520d0d;
         height: 20vh;
         background-color: #2a3b6b;
@@ -27,7 +27,7 @@
     }
 
     .header .logoImage {
-        max-width: 90px;
+        max-width: 80px;
         height: auto;
     }
 
@@ -36,12 +36,12 @@
     }
 
     .logoImage-right {
-        max-width: 200px;
+        max-width: 180px;
         height: auto;
     }
 
     .overlay-text {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: bold;
         color: white;
         text-align: center;
@@ -49,10 +49,10 @@
     }
 
     .overlay-text-p {
-        font-size: 11px;
+        font-size: 0.8rem;
         color: white;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .content-container {
@@ -60,7 +60,7 @@
         max-width: 1000px;
         margin: 20px auto;
         background-color: white;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         font-size: 14px;
         color: #333;
@@ -69,18 +69,19 @@
     .events-section {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 15px;
     }
 
     .event-card {
         background-color: #f9f9f9;
         border-radius: 8px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 15px;
         text-align: center;
-        width: calc(33.333% - 20px);
+        width: calc(33.333% - 15px);
         position: relative;
         box-sizing: border-box;
+        transition: box-shadow 0.3s;
     }
 
     .event-card img {
@@ -93,26 +94,29 @@
     .event-card h4 {
         color: #2a3b6b;
         margin: 10px 0;
+        font-size: 1rem;
     }
 
     .event-card p {
-        margin: 10px 0;
+        margin: 5px 0;
+        font-size: 0.9rem;
     }
 
     .event-card a {
         display: inline-block;
         margin-top: 10px;
-        padding: 10px 20px;
+        padding: 8px 15px;
         background-color: #4267b2;
         color: white;
         text-decoration: none;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: background-color 0.3s;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: background-color 0.3s, transform 0.3s;
     }
 
     .event-card a:hover {
-        background-color: #365899;
+        background-color: #a6a6a6;
+        transform: scale(1.05);
     }
 
     .facebook-events {
@@ -131,7 +135,7 @@
 
     @media (max-width: 800px) {
         .event-card {
-            width: calc(50% - 20px);
+            width: calc(50% - 15px);
         }
     }
 
@@ -163,7 +167,8 @@
             <h4>Annual Science Fair</h4>
             <p><strong>Date:</strong> September 15, 2024</p>
             <p><strong>Location:</strong> School Auditorium</p>
-            <p>Join us for our Annual Science Fair where students will showcase their innovative science projects. All are welcome to attend and support our young scientists. <a href="https://example.com/annual-science-fair" target="_blank">Learn more</a></p>
+            <p>Join us for our Annual Science Fair where students will showcase their innovative science projects. All are welcome to attend and support our young scientists.</p>
+            <a href="https://example.com/annual-science-fair" target="_blank">Learn more</a>
         </div>
 
         <div class="event-card">
@@ -171,7 +176,8 @@
             <h4>Parent-Teacher Conference</h4>
             <p><strong>Date:</strong> October 10, 2024</p>
             <p><strong>Location:</strong> Classroom Building</p>
-            <p>Meet with your child’s teachers to discuss their academic progress and any concerns. This is an excellent opportunity to get involved in your child’s education. <a href="https://example.com/parent-teacher-conference" target="_blank">Learn more</a></p>
+            <p>Meet with your child’s teachers to discuss their academic progress and any concerns. This is an excellent opportunity to get involved in your child’s education.</p>
+            <a href="https://example.com/parent-teacher-conference" target="_blank">Learn more</a>
         </div>
 
         <div class="event-card">
@@ -179,7 +185,8 @@
             <h4>Winter Concert</h4>
             <p><strong>Date:</strong> December 20, 2024</p>
             <p><strong>Location:</strong> School Gymnasium</p>
-            <p>Enjoy an evening of music and performances as our students present their Winter Concert. Don’t miss this festive event! <a href="https://example.com/winter-concert" target="_blank">Learn more</a></p>
+            <p>Enjoy an evening of music and performances as our students present their Winter Concert. Don’t miss this festive event!</p>
+            <a href="https://example.com/winter-concert" target="_blank">Learn more</a>
         </div>
 
         <!-- Additional Event Cards -->
@@ -188,7 +195,8 @@
             <h4>Fun Fair</h4>
             <p><strong>Date:</strong> November 5, 2024</p>
             <p><strong>Location:</strong> School Grounds</p>
-            <p>Join us for a day of games, food, and entertainment at our annual Fun Fair. Bring your family and friends for a day full of excitement! <a href="https://example.com/fun-fair" target="_blank">Learn more</a></p>
+            <p>Join us for a day of games, food, and entertainment at our annual Fun Fair. Bring your family and friends for a day full of excitement!</p>
+            <a href="https://example.com/fun-fair" target="_blank">Learn more</a>
         </div>
 
         <div class="event-card">
@@ -196,7 +204,8 @@
             <h4>Book Fair</h4>
             <p><strong>Date:</strong> November 20, 2024</p>
             <p><strong>Location:</strong> School Library</p>
-            <p>Explore a wide range of books at our annual Book Fair. Find your next great read and support our library. <a href="https://example.com/book-fair" target="_blank">Learn more</a></p>
+            <p>Explore a wide range of books at our annual Book Fair. Find your next great read and support our library.</p>
+            <a href="https://example.com/book-fair" target="_blank">Learn more</a>
         </div>
 
         <div class="event-card">
@@ -204,7 +213,8 @@
             <h4>Sports Day</h4>
             <p><strong>Date:</strong> January 15, 2025</p>
             <p><strong>Location:</strong> School Sports Field</p>
-            <p>Cheer on our students as they compete in various athletic events. It’s a day full of sportsmanship and school spirit! <a href="https://example.com/sports-day" target="_blank">Learn more</a></p>
+            <p>Cheer on our students as they compete in various athletic events. It’s a day full of sportsmanship and school spirit!</p>
+            <a href="https://example.com/sports-day" target="_blank">Learn more</a>
         </div>
     </div>
 

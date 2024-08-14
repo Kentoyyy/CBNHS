@@ -1,6 +1,6 @@
 @extends('home-master')
 
-@section('title', 'Deped Advisories')
+@section('title', 'DepEd Advisories')
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 
 @section('style')
@@ -15,7 +15,7 @@
     }
 
     .header {
-        padding: 30px;
+        padding: 20px;
         background-color: #2a3b6b;
         color: #fff;
         text-align: center;
@@ -23,7 +23,7 @@
     }
 
     .header .logoImage {
-        max-width: 80px;
+        max-width: 60px;
         height: auto;
         display: inline-block;
         vertical-align: middle;
@@ -32,7 +32,7 @@
     .header .overlay-text {
         display: inline-block;
         vertical-align: middle;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         font-weight: bold;
         margin: 0 15px;
     }
@@ -40,7 +40,7 @@
     .content-container {
         display: flex;
         justify-content: space-between;
-        margin: 0 30px;
+        margin: 0 20px;
     }
 
     .content-left {
@@ -48,36 +48,37 @@
     }
 
     .memo-item {
-        margin-bottom: 20px;
-        padding: 20px;
+        margin-bottom: 15px;
+        padding: 15px;
         background-color: #fff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
         border-left: 4px solid #2a3b6b;
     }
 
     .memo-item h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #2a3b6b;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .memo-item p {
-        font-size: 0.9rem;
-        margin-bottom: 10px;
+        font-size: 0.8rem;
+        margin-bottom: 8px;
     }
 
     .memo-item .view-pdf {
         display: inline-block;
-        padding: 8px 12px;
+        padding: 6px 10px;
         background-color: #2a3b6b;
         color: #fff;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 4px;
+        font-size: 0.8rem;
     }
 
     .content-right {
         width: 28%;
-        padding-left: 20px;
+        padding-left: 15px;
     }
 
     .facebook-page {
@@ -86,7 +87,7 @@
 
     .facebook-page iframe {
         width: 100%;
-        height: 400px;
+        height: 300px;
         border: none;
         overflow: hidden;
     }
@@ -98,13 +99,13 @@
 
 <div class="header container-fluid">
     <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage">
-    <span class="overlay-text">Deped Advisories</span>
+    <span class="overlay-text">DepEd Advisories</span>
     <img src="{{ asset('images/depeedlogo.png') }}" alt="Banner Image" class="logoImage">
 </div>
 
 <div class="content-container">
     <div class="content-left">
-        <!-- Deped Memorandum Items -->
+        <!-- DepEd Memorandum Items -->
         <div class="memo-item">
             <h3>December 21, 2020 DM 082, S. 2020 – Guidelines on the Registration of Teachers and School Leaders for NEAP-Recognized Professional Development Programs and Courses</h3>
             <p>Guidelines on the Registration of Teachers and School Leaders for NEAP-Recognized Professional Development Programs and Courses</p>
@@ -127,7 +128,7 @@
     <div class="content-right">
         <!-- Facebook Page Iframe -->
         <div class="facebook-page">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDepEdTayoCBNHSS305688&tabs=timeline&width=300&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDepEdTayoCBNHSS305688&tabs=timeline&width=300&height=300&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
     </div>
 </div>
