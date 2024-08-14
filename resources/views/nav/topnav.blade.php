@@ -162,7 +162,7 @@
                         <a class="dropdown-item" href="deped-memo">DepEd Memo</a>
                         <a class="dropdown-item" href="advisories">DepEd Advisories</a>
                         <a class="dropdown-item" href="orders">DepEd Orders</a>
-                        <a class="dropdown-item" href="school-memo">School Memo</a>
+                     
                     </div>
                 </li>
                 <li class="nav-item">
