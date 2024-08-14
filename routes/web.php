@@ -32,6 +32,10 @@ Route::get('/staff', function () {
 Route::get('/deped-memo', function () {
     return view('pages.deped-memo');
 });
+Route::get('/deped-advisorie', function () {
+    return view('pages.deped-deped-advisories');
+});
+
 
 
 Route::get('/supportservices', function () {
