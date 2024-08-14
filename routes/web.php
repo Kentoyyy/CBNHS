@@ -46,6 +46,14 @@ Route::get('/inssuances', function () {
 Route::get('/inssuances23', function () {
     return view('pages.issuancesitems.2023');
 });
+Route::get('/inssuances24', function () {
+    return view('pages.issuancesitems.2024');
+});
+Route::get('/inssuances22', function () {
+    return view('pages.issuancesitems.2022');
+});
+
+
 
 
 

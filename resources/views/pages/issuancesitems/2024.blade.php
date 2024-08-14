@@ -167,13 +167,13 @@
             <h3 onclick="toggleSubmenu('year-submenu')">Issuances by year <i class="fas fa-chevron-down arrow"></i></h3>
             <div id="year-submenu" class="nav-submenu">
                 <div class="nav-item">
-                    <a href="#">2024</a>
+                    <a href="inssuances24">2024</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">2022</a>
+                    <a href="inssuances23">2022</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">2022</a>
+                    <a href="inssuances22">2022</a>
                 </div>
                 <div class="nav-item">
                     <a href="#">2021</a>
