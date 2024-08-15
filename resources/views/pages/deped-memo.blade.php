@@ -12,18 +12,19 @@
         background-color: #f4f7fa;
         color: #444;
         line-height: 1.6;
+        font-size: 0.85rem;
     }
 
     .header {
-        padding: 30px;
+        padding: 20px;
         background-color: #2a3b6b;
         color: #fff;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .header .logoImage {
-        max-width: 80px;
+        max-width: 60px;
         height: auto;
         display: inline-block;
         vertical-align: middle;
@@ -32,15 +33,15 @@
     .header .overlay-text {
         display: inline-block;
         vertical-align: middle;
-        font-size: 1.8rem;
-        font-weight: bold;
-        margin: 0 15px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0 10px;
     }
 
     .content-container {
         display: flex;
         justify-content: space-between;
-        margin: 0 30px;
+        margin: 0 20px;
     }
 
     .content-left {
@@ -48,45 +49,42 @@
     }
 
     .memo-item {
-        margin-bottom: 20px;
-        padding: 20px;
+        margin-bottom: 15px;
+        padding: 15px;
         background-color: #fff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        border-left: 4px solid #2a3b6b;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+        border-left: 3px solid #2a3b6b;
     }
 
     .memo-item h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #2a3b6b;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .memo-item p {
-        font-size: 0.9rem;
-        margin-bottom: 10px;
+        font-size: 0.8rem;
+        margin-bottom: 8px;
     }
 
     .memo-item .view-pdf {
         display: inline-block;
-        padding: 8px 12px;
+        padding: 6px 10px;
         background-color: #2a3b6b;
         color: #fff;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 3px;
+        font-size: 0.8rem;
     }
 
     .content-right {
         width: 28%;
-        padding-left: 20px;
-    }
-
-    .facebook-page {
-        margin-bottom: 20px;
+        padding-left: 15px;
     }
 
     .facebook-page iframe {
         width: 100%;
-        height: 400px;
+        height: 350px;
         border: none;
         overflow: hidden;
     }
@@ -97,9 +95,9 @@
 @include('nav.topnav')
 
 <div class="header container-fluid">
-    <img src="{{ asset('images/logoschool.png') }}" alt="Logo Image" class="logoImage">
+    <img src="{{ asset('images/logoschool.png') }}" alt="Logo" class="logoImage">
     <span class="overlay-text">Deped Memorandum</span>
-    <img src="{{ asset('images/depeedlogo.png') }}" alt="Banner Image" class="logoImage">
+    <img src="{{ asset('images/depeedlogo.png') }}" alt="DepEd Logo" class="logoImage">
 </div>
 
 <div class="content-container">
