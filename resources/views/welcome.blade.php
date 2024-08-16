@@ -94,9 +94,11 @@
 }
 
 /* News Bulletin Section */
+/* News Bulletin Section */
 .news-bulletin .card {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
+    width: 100%; /* Ensure cards take full width of their container */
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
@@ -132,7 +134,6 @@
 .news-bulletin .card-title a:hover {
     text-decoration: underline;
 }
-
 /* Featured Videos Section */
 .featured-videos {
     margin-top: 40px;
@@ -243,6 +244,13 @@ hr {
 
 .related-links a:hover {
     background-color: transparent;
+}
+.facebook-page iframe {
+    width: 100%; /* Make iframe take full width of its container */
+    height: 500px; /* Set a fixed height for the iframe */
+    border: none; /* Remove default border */
+    border-radius: 6px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow */
 }
     </style>
 @endsection
