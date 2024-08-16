@@ -93,17 +93,15 @@
     background-color: #003f75;
 }
 
-/* News Bulletin Section */
-/* News Bulletin Section */
 .news-bulletin .card {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
-    width: 100%; /* Ensure cards take full width of their container */
+    width: 100%; /* Full width within the column */
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
     overflow: hidden;
-    height: 100%; /* Ensures that all cards have the same height */
+    height: 100%; /* Ensure uniform card height */
 }
 
 .news-bulletin .card img {
@@ -117,7 +115,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Make sure the card body takes the remaining height */
+    height: 100%; /* Ensure the card body takes the remaining height */
 }
 
 .news-bulletin .card-title {
@@ -251,6 +249,13 @@ hr {
     border: none; /* Remove default border */
     border-radius: 6px; /* Add rounded corners */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow */
+}
+@media (max-width: 768px) {
+    .news-bulletin .col-md-6 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%; /* Stack cards on smaller screens */
+    }
 }
     </style>
 @endsection
