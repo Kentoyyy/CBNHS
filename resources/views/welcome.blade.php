@@ -5,7 +5,7 @@
 
 @section('style')
     <style>
-       body {
+     body {
     font-family: "Lato", sans-serif;
     background-color: #f9f9f9;
     color: #333;
@@ -13,6 +13,7 @@
     padding: 0;
 }
 
+/* Slider Styles */
 .slider {
     position: relative;
     overflow: hidden;
@@ -59,6 +60,7 @@
     background-color: rgba(0,0,0,0.6);
 }
 
+/* School Division Section */
 .schoolDivision {
     background: white;
     padding: 25px;
@@ -91,32 +93,29 @@
     background-color: #003f75;
 }
 
-.news-bulletin {
-    margin-top: 40px;
-}
-
-.news-bulletin h2 {
-    font-size: 1.4rem;
-    color: #0056b3;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
+/* News Bulletin Section */
 .news-bulletin .card {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 100%; /* Ensures that all cards have the same height */
 }
 
 .news-bulletin .card img {
     width: 100%;
-    height: 180px;
+    height: 180px; /* Set a uniform height for all images */
     object-fit: cover;
 }
 
 .news-bulletin .card-body {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Make sure the card body takes the remaining height */
 }
 
 .news-bulletin .card-title {
@@ -134,6 +133,7 @@
     text-decoration: underline;
 }
 
+/* Featured Videos Section */
 .featured-videos {
     margin-top: 40px;
     padding: 20px;
@@ -183,6 +183,7 @@
     text-decoration: underline;
 }
 
+/* Footer and Related Links */
 hr {
     border: none;
     border-top: 1px solid #e0e0e0;
@@ -226,7 +227,7 @@ hr {
 }
 
 .related-links img {
-    width: 100px; /* Increase the logo size */
+    width: 100px;
     margin: 10px;
 }
 
@@ -316,6 +317,7 @@ hr {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="col-md-4">

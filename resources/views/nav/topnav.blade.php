@@ -150,7 +150,7 @@
                     <div class="dropdown-menu" aria-labelledby="studentsDropdown">
                         <a class="dropdown-item" href="student">Student</a>
                         <a class="dropdown-item" href="teacherportal">Teacher</a>
-                        <a class="dropdown-item" href="adminlanding">Administrator</a>
+                       
                     </div>
                 </li>
                 <li class="nav-item dropdown">

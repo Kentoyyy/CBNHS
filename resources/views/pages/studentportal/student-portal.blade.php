@@ -20,7 +20,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #2C3E50;
-            background-color: #FAFAFA;
+            background-color: #f8f8ff;
             overflow-x: hidden;
             line-height: 1.6;
         }
