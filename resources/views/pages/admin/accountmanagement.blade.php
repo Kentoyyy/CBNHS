@@ -2,6 +2,7 @@
 <link rel="shortcut icon" href="{{ asset('images/logoschool.png') }}">
 
 @section('title', 'Account Management')
+@endsection
 
 @section('content')
 <div class="admin-container">
@@ -31,51 +32,32 @@
                 </form>
 
                 <div class="table-responsive">
-                    <div class="card table-card">
-                        <div class="card-header">
-                            <h3>Student List</h3>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-hover table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="small-col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col" class="text-center">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Example of student row -->
-                                    <tr class="account-row">
-                                        <th scope="row">1</th>
-                                        <td>John Doe</td>
-                                        <td>johndoe@example.com</td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <!-- Repeat for each student -->
-                                </tbody>
-                            </table>
+                    <table class="table table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="small-col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($students as $student)
+                            <tr class="account-row">
+                                <th scope="row">{{ $student->id }}</th>
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $student->email }}</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
-                            <!-- Pagination -->
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center mt-4">
-                                    <li class="page-item disabled">
-                                        <span class="page-link">Previous</span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                    <!-- Pagination -->
+                    {{ $students->links() }}
                 </div>
             </div>
         </div>
@@ -103,57 +85,38 @@
                 </form>
 
                 <div class="table-responsive">
-                    <div class="card table-card">
-                        <div class="card-header">
-                            <h3>Teacher List</h3>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-hover table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="small-col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col" class="text-center">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Example of teacher row -->
-                                    <tr class="account-row">
-                                        <th scope="row">1</th>
-                                        <td>Jane Smith</td>
-                                        <td>janesmith@example.com</td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <!-- Repeat for each teacher -->
-                                </tbody>
-                            </table>
+                    <table class="table table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="small-col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($teachers as $teacher)
+                            <tr class="account-row">
+                                <th scope="row">{{ $teacher->id }}</th>
+                                <td>{{ $teacher->name }}</td>
+                                <td>{{ $teacher->email }}</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
-                            <!-- Pagination -->
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center mt-4">
-                                    <li class="page-item disabled">
-                                        <span class="page-link">Previous</span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                    <!-- Pagination -->
+                    {{ $teachers->links() }}
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+</div
+@endsection
 <style>
     body {
         background-color: #f8f9fa;
