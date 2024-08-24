@@ -14,21 +14,31 @@
                 <h2>Student Accounts</h2>
             </div>
             <div class="card-body">
-                <form class="account-form mb-4">
-                    <div class="form-group">
-                        <label for="student-id">Student ID</label>
-                        <input type="text" id="student-id" class="form-control" placeholder="Enter student ID">
-                    </div>
-                    <div class="form-group">
-                        <label for="student-name">Student Name</label>
-                        <input type="text" id="student-name" class="form-control" placeholder="Enter student name">
-                    </div>
-                    <div class="form-group">
-                        <label for="student-email">Student Email</label>
-                        <input type="email" id="student-email" class="form-control" placeholder="Enter student email">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add Student</button>
-                </form>
+            <form action="{{ route('students.store') }}" method="POST" class="account-form mb-4">
+                @csrf
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" class="form-control" placeholder="Enter student ID">
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" name="student_name" class="form-control" placeholder="Enter student name">
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Student Email</label>
+                    <input type="email" id="student-email" name="student_email" class="form-control" placeholder="Enter student email">
+                </div>
+                <div class="form-group">
+                    <label for="learner-id">Learner ID</label>
+                    <input type="text" id="learner-id" name="learner_id" class="form-control" placeholder="Enter learner ID" value="{{ old('learner_id') }}">
+                </div>
+                <div class="form-group">
+                    <label for="roles">Roles</label>
+                    <input type="text" id="roles" name="roles" class="form-control" placeholder="Enter roles" value="{{ old('roles') }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Student</button>
+            </form>
+
 
                 <div class="table-responsive">
                     <div class="card table-card">
@@ -109,10 +119,16 @@
                             @foreach($teachers as $teacher)
                             <tr class="account-row">
                                 <th scope="row">{{ $teacher->id }}</th>
+                                <td>{{ $teacher->name }}</td>
+                                <td>{{ $teacher->email }}</td>
+                                <td class="text-center">
+                                    <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                    <a href="{{ route('teachers.destroy', $teacher->id) }}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
                                 </td>
                             </tr>
-                                    <!-- Repeat for each teacher -->
-                                </tbody>
+                            @endforeach
+                        </tbody>
+
                             </table>
 
                             <!-- Pagination -->

@@ -1,5 +1,6 @@
 <?php
 
+// AccountManagementController.php
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -10,8 +11,8 @@ class AccountManagementController extends Controller
 {
     public function index()
     {
-        $accounts = Account::all();
-        return view('accountmanagement', compact('accounts'));
+        $students = Account::where('roles', 'student')->get();
+        return view('pages.admin.accountmanagement', compact('students'));
     }
 
     public function store(Request $request)
@@ -20,12 +21,16 @@ class AccountManagementController extends Controller
             'username' => 'required|string',
             'email' => 'required|string|email|unique:accounts',
             'password' => 'required|string|confirmed',
+            'learner_id' => 'required|integer|unique:accounts',
+            'roles' => 'required|string',
         ]);
 
         $account = new Account();
         $account->username = $request->input('username');
         $account->email = $request->input('email');
         $account->password = bcrypt($request->input('password'));
+        $account->learner_id = $request->input('learner_id');
+        $account->roles = $request->input('roles');
         $account->save();
 
         return redirect()->route('accountmanagement.index')->with('success', 'Account created successfully!');
@@ -37,22 +42,19 @@ class AccountManagementController extends Controller
             'username' => 'required|string',
             'email' => 'required|string|email|unique:accounts,email,' . $id,
             'password' => 'required|string|confirmed',
+            'learner_id' => 'required|integer|unique:accounts,learner_id,' . $id,
+            'roles' => 'required|string',
         ]);
 
         $account = Account::find($id);
         $account->username = $request->input('username');
         $account->email = $request->input('email');
         $account->password = bcrypt($request->input('password'));
+        $account->learner_id = $request->input('learner_id');
+        $account->roles = $request->input('roles');
         $account->save();
 
         return redirect()->route('accountmanagement.index')->with('success', 'Account updated successfully!');
     }
-
-    public function destroy($id)
-    {
-        $account = Account::find($id);
-        $account->delete();
-
-        return redirect()->route('accountmanagement.index')->with('success', 'Account deleted successfully!');
-    }
 }
+
