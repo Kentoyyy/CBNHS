@@ -167,20 +167,19 @@
             <h3 onclick="toggleSubmenu('year-submenu')">Issuances by year <i class="fas fa-chevron-down arrow"></i></h3>
             <div id="year-submenu" class="nav-submenu">
                 <div class="nav-item">
-                    <a href="#">2024</a>
+                <a href="{{ url('issuances/2024') }}">2024</a>
                 </div>
                 <div class="nav-item">
-                    <a href="inssuances23">2023</a>
+                <a href="{{ url('issuances/2023') }}">2023</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">2022</a>
+                <a href="{{ url('issuances/2022') }}">2022</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">2021</a>
+                <a href="{{ url('issuances/2021') }}">2021</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#">2020</a>
-                </div>
+                <a href="{{ url('issuances/2020') }}">2020</a>
             </div>
         </div>
 
