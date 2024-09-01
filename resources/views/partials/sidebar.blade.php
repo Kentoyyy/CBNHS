@@ -55,7 +55,7 @@
         }
 
         .sidebar-menu a.active {
-            background-color: #3925ab;
+            background-color: #1a62a5;
         }
 
         .sidebar-menu i {
