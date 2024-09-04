@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountManagementController;
-
+use App\Http\Controllers\IssuancesController;
 // Welcome and Static Pages
 Route::view('/', 'welcome');
 Route::view('/mission', 'pages.about-mission');
@@ -15,19 +15,19 @@ Route::view('/staff', 'pages.staff');
 Route::view('/deped-memo', 'pages.deped-memo');
 Route::view('/advisories', 'pages.deped-advisories');
 Route::view('/orders', 'pages.deped-orders');
-Route::view('/inssuances', 'pages.inssuances');
+
 Route::view('/supportservices', 'pages.supportservices');
 Route::view('/faculty', 'pages.faculty');
 Route::view('/resources', 'pages.resources');
 
-// Issuances by Year (Group them together for better organization)
-Route::prefix('issuances')->group(function () {
-    Route::view('/2020', 'pages.issuancesitems.2020');
-    Route::view('/2021', 'pages.issuancesitems.2021');
-    Route::view('/2022', 'pages.issuancesitems.2022');
-    Route::view('/2023', 'pages.issuancesitems.2023');
-    Route::view('/2024', 'pages.issuancesitems.2024');
+Route::get('/inssuances', function () {
+    return view('pages.inssuances');
 });
+
+
+
+Route::get('/load-issuances/{year}', [IssuancesController::class, 'show']);
+
 
 // Student Portal Routes
 Route::prefix('student')->group(function () {

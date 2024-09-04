@@ -167,19 +167,20 @@
             <h3 onclick="toggleSubmenu('year-submenu')">Issuances by year <i class="fas fa-chevron-down arrow"></i></h3>
             <div id="year-submenu" class="nav-submenu">
                 <div class="nav-item">
-                <a href="{{ url('issuances/2024') }}">2024</a>
+                    <a href="#" onclick="loadIssuances(2024)">2024</a>
                 </div>
                 <div class="nav-item">
-                <a href="{{ url('issuances/2023') }}">2023</a>
+                    <a href="#" onclick="loadIssuances(2023)">2023</a>
                 </div>
                 <div class="nav-item">
-                <a href="{{ url('issuances/2022') }}">2022</a>
+                    <a href="#" onclick="loadIssuances(2022)">2022</a>
                 </div>
                 <div class="nav-item">
-                <a href="{{ url('issuances/2021') }}">2021</a>
+                    <a href="#" onclick="loadIssuances(2021)">2021</a>
                 </div>
                 <div class="nav-item">
-                <a href="{{ url('issuances/2020') }}">2020</a>
+                    <a href="#" onclick="loadIssuances(2020)">2020</a>
+                </div>
             </div>
         </div>
 
@@ -193,20 +194,9 @@
                     <th>Date</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href="{{ asset('documents/DM_No_413_s_2024.pdf') }}" target="_blank">DM No. 413, s. 2024</a></td>
-                    <td>Memorandum</td>
-                    <td>Distribution of Special Needs Education (SNED) Supplies and Equipment 2024 from the Local Government Unit (LGU)</td>
-                    <td>08/13/2024</td>
-                </tr>
-                <tr>
-                    <td><a href="{{ asset('documents/DM_No_412_s_2024.pdf') }}" target="_blank">DM No. 412, s. 2024</a></td>
-                    <td>Memorandum</td>
-                    <td>Submission of Application for Special Education Teacher I (SPET) in the City Schools Division of Bacoor</td>
-                    <td>08/13/2024</td>
-                </tr>
-                <!-- Add more rows as needed -->
+            <tbody id="issuances-table-body">
+               
+
             </tbody>
         </table>
     </div>
@@ -233,6 +223,20 @@
             header.classList.add('active');
         }
     }
+
+    function loadIssuances(year) {
+    $.ajax({
+        url: '/load-issuances/' + year,
+        method: 'GET',
+        success: function(response) {
+            console.log(response); // Check what is returned by the server
+            $('#issuances-table-body').html(response);
+        },
+        error: function() {
+            alert('Failed to load data.');
+        }
+    });
+}
 </script>
 @endsection
 
