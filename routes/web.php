@@ -43,22 +43,11 @@ Route::get('/inssuances', function () {
     return view('pages.inssuances');
 });
 
-Route::get('/inssuances23', function () {
-    return view('pages.issuancesitems.2023');
-});
-Route::get('/inssuances24', function () {
-    return view('pages.issuancesitems.2024');
-});
-Route::get('/inssuances22', function () {
-    return view('pages.issuancesitems.2022');
-});
+use App\Http\Controllers\IssuancesController;
 
-Route::get('/inssuances21', function () {
-    return view('pages.issuancesitems.2021');
-});
-Route::get('/inssuances20', function () {
-    return view('pages.issuancesitems.2020');
-});
+Route::get('/load-issuances/{year}', [IssuancesController::class, 'show']);
+
+
 
 
 
