@@ -11,22 +11,21 @@ class AccountManagementController extends Controller
 {
     public function index()
     {
-        $students = Account::where('roles', 'student')->get();
-        return view('pages.admin.accountmanagement', compact('students'));
+        $students = Account::all();
+        $teachers = Account::where('role', 'teacher')->get();
+        return view('pages.admin.accountmanagement', compact('students', 'teachers'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required|string',
-            'email' => 'required|string|email|unique:accounts',
-            'password' => 'required|string|confirmed',
-            'learner_id' => 'required|integer|unique:accounts',
+            'email' => 'required|string|email|unique:accounts,email',
+            'password' => 'required|string',
+            'learner_id' => 'required|integer',
             'roles' => 'required|string',
         ]);
 
         $account = new Account();
-        $account->username = $request->input('username');
         $account->email = $request->input('email');
         $account->password = bcrypt($request->input('password'));
         $account->learner_id = $request->input('learner_id');
@@ -39,15 +38,13 @@ class AccountManagementController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'username' => 'required|string',
             'email' => 'required|string|email|unique:accounts,email,' . $id,
-            'password' => 'required|string|confirmed',
-            'learner_id' => 'required|integer|unique:accounts,learner_id,' . $id,
+            'password' => 'required|string',
+            'learner_id' => 'required|integer',
             'roles' => 'required|string',
         ]);
 
         $account = Account::find($id);
-        $account->username = $request->input('username');
         $account->email = $request->input('email');
         $account->password = bcrypt($request->input('password'));
         $account->learner_id = $request->input('learner_id');
@@ -57,4 +54,3 @@ class AccountManagementController extends Controller
         return redirect()->route('accountmanagement.index')->with('success', 'Account updated successfully!');
     }
 }
-

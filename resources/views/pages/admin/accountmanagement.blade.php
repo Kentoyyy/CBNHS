@@ -46,29 +46,27 @@
                             <h3>Student List</h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="small-col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col" class="text-center">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($students as $student)
-                                    <tr class="account-row">
-                                        <th scope="row">{{ $student->id }}</th>
-                                        <td>{{ $student->name }}</td>
-                                        <td>{{ $student->email }}</td>
-                                        <td class="text-center">
-                                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="{{ route('students.destroy', $student->id) }}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="small-col">#</th>
+                            <th scope="col">Email</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($students as $student)
+                        <tr class="account-row">
+                            <th scope="row">{{ $student->learner_id }}</th>
+                            <td>{{ $student->email }}</td>
+                            <td class="text-center">
+                                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                <a href="{{ route('students.destroy', $student->id) }}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
                             <!-- Pagination -->
                             {{ $students->links() }}

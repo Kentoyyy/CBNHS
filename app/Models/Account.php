@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model
 {
-    protected $fillable = ['username', 'email', 'password', 'learner_id', 'roles'];
+    protected $fillable = ['email', 'password', 'learner_id', 'roles'];
 
     protected $hidden = [
         'password',

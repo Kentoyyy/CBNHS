@@ -61,6 +61,7 @@ Route::prefix('admin')->group(function () {
     Route::view('/accountmanagement', 'pages.admin.accountmanagement')->name('accountmanagement.index');
     Route::view('/profile', 'pages.admin.profile');
 
+    Route::view('/accountmanagement', 'pages.admin.accountmanagement')->name('accountmanagement.index');
     Route::get('students', [AccountManagementController::class, 'index'])->name('students.index');
     Route::post('students', [AccountManagementController::class, 'store'])->name('students.store');
     Route::get('students/{id}/edit', [AccountManagementController::class, 'edit'])->name('students.edit');
