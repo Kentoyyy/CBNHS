@@ -14,21 +14,31 @@
                 <h2>Student Accounts</h2>
             </div>
             <div class="card-body">
-                <form class="account-form mb-4">
-                    <div class="form-group">
-                        <label for="student-id">Student ID</label>
-                        <input type="text" id="student-id" class="form-control" placeholder="Enter student ID">
-                    </div>
-                    <div class="form-group">
-                        <label for="student-name">Student Name</label>
-                        <input type="text" id="student-name" class="form-control" placeholder="Enter student name">
-                    </div>
-                    <div class="form-group">
-                        <label for="student-email">Student Email</label>
-                        <input type="email" id="student-email" class="form-control" placeholder="Enter student email">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add Student</button>
-                </form>
+            <form action="{{ route('students.store') }}" method="POST" class="account-form mb-4">
+                @csrf
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" class="form-control" placeholder="Enter student ID">
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" name="student_name" class="form-control" placeholder="Enter student name">
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Student Email</label>
+                    <input type="email" id="student-email" name="student_email" class="form-control" placeholder="Enter student email">
+                </div>
+                <div class="form-group">
+                    <label for="learner-id">Learner ID</label>
+                    <input type="text" id="learner-id" name="learner_id" class="form-control" placeholder="Enter learner ID" value="{{ old('learner_id') }}">
+                </div>
+                <div class="form-group">
+                    <label for="roles">Roles</label>
+                    <input type="text" id="roles" name="roles" class="form-control" placeholder="Enter roles" value="{{ old('roles') }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Student</button>
+            </form>
+
 
                 <div class="table-responsive">
                     <div class="card table-card">
@@ -36,44 +46,30 @@
                             <h3>Student List</h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="small-col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col" class="text-center">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Example of student row -->
-                                    <tr class="account-row">
-                                        <th scope="row">1</th>
-                                        <td>John Doe</td>
-                                        <td>johndoe@example.com</td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <!-- Repeat for each student -->
-                                </tbody>
-                            </table>
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="small-col">#</th>
+                            <th scope="col">Email</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($students as $student)
+                        <tr class="account-row">
+                            <th scope="row">{{ $student->learner_id }}</th>
+                            <td>{{ $student->email }}</td>
+                            <td class="text-center">
+                                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                <a href="{{ route('students.destroy', $student->id) }}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
                             <!-- Pagination -->
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center mt-4">
-                                    <li class="page-item disabled">
-                                        <span class="page-link">Previous</span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            {{ $students->links() }}
                         </div>
                     </div>
                 </div>
@@ -116,20 +112,21 @@
                                         <th scope="col">Email</th>
                                         <th scope="col" class="text-center">Actions</th>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Example of teacher row -->
-                                    <tr class="account-row">
-                                        <th scope="row">1</th>
-                                        <td>Jane Smith</td>
-                                        <td>janesmith@example.com</td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
-                                        </td>
-                                    </tr>
-                                    <!-- Repeat for each teacher -->
-                                </tbody>
+                        </thead>
+                        <tbody>
+                            @foreach($teachers as $teacher)
+                            <tr class="account-row">
+                                <th scope="row">{{ $teacher->id }}</th>
+                                <td>{{ $teacher->name }}</td>
+                                <td>{{ $teacher->email }}</td>
+                                <td class="text-center">
+                                    <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                    <a href="{{ route('teachers.destroy', $teacher->id) }}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+
                             </table>
 
                             <!-- Pagination -->
@@ -153,7 +150,8 @@
         </div>
     </div>
 </div>
-
+@endsection
+@section('style')
 <style>
     body {
         background-color: #f8f9fa;

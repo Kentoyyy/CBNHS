@@ -1,174 +1,70 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountManagementController;
+use App\Http\Controllers\IssuancesController;
+// Welcome and Static Pages
+Route::view('/', 'welcome');
+Route::view('/mission', 'pages.about-mission');
+Route::view('/teacher', 'pages.dashboard-teacher');
+Route::view('/events', 'pages.events');
+Route::view('/admission', 'pages.admission');
+Route::view('/intendent', 'pages.about-intendent');
+Route::view('/administrator', 'pages.administrator');
+Route::view('/staff', 'pages.staff');
+Route::view('/deped-memo', 'pages.deped-memo');
+Route::view('/advisories', 'pages.deped-advisories');
+Route::view('/orders', 'pages.deped-orders');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/mission', function () {
-    return view('pages.about-mission');
-});
-
-Route::get('/teacher', function () {
-    return view('pages.dashboard-teacher');
-});
-
-Route::get('/events', function () {
-    return view('pages.events');
-});
-Route::get('/admission', function () {
-    return view('pages.admission');
-});
-Route::get('/intendent', function () {
-    return view('pages.about-intendent');
-});
-Route::get('/administrator', function () {
-    return view('pages.administrator');
-});
-Route::get('/staff', function () {
-    return view('pages.staff');
-});
-Route::get('/deped-memo', function () {
-    return view('pages.deped-memo');
-});
-Route::get('/advisories', function () {
-    return view('pages.deped-advisories');
-});
-Route::get('/orders', function () {
-    return view('pages.deped-orders');
-});
+Route::view('/supportservices', 'pages.supportservices');
+Route::view('/faculty', 'pages.faculty');
+Route::view('/resources', 'pages.resources');
 
 Route::get('/inssuances', function () {
     return view('pages.inssuances');
 });
 
-use App\Http\Controllers\IssuancesController;
+
 
 Route::get('/load-issuances/{year}', [IssuancesController::class, 'show']);
 
 
-
-
-
-
-
-
-
-
-Route::get('/supportservices', function () {
-    return view('pages.supportservices');
-});
-Route::get('/faculty', function () {
-    return view('pages.faculty');
-});
-Route::get('/test', function () {
-    return view('nav.intendent');
-});
-Route::get('/resources', function () {
-    return view('pages.resources');
-});
-Route::get('/student', function () {
-    return view('pages.studentportal.student-portal');
-});
-Route::get('/faqportal', function () {
-    return view('pages.studentportal.faqportal');
-});
-// routes/web.php
-Route::get('/dashboardlayout', function () {
-    return view('layouts.portal-layout');
-});
-Route::get('/dashboard', function () {
-    return view('pages.studentportal.dashboard');
+// Student Portal Routes
+Route::prefix('student')->group(function () {
+    Route::view('/portal', 'pages.studentportal.student-portal');
+    Route::view('/faq', 'pages.studentportal.faqportal');
+    Route::view('/dashboard', 'pages.studentportal.dashboard');
+    Route::view('/grades', 'pages.studentportal.grades');
+    Route::view('/announcement', 'pages.studentportal.announcement');
+    Route::view('/examination', 'pages.studentportal.examination');
+    Route::view('/profile', 'pages.studentportal.profile');
+    Route::view('/schedule', 'pages.studentportal.class-schedule');
+    Route::view('/guideenrollment', 'pages.studentportal.guideenrollment');
 });
 
-Route::get('/grades', function () {
-    return view('pages.studentportal.grades');
-});
-Route::get('/announcement', function () {
-    return view('pages.studentportal.announcement');
-});
-Route::get('/examination', function () {
-    return view('pages.studentportal.examination');
-});
-Route::get('/announcement', function () {
-    return view('pages.studentportal.announcement');
-});
-Route::get('/profile', function () {
-    return view('pages.studentportal.profile');
-});
-Route::get('/schedule', function () {
-    return view('pages.studentportal.class-schedule');
-});
-Route::get('/guideenrollment', function () {
-    return view('pages.studentportal.guideenrollment');
+// Teacher Portal Routes
+Route::prefix('teacher')->group(function () {
+    Route::view('/portal', 'pages.teacherportal.teacher-portal-landing');
+    Route::view('/dashboard', 'pages.teacherportal.teacherdashboard');
+    Route::view('/managestudent', 'pages.teacherportal.teacher-students');
+    Route::view('/gradestudent', 'pages.teacherportal.teacher-grades');
+    Route::view('/profile', 'pages.teacherportal.teacher-profile');
+    Route::view('/schedule', 'pages.teacherportal.teacher-schedule');
 });
 
+// Admin Portal Routes
+Route::prefix('admin')->group(function () {
+    Route::view('/landing', 'pages.admin.landing');
+    Route::view('/dashboard', 'pages.admin.dashboard');
+    Route::view('/subjectmanagement', 'pages.admin.subjectmanagement');
+    Route::view('/postmanagement', 'pages.admin.postmanagement');
+    Route::view('/accountmanagement', 'pages.admin.accountmanagement')->name('accountmanagement.index');
+    Route::view('/profile', 'pages.admin.profile');
 
-Route::get('/teacherportal', function () {
-    return view('pages.teacherportal.teacher-portal-landing');
+    Route::view('/accountmanagement', 'pages.admin.accountmanagement')->name('accountmanagement.index');
+    Route::get('students', [AccountManagementController::class, 'index'])->name('students.index');
+    Route::post('students', [AccountManagementController::class, 'store'])->name('students.store');
+    Route::get('students/{id}/edit', [AccountManagementController::class, 'edit'])->name('students.edit');
+    Route::put('students/{id}', [AccountManagementController::class, 'update'])->name('students.update');
+    Route::delete('students/{id}', [AccountManagementController::class, 'destroy'])->name('students.destroy');
 });
-Route::get('/teacherdashboard', function () {
-    return view('layouts.teacherportal-layout');
-});
-
-Route::get('/teacherdashboard', function () {
-    return view('pages.teacherportal.teacherdashboard');
-});
-Route::get('/managestudent', function () {
-    return view('pages.teacherportal.teacher-students');
-});
-Route::get('/teachergradestudent', function () {
-    return view('pages.teacherportal.teacher-grades');
-});
-Route::get('/teacherprofile', function () {
-    return view('pages.teacherportal.teacher-profile');
-});
-Route::get('/teacherschedule', function () {
-    return view('pages.teacherportal.teacher-schedule');
-});
-
-Route::get('/adminlayout', function () {
-    return view('layouts.admin-layout');
-});
-
-Route::get('/adminlanding', function () {
-    return view('pages.admin.landing');
-});
-Route::get('/admindashboard', function () {
-    return view('pages.admin.dashboard');
-});
-
-
-Route::get('/adminusermanagement', function () {
-    return view('pages.admin.usermanagement');
-
-});
-Route::get('/adminsubjectmanagement', function () {
-    return view('pages.admin.subjectmanagement');
-
-});
-Route::get('/postmanagement', function () {
-    return view('pages.admin.postmanagement');
-
-});
-Route::get('/accountmanagement', function () {
-    return view('pages.admin.accountmanagement');
-
-});
-Route::get('/adminprofile', function () {
-    return view('pages.admin.profile');
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
