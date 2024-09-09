@@ -285,8 +285,8 @@ hr {
             </div>
             <div class="col-lg-4">
                 <div class="schoolDivision">
-                    <h3>Welcome to NBHS - Springville</h3>
-                    <p>Welcome to the official website of National Bacoor High School - Springville, located in Bacoor, Cavite, Philippines. It is a public secondary school offering free and quality education managed by the Philippine Department of Education (DepEd).</p>
+                    <h3>Welcome to CBNHS - Springville</h3>
+                    <p>Welcome to the official website of City of Bacoor National High School - Springville, located in Bacoor, Cavite, Philippines. It is a public secondary school offering free and quality education managed by the Philippine Department of Education (DepEd).</p>
                     <a href="#" class="read-more-btn">Read more</a>
                 </div>
             </div>
