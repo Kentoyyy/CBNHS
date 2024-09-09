@@ -11,7 +11,7 @@
         position: relative;
         padding: 50px 90px;
         color: #fff;
-        height: 30vh; /* Adjust the height as needed */
+        height: 70vh; /* Adjust the height as needed */
         overflow: hidden; /* Ensure content does not overflow */
     }
 
@@ -28,14 +28,20 @@
 
     .overlay-text {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 60%;
+        left: 15%;
         transform: translate(-50%, -50%);
         font-size: 2rem;
         font-weight: bold;
         color: white;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         text-align: center;
+    }
+    .overlay-subtext {
+        position: absolute;
+        top: 70%;
+        left: 7%;
+        width: 80%;
     }
 
     /* Back button styles */
@@ -69,10 +75,10 @@
         line-height: 1.6;
     }
 
-    .content h2 {
+    .content h1 {
         color: #0B4F91; /* Dark blue color */
         font-weight: bold;
-        font-size: 18px;
+        font-size: 32px;
         margin-bottom: 20px;
     }
 
@@ -92,26 +98,125 @@
         margin-bottom: 10px;
     }
 
-    .step {
-        margin-bottom: 40px;
-    }
+    /* Style for the collapsible button */
+.collapsible-btn-req {
+    background-color: #0B4F91;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    width: 900px;
+    text-align: left;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Ensure content is spaced out */
+    align-items: center;
+}
 
-    .step img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 5px;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    }
+/* Arrow icon (default pointing down) */
+.collapsible-btn-req::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    font-size: 16px;
+    position: absolute;
+    right: 10px; /* Adjust positioning */
+    transition: transform 0.3s; /* Smooth transition when rotated */
+}
 
-    .step h3 {
-        color: #0B4F91; /* Dark blue color */
-        font-size: 16px;
-        margin-top: 10px;
-        font-weight: bold;
+.collapsible-content-req {
+      padding: 0 18px;
+      max-height: 0; /* Initially hidden */
+      transition: max-height 0.5s ease-out;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      margin-top: 1px;
+      width: 900px;
     }
+/* Arrow icon when content is expanded (pointing up) */
+.collapsible-btn-req.active::after {
+    content: '\25B2'; /* Unicode for up arrow */
+}
+    /* Style for the collapsible button */
+.collapsible-btn-step {
+    margin-top: 10px;
+    background-color: #0B4F91;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    width: 900px;
+    text-align: left;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Ensure content is spaced out */
+    align-items: center;
+}
 
-    .step p {
-        font-size: 14px;
+/* Arrow icon (default pointing down) */
+.collapsible-btn-step::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    font-size: 16px;
+    position: absolute;
+    right: 10px; /* Adjust positioning */
+    transition: transform 0.3s; /* Smooth transition when rotated */
+}
+
+/* Arrow icon when content is expanded (pointing up) */
+.collapsible-btn-step.active::after {
+    content: '\25B2'; /* Unicode for up arrow */
+}
+
+    /* Style for the content inside the collapsible div */
+    .collapsible-content-step {
+      padding: 0 18px;
+      max-height: 0; /* Initially hidden */
+      transition: max-height 0.5s ease-out;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      margin-top: 1px;
+      width: 900px;
+    }
+    /* Style for the collapsible button */
+    .collapsible-btn-trans {
+    margin-top: 10px;
+    background-color: #0B4F91;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    width: 900px;
+    text-align: left;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Ensure content is spaced out */
+    align-items: center;
+}
+
+/* Arrow icon (default pointing down) */
+.collapsible-btn-trans::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    font-size: 16px;
+    position: absolute;
+    right: 10px; /* Adjust positioning */
+    transition: transform 0.3s; /* Smooth transition when rotated */
+}
+
+/* Arrow icon when content is expanded (pointing up) */
+.collapsible-btn-trans.active::after {
+    content: '\25B2'; /* Unicode for up arrow */
+}
+
+    /* Style for the content inside the collapsible div */
+    .collapsible-content-trans {
+      padding: 0 18px;
+      max-height: 0; /* Initially hidden */
+      transition: max-height 0.5s ease-out;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      margin-top: 1px;
+      width: 900px;
     }
 </style>
 @endsection
@@ -123,7 +228,9 @@
 <div class="header container-fluid">
     <div class="homeContainer">
         <img src="{{ asset('images/ourmission.jpg') }}" alt="Background Image" class="backgroundImage">
-        <div class="overlay-text">ADMISSION</div>
+        <div class="overlay-text">ADMISSIONS
+        </div>
+        <div class="overlay-subtext">The school serves students residing in the nearby community. As a government-funded institution, it does not impose tuition fees or any miscellaneous charges on any student. Nevertheless, there might be voluntary contributions for those who choose to participate in various school organizations.</div>
     </div>
 </div>
 
@@ -134,29 +241,15 @@
 
 <!-- Content section with admission information -->
 <div class="content">
-    <p>The school serves students residing in the nearby community. As a government-funded institution, it does not impose tuition fees or any miscellaneous charges on any student. Nevertheless, there might be voluntary contributions for those who choose to participate in various school organizations.</p>
-    
-    <h2>HOW TO ENROLL IN JUNIOR HIGH SCHOOL</h2>
+    <h1>HOW TO ENROLL IN JUNIOR HIGH SCHOOL</h1>
     <p>Follow these steps to enroll your child in Junior High School:</p>
-    
-    <!-- Step-by-step instructions -->
-    <div class="step">
-        <img src="{{ asset('images/step1.jpg') }}" alt="Visit Admission Office">
-        <h3>Step 1: Visit the School’s Admission Office</h3>
-        <p>Go to the school's admission office or visit our official website to get the enrollment form.</p>
-    </div>
 
-    <div class="step">
-        <img src="{{ asset('images/step2.jpg') }}" alt="Fill Out Form">
-        <h3>Step 2: Fill Out the Enrollment Form</h3>
-        <p>Complete the form with accurate information about the student.</p>
-    </div>
+    <button class="collapsible-btn-req">REQUIREMENTS</button>
 
-    <div class="step">
-        <img src="{{ asset('images/step3.jpg') }}" alt="Submit Documents">
-        <h3>Step 3: Submit the Required Documents</h3>
-        <p>Provide the following documents:
+    <!-- Collapsible content -->
+    <div class="collapsible-content-req">
             <ul>
+                <br>
                 <li>Original and photocopy of Birth Certificate</li>
                 <li>Original and photocopy of Form 138 (Report Card)</li>
                 <li>Original and photocopy of Certificate of Good Moral Character</li>
@@ -164,20 +257,43 @@
                 <li>Proof of Residence (e.g., Barangay Certificate)</li>
                 <li>Additional documents may be required based on specific school requirements.</li>
             </ul>
-        </p>
-    </div>
+        </div>
+    
 
-    <div class="step">
-        <img src="{{ asset('images/step4.jpg') }}" alt="Attend Orientation">
-        <h3>Step 4: Attend the Scheduled Orientation</h3>
-        <p>If applicable, attend the orientation session to learn more about the school and the enrollment process.</p>
-    </div>
+    <button class="collapsible-btn-step">PROCEDURE</button>
 
-    <div class="step">
-        <img src="{{ asset('images/step5.jpg') }}" alt="Complete Additional Requirements">
-        <h3>Step 5: Complete Any Additional Requirements</h3>
-        <p>Follow any additional instructions provided by the school to finalize the enrollment process.</p>
-    </div>
+    <!-- Collapsible content -->
+    <div class="collapsible-content-step">
+            <ul>
+                <br>
+                <li><h4>Step 1</h4>
+                Visit the School's Admission Office</li>
+                <li><h4>Step 2</h4>
+                Fill out the Enrollment Form</li>
+                <li><h4>Step 3</h4>
+                Submit the Required Documents</li>
+                <li><h4>Step 4</h4>
+                Attend the Scheduled Orientation</li>
+                <li><h4>Step 5</h4>
+                Complete the Additional Requirements</li>
+            </ul>
+        </div>
+
+    <button class="collapsible-btn-trans">TRANSFEREES</button>
+
+    <!-- Collapsible content -->
+    <div class="collapsible-content-trans">
+            <ul>
+                <br>
+                <li>Original Copy of Form 137</li>
+                <li>Original and photocopy of Birth Certificate</li>
+                <li>Original and photocopy of Form 138 (Report Card)</li>
+                <li>Original and photocopy of Certificate of Good Moral Character</li>
+                <li>Recent 1x1 or 2x2 photo (usually 2 copies)</li>
+                <li>Proof of Residence (e.g., Barangay Certificate)</li>
+                <li>Additional documents may be required based on specific school requirements.</li>
+            </ul>
+        </div>
 </div>
 
 @endsection
@@ -189,6 +305,53 @@
     function goBack() {
         window.history.back();
     }
+    // Get the button and the collapsible content for the Requirements
+var collapsibleBtn = document.querySelector('.collapsible-btn-req');
+var collapsibleContent = document.querySelector('.collapsible-content-req');
+
+// Add click event listener to the button
+collapsibleBtn.addEventListener('click', function() {
+    // Toggle between hiding and showing the collapsible content
+    if (collapsibleContent.style.maxHeight) {
+        collapsibleContent.style.maxHeight = null; // Collapse the content
+        collapsibleBtn.classList.remove('active'); // Remove 'active' class (arrow down)
+    } else {
+        collapsibleContent.style.maxHeight = collapsibleContent.scrollHeight + "px"; // Expand the content
+        collapsibleBtn.classList.add('active'); // Add 'active' class (arrow up)
+    }
+});
+
+// Get the button and the collapsible content for the Procedure
+var collapsibleBtn2 = document.querySelector('.collapsible-btn-step');
+var collapsibleContent2 = document.querySelector('.collapsible-content-step');
+
+// Add click event listener to the button
+collapsibleBtn2.addEventListener('click', function() {
+    // Toggle between hiding and showing the collapsible content
+    if (collapsibleContent2.style.maxHeight) {
+        collapsibleContent2.style.maxHeight = null; // Collapse the content
+        collapsibleBtn2.classList.remove('active'); // Remove 'active' class (arrow down)
+    } else {
+        collapsibleContent2.style.maxHeight = collapsibleContent2.scrollHeight + "px"; // Expand the content
+        collapsibleBtn2.classList.add('active'); // Add 'active' class (arrow up)
+    }
+});
+
+// Get the button and the collapsible content for the Procedure
+var collapsibleBtn3 = document.querySelector('.collapsible-btn-trans');
+var collapsibleContent3 = document.querySelector('.collapsible-content-trans');
+
+// Add click event listener to the button
+collapsibleBtn3.addEventListener('click', function() {
+    // Toggle between hiding and showing the collapsible content
+    if (collapsibleContent3.style.maxHeight) {
+        collapsibleContent3.style.maxHeight = null; // Collapse the content
+        collapsibleBtn3.classList.remove('active'); // Remove 'active' class (arrow down)
+    } else {
+        collapsibleContent3.style.maxHeight = collapsibleContent3.scrollHeight + "px"; // Expand the content
+        collapsibleBtn3.classList.add('active'); // Add 'active' class (arrow up)
+    }
+});
 </script>
 @endsection
 
