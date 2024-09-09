@@ -15,19 +15,11 @@ Route::view('/staff', 'pages.staff');
 Route::view('/deped-memo', 'pages.deped-memo');
 Route::view('/advisories', 'pages.deped-advisories');
 Route::view('/orders', 'pages.deped-orders');
-
 Route::view('/supportservices', 'pages.supportservices');
 Route::view('/faculty', 'pages.faculty');
 Route::view('/resources', 'pages.resources');
-
-Route::get('/inssuances', function () {
-    return view('pages.inssuances');
-});
-
-
-
+Route::get('/issuances', fn() => view('pages.issuances'));
 Route::get('/load-issuances/{year}', [IssuancesController::class, 'show']);
-
 
 // Student Portal Routes
 Route::prefix('student')->group(function () {
@@ -58,13 +50,22 @@ Route::prefix('admin')->group(function () {
     Route::view('/dashboard', 'pages.admin.dashboard');
     Route::view('/subjectmanagement', 'pages.admin.subjectmanagement');
     Route::view('/postmanagement', 'pages.admin.postmanagement');
-    Route::view('/accountmanagement', 'pages.admin.accountmanagement')->name('accountmanagement.index');
     Route::view('/profile', 'pages.admin.profile');
-
-    Route::view('/accountmanagement', 'pages.admin.accountmanagement')->name('accountmanagement.index');
-    Route::get('students', [AccountManagementController::class, 'index'])->name('students.index');
-    Route::post('students', [AccountManagementController::class, 'store'])->name('students.store');
-    Route::get('students/{id}/edit', [AccountManagementController::class, 'edit'])->name('students.edit');
-    Route::put('students/{id}', [AccountManagementController::class, 'update'])->name('students.update');
-    Route::delete('students/{id}', [AccountManagementController::class, 'destroy'])->name('students.destroy');
+    
+    // Account Management Routes
+    Route::get('/accountmanagement', [AccountManagementController::class, 'index'])->name('accountmanagement.index');
+    
+    // Student Routes
+    Route::post('/students', [AccountManagementController::class, 'store'])->name('students.store');
+    Route::get('/students/{id}/edit', [AccountManagementController::class, 'edit'])->name('students.edit');
+    Route::put('/students/{id}', [AccountManagementController::class, 'update'])->name('students.update');
+    Route::delete('/students/{id}', [AccountManagementController::class, 'destroy'])->name('students.destroy');
+    
+    // Teacher Routes
+    Route::get('/teachers/{id}/edit', [AccountManagementController::class, 'editTeacher'])->name('teachers.edit');
+    Route::put('/teachers/{id}', [AccountManagementController::class, 'updateTeacher'])->name('teachers.update');
+    Route::delete('/teachers/{id}', [AccountManagementController::class, 'destroyTeacher'])->name('teachers.destroy');
+    
+    // Resource Controller for Teachers
+    Route::resource('teachers', TeacherController::class)->except(['edit', 'update']);
 });

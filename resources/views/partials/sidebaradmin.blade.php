@@ -10,6 +10,9 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            position: fixed; /* Keep the sidebar fixed */
+            top: 0;
+            left: 0;
         }
 
         .sidebar-header {
@@ -79,6 +82,8 @@
         .logout-button:hover {
             background-color: #241e95;
         }
+
+
     </style>
     <div class="sidebar-header">
         <img src="{{ asset('images/logoschool.png') }}" alt="Logo">
