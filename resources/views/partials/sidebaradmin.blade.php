@@ -3,7 +3,8 @@
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
         .sidebar {
-            width: 220px;
+            width: 230px;
+            font-size: 15px;
             background-color: #083a68;
             color: #ecf0f1;
             padding: 15px;
