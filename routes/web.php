@@ -60,12 +60,15 @@ Route::prefix('admin')->group(function () {
     Route::get('/students/{id}/edit', [AccountManagementController::class, 'edit'])->name('students.edit');
     Route::put('/students/{id}', [AccountManagementController::class, 'update'])->name('students.update');
     Route::delete('/students/{id}', [AccountManagementController::class, 'destroy'])->name('students.destroy');
-    
+    Route::get('/students/create', [AccountManagementController::class, 'createStudent'])->name('students.create');
+    Route::post('/students', [AccountManagementController::class, 'storeStudent'])->name('students.store');
+
     // Teacher Routes
-    Route::get('/teachers/{id}/edit', [AccountManagementController::class, 'editTeacher'])->name('teachers.edit');
-    Route::put('/teachers/{id}', [AccountManagementController::class, 'updateTeacher'])->name('teachers.update');
-    Route::delete('/teachers/{id}', [AccountManagementController::class, 'destroyTeacher'])->name('teachers.destroy');
-    
-    // Resource Controller for Teachers
-    Route::resource('teachers', TeacherController::class)->except(['edit', 'update']);
+    Route::get('/teachers/{id}/edit', [AccountManagementController::class, 'edit'])->name('teachers.edit');
+    Route::put('/teachers/{id}', [AccountManagementController::class, 'update'])->name('teachers.update');
+    Route::delete('/teachers/{id}', [AccountManagementController::class, 'destroy'])->name('teachers.destroy');
+    // Routes for managing teachers
+    Route::get('/teachers/create', [AccountManagementController::class, 'createTeacher'])->name('teachers.create');
+    Route::post('/teachers', [AccountManagementController::class, 'storeTeacher'])->name('teachers.store');
+
 });

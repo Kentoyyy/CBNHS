@@ -4,10 +4,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class AccountDetail extends Model
+class accountdetail extends Model
 {
-    protected $fillable = ['student_id', 'teacher_id', 'name', 'grade_level', 'grades', 'position', 'major', 'phone_number'];
+    use HasFactory;
+    protected $table = 'account_details';
+    protected $fillable = ['student_id', 'teacher_id', 'name', 'grade_level', 'position', 'major', 'phone_number'];
 
     public function student()
     {
@@ -18,4 +21,5 @@ class AccountDetail extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+
 }

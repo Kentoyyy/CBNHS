@@ -11,9 +11,9 @@
         <div class="card manage-students mb-4">
             <div class="card-header">
                 <h2>Student Accounts</h2>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal">
+                <a href="{{ route('students.create') }}" class="btn btn-primary">
                     Add Student
-                </button>
+                </a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -37,7 +37,7 @@
                                     <tr class="account-row">
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $student->learner_id }}</td>
-                                        <td>{{ $student->name }}</td>
+                                        <td>{{ $student->accountDetail->name ?? 'N/A' }}</td>
                                         <td>{{ $student->email }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
@@ -51,8 +51,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <!-- Pagination -->
-                            {{ $students->links() }}
                         </div>
                     </div>
                 </div>
@@ -63,9 +61,9 @@
         <div class="card manage-teachers">
             <div class="card-header">
                 <h2>Teacher Accounts</h2>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTeacherModal">
+                <a href="{{ route('teachers.create') }}" class="btn btn-primary">
                     Add Teacher
-                </button>
+                </a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -88,8 +86,8 @@
                                     @foreach($teachers as $teacher)
                                     <tr class="account-row">
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $teacher->learner_id }}</td>
-                                        <td>{{ $teacher->name }}</td>
+                                        <td>{{ $teacher->teacher_id }}</td>
+                                        <td>{{ $teacher->accountDetail->name ?? 'N/A' }}</td>
                                         <td>{{ $teacher->email }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
@@ -103,8 +101,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <!-- Pagination -->
-                  
                         </div>
                     </div>
                 </div>
@@ -112,12 +108,6 @@
         </div>
     </div>
 </div>
-
-<!-- Add Student Modal -->
-<!-- (Modal content unchanged) -->
-
-<!-- Add Teacher Modal -->
-<!-- (Modal content unchanged) -->
 @endsection
 
 @section('style')
@@ -198,15 +188,5 @@
 @endsection
 
 @section('scripts')
-<script>
-    $(document).ready(function () {
-        $('#addStudentModal').on('shown.bs.modal', function () {
-            $('#student-id').focus();
-        });
 
-        $('#addTeacherModal').on('shown.bs.modal', function () {
-            $('#teacher-id').focus();
-        });
-    });
-</script>
 @endsection

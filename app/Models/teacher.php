@@ -8,7 +8,7 @@ class Teacher extends Model
 {
     protected $fillable = ['learner_id', 'email', 'password'];
 
-    public function details()
+    public function accountDetail()
     {
         return $this->hasOne(AccountDetail::class, 'teacher_id');
     }
