@@ -61,7 +61,7 @@
 .time {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    background-color: rgba(0, 0, 0, 0.5);
+   
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
