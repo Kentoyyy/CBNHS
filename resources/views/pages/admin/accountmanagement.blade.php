@@ -11,7 +11,8 @@
         <div class="card manage-students mb-4">
             <div class="card-header">
                 <h2>Student Accounts</h2>
-                <a href="{{ route('students.create') }}" class="btn btn-primary">
+                <!-- Trigger the Add Student Modal -->
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addStudentModal">
                     Add Student
                 </a>
             </div>
@@ -40,7 +41,10 @@
                                         <td>{{ $student->accountDetail->name ?? 'N/A' }}</td>
                                         <td>{{ $student->email }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
+                                            <!-- Trigger Edit Student Modal -->
+                                            <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#editStudentModal{{ $student->id }}">
+                                                <i class="fa fa-edit"></i> Edit
+                                            </a>
                                             <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
@@ -48,6 +52,47 @@
                                             </form>
                                         </td>
                                     </tr>
+
+                                    <!-- Edit Student Modal -->
+                                    <div class="modal fade" id="editStudentModal{{ $student->id }}" tabindex="-1" role="dialog" aria-labelledby="editStudentModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editStudentModalLabel">Edit Student</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('students.update', $student->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <div class="form-group">
+                                                            <label for="name">Name</label>
+                                                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $student->accountDetail->name) }}" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $student->email) }}" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="learner_id">Student ID</label>
+                                                            <input type="text" class="form-control" id="learner_id" name="learner_id" value="{{ old('learner_id', $student->learner_id) }}" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="phone_number">Phone Number</label>
+                                                            <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ old('phone_number', $student->accountDetail->phone_number) }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="password">Password</label>
+                                                            <input type="password" class="form-control" id="password" name="password" placeholder="Leave blank to keep current password">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Update</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -61,7 +106,8 @@
         <div class="card manage-teachers">
             <div class="card-header">
                 <h2>Teacher Accounts</h2>
-                <a href="{{ route('teachers.create') }}" class="btn btn-primary">
+                <!-- Trigger the Add Teacher Modal -->
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addTeacherModal">
                     Add Teacher
                 </a>
             </div>
@@ -108,85 +154,90 @@
         </div>
     </div>
 </div>
+
+<!-- Add Student Modal -->
+<div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStudentModalLabel">Add Student</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('students.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="learner_id">Student ID</label>
+                        <input type="text" class="form-control" id="learner_id" name="learner_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Student</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Teacher Modal -->
+<div class="modal fade" id="addTeacherModal" tabindex="-1" role="dialog" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTeacherModalLabel">Add Teacher</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('teachers.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher_id">Teacher ID</label>
+                        <input type="text" class="form-control" id="teacher_id" name="teacher_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Teacher</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
-@section('style')
-<style>
-    body {
-        background-color: #f8f9fa;
-        font-family: 'Arial', sans-serif;
-        color: #333;
-    }
-
-    .admin-container {
-        padding: 20px;
-    }
-
-    .content-wrapper {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .page-title {
-        margin-bottom: 20px;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
-
-    .card-header {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .card-header h2, .card-header h3 {
-        margin: 0;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
-        padding: 8px 16px;
-    }
-
-    /* Pagination Styling */
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .pagination a {
-        font-size: 14px; /* Adjust pagination size */
-        padding: 6px 12px;
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .pagination a:hover {
-        background-color: #f0f0f0;
-    }
-
-    .pagination .active a {
-        font-weight: bold;
-        color: white;
-        background-color: #007bff;
-        border-radius: 5px;
-    }
-
-    /* Remove left and right arrow styles */
-    .pagination svg {
-        display: none;
-    }
-</style>
-@endsection
-
-@section('scripts')
-
-@endsection
+@push('scripts')
+<!-- Include Bootstrap JS -->
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+@endpush
