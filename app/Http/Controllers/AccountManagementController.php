@@ -31,7 +31,7 @@ class AccountManagementController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:students',
             'learner_id' => 'required|integer',
-            'phone_number' => 'required|string|max:15',
+            'phone_number' => 'required|string',
             'password' => 'required|string|min:8',
         ]);
 
@@ -62,7 +62,7 @@ class AccountManagementController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:teachers',
             'teacher_id' => 'required|integer',
-            'phone_number' => 'required|string|max:15',
+            'phone_number' => 'required|string',
             'password' => 'required|string|min:8',
         ]);
 
@@ -115,7 +115,7 @@ class AccountManagementController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|unique:students,email,' . $id,
                 'password' => 'nullable|string|min:8',
-                'phone_number' => 'required|string|max:15',
+                'phone_number' => 'required|string',
             ]);
 
             // Update student details
@@ -144,7 +144,7 @@ class AccountManagementController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|unique:teachers,email,' . $id,
                 'password' => 'nullable|string|min:8',
-                'phone_number' => 'required|string|max:15',
+                'phone_number' => 'required|string',
                 'position' => 'nullable|string',
                 'major' => 'nullable|string',
             ]);
