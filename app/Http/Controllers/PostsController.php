@@ -21,28 +21,66 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'link' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-        $post->image = $request->input('image');
         $post->link = $request->input('link');
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Get the uploaded file
+            $image = $request->file('image');
+
+            // Generate a unique name for the file
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+            // Move the file to the storage location
+            $image->storeAs('public/images', $imageName);
+
+            // Store the image path in the database
+            $post->image = 'images/' . $imageName;
+        }
+
         $post->save();
         return redirect()->route('posts.index');
     }
 
-    public function edit($id)
-    {
-        $post = Post::find($id);
-        return view('pages.admin.postmanagement', compact('post'));
-    }
-
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'link' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-        $post->image = $request->input('image');
         $post->link = $request->input('link');
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Get the uploaded file
+            $image = $request->file('image');
+
+            // Generate a unique name for the file
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+            // Move the file to the storage location
+            $image->storeAs('public/images', $imageName);
+
+            // Store the image path in the database
+            $post->image = 'images/' . $imageName;
+        }
+
         $post->save();
         return redirect()->route('posts.index');
     }
