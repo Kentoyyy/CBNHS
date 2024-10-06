@@ -403,28 +403,24 @@ hr {
                 <div class="news-bulletin">
                     <h2>Posts</h2>
                         <div class="max-w-2xl mx-auto space-y-6">
-                            @foreach($posts as $post)
-                                <div class="bg-white p-4 rounded-lg shadow-md flex space-x-4">
-                                    <img alt="Post Image" class="w-24 h-24 rounded-lg object-cover" src="{{ asset('storage/' . $post->image) }}">
-                                    <div>
-                                        <div class="text-{{ $post->category_color }}-500 font-semibold">
-                                            {{ $post->category }} • {{ $post->author }}
-                                        </div>
-                                        <div class="text-lg font-bold">
-                                            {{ $post->title }}
-                                        </div>
-                                        <div class="text-gray-600">
-                                            {{ $post->content }}
-                                        </div>
-                                        <div class="flex items-center text-gray-500 text-sm mt-2">
-                                            <i class="fas fa-comment mr-1"></i>
-                                            {{ $post->comments_count }}
-                                            <span class="mx-2">•</span>
-                                            <span>{{ $post->read_time }} min read</span>
-                                        </div>
+                        @foreach($posts as $post)
+                            <div class="bg-white p-4 rounded-lg shadow-md flex flex-row">
+                                <img alt="Post Image" class="w-24 h-24 rounded-lg object-cover" src="{{ asset('storage/' . $post->image) }}">
+                                <a href="{{ $post->link }}" class="flex-1 ml-4">
+                                    <div class="text-lg font-bold">
+                                        {{ $post->title }}
                                     </div>
-                                </div>
-                            @endforeach
+                                    <div class="text-gray-600">
+                                        {{ $post->content }}
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm mt-2">
+                                        <i class="fas fa-comment mr-1"></i>
+                                        <span class="mx-2">•</span>
+                                        <span>Date posted {{ $post->created_at }}</span>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
                         </div>
                     
                 </div>

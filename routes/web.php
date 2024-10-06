@@ -57,7 +57,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/postmanagement', [PostsController::class, 'index'])->name('posts.index');
     Route::get('/postmanagement/create', [PostsController::class, 'create'])->name('posts.create');
     Route::post('/postmanagement', [PostsController::class, 'store'])->name('posts.store');
-    Route::get('/postmanagement/{id}/edit', [PostsController::class, 'edit'])->name('posts.edit');
     Route::put('/postmanagement/{id}', [PostsController::class, 'update'])->name('posts.update');
     Route::delete('/postmanagement/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
 

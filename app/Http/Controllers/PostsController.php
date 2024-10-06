@@ -59,11 +59,6 @@ class PostsController extends Controller
     return redirect()->route('posts.index')->with('status', 'Post created successfully!');
 }
 
-    public function edit($id)
-    {
-        $post = Post::find($id);
-        return view('pages.admin.postmanagement', compact('post'));
-    }
 
     public function update(Request $request, $id)
     {
@@ -97,6 +92,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->link = $request->input('link');
+
         $post->save();
 
         // Redirect to the post management page
