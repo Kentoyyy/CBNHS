@@ -8,46 +8,92 @@
     <div class="content-wrapper">
         <h1 class="page-title">Post Management</h1>
 
-        <form method="POST" action="{{ route('posts.store') }}">
+        @if(isset($post))
+            <form method="POST" action="{{ route('posts.update', $post->id) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-control" value="{{ $post->title }}">
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" class="form-control">{{ $post->content }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="text" id="link" name="link" class="form-control" value="{{ $post->link }}">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Post</button>
+            </form>
+        @else
+        <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" class="form -control">
-        </div>
-        <div class="form-group">
-            <label for="content">Content</label>
-            <textarea id="content" name="content" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="image">Image</label>
-            <input type="file" id="image" name="image" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="link">Link</label>
-            <input type="text" id="link" name="link" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Create Post</button>
-    </form>
-
-    @foreach($posts as $post)
-        <div class="card">
-            <img src="{{ asset($post->image) }}" class="card-img-top" alt="Post Image">
-            <div class="card-body">
-                <h5 class="card-title">{{ $post->title }}</h5>
-                <p class="card-text">{{ $post->content }}</p>
-                <a href="{{ $post->link }}" class="btn btn-primary">Read More</a>
-                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-secondary">Edit</a>
-                <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" class="form-control">
             </div>
-        </div>
-    @endforeach
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="link">Link</label>
+                <input type="text" id="link" name="link" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Create Post</button>
+        </form>
+        @endif
+
+        <h2 class="page-title">Posts</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Link</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($posts as $post)
+                    <tr>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->content }}</td>
+                        <td>{{ $post->link }}</td>
+                        <td>
+                            @if($post->image)
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image" width="100">
+                            @else
+                                <p>No Image</p>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">Edit</a>
+                            <form method="POST" action="{{ route('posts.destroy', $post->id) }}" style="display: inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
-
+@endsection
+@section('style')
 <style>
     body {
         background-color: #f8f9fa;
@@ -87,7 +133,7 @@
     }
 
     .card-header h2 {
-        margin: 0;
+ margin: 0;
     }
 
     .card-body {

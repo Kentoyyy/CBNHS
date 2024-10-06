@@ -166,6 +166,112 @@
     padding: 15px;
     background-color: #fff;
 }
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.space-y-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.flex {
+    display: flex;
+}
+
+.space-x-4 {
+    justify-content: space-between;
+}
+
+.w-24 {
+    width: 6rem;
+}
+
+.h-24 {
+    height: 6rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.text-red-500 {
+    color: #dc2626;
+}
+
+.text-blue-500 {
+    color: #3498db;
+}
+
+.text-purple-500 {
+    color: #7a288a;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-gray-600 {
+    color: #6b7280;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
 
 .featured-videos .video-card-title {
     font-size: 1rem;
@@ -292,54 +398,34 @@ hr {
             </div>
         </div>
         <hr>
-        @foreach($posts as $post)
-    <div class="card">
-        <img src="{{ asset($post->image) }}" class="card-img-top" alt="Post Image">
-        <div class="card-body">
-            <h5 class="card-title">{{ $post->title }}</h5>
-            <p class="card-text">{{ $post->content }}</p>
-            <a href="{{ $post->link }}" class="btn btn-primary">Read More</a>
-        </div>
-    </div>
-    @endforeach
         <div class="row">
             <div class="col-md-8">
                 <div class="news-bulletin">
-                    <h2>News Bulletin</h2>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="{{ asset('images/newsimage/wikangfilipino.jpg') }}" class="card-img-top" alt="News 1">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="#">Pakikiisa sa Buwan ng Wikang Pambansa 2024</a></h5>
+                    <h2>Posts</h2>
+                        <div class="max-w-2xl mx-auto space-y-6">
+                            @foreach($posts as $post)
+                                <div class="bg-white p-4 rounded-lg shadow-md flex space-x-4">
+                                    <img alt="Post Image" class="w-24 h-24 rounded-lg object-cover" src="{{ asset('storage/' . $post->image) }}">
+                                    <div>
+                                        <div class="text-{{ $post->category_color }}-500 font-semibold">
+                                            {{ $post->category }} • {{ $post->author }}
+                                        </div>
+                                        <div class="text-lg font-bold">
+                                            {{ $post->title }}
+                                        </div>
+                                        <div class="text-gray-600">
+                                            {{ $post->content }}
+                                        </div>
+                                        <div class="flex items-center text-gray-500 text-sm mt-2">
+                                            <i class="fas fa-comment mr-1"></i>
+                                            {{ $post->comments_count }}
+                                            <span class="mx-2">•</span>
+                                            <span>{{ $post->read_time }} min read</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="{{ asset('images/newsimage/class_schedule.jpg') }}" class="card-img-top" alt="News 2">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="#">Welcome Back to School!</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="{{ asset('images/newsimage/brigada.jpg') }}" class="card-img-top" alt="News 3">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="#">Brigada Eskwela 2024</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="{{ asset('images/newsimage/orientation.jpg') }}" class="card-img-top" alt="News 4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="#">Parent Orientation Program</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
                 </div>
             </div>

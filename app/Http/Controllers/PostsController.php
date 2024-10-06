@@ -1,94 +1,146 @@
 <?php
 
-namespace App\Http\Controllers;
+// app/Http/Controllers/Admin/SlidesController.php
 
-use App\Models\Post;
+namespace App\Http\Controllers\Admin;
+
 use Illuminate\Http\Request;
+use App\Models\Slide;
+use Illuminate\Support\Facades\Storage;
 
-class PostsController extends Controller
+class SlidesController extends Controller
 {
-        
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $posts = Post::all();
-        return view('pages.admin.postmanagement', compact('posts'));
+        $slides = Slide::all();
+        return view('admin.slides.index', compact('slides'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('pages.admin.postmanagement');
-    }  
+        return view('admin.slides.create');
+    }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'link' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'alt_text' => 'required|string|max:255',
         ]);
 
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->content = $request->input('content');
-        $post->link = $request->input('link');
+        $imagePath = $this->uploadImage($request);
 
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            // Get the uploaded file
-            $image = $request->file('image');
+        $slide = new Slide([
+            'image' => $imagePath,
+            'alt_text' => $request->input('alt_text'),
+        ]);
 
-            // Generate a unique name for the file
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $slide->save();
 
-            // Move the file to the storage location
-            $image->storeAs('public/images', $imageName);
-
-            // Store the image path in the database
-            $post->image = 'images/' . $imageName;
-        }
-
-        $post->save();
-        return redirect()->route('posts.index');
+        return redirect()->route('slides.index')->with('success', 'Slide created successfully!');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $slide = Slide::find($id);
+        return view('admin.slides.show', compact('slide'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $slide = Slide::find($id);
+        return view('admin.slides.edit', compact('slide'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'link' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'alt_text' => 'required|string|max:255',
         ]);
 
-        $post = Post::find($id);
-        $post->title = $request->input('title');
-        $post->content = $request->input('content');
-        $post->link = $request->input('link');
+        $slide = Slide::find($id);
 
-        // Handle image upload
         if ($request->hasFile('image')) {
-            // Get the uploaded file
-            $image = $request->file('image');
-
-            // Generate a unique name for the file
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-
-            // Move the file to the storage location
-            $image->storeAs('public/images', $imageName);
-
-            // Store the image path in the database
-            $post->image = 'images/' . $imageName;
+            Storage::delete($slide->image);
+            $slide->image = $this->uploadImage($request);
         }
 
-        $post->save();
-        return redirect()->route('posts.index');
+        $slide->alt_text = $request->input('alt_text');
+        $slide->save();
+
+        return redirect()->route('slides.index')->with('success', 'Slide updated successfully!');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $post->delete();
-        return redirect()->route('posts.index');
+        $slide = Slide::find($id);
+        Storage::delete($slide->image);
+        $slide->delete();
+
+        return redirect()->route('slides.index')->with('success', 'Slide deleted successfully!');
+    }
+
+    /**
+     * Upload image to storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return string
+     */
+    private function uploadImage(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            try {
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/images', $imageName);
+                return 'images/' . $imageName;
+            } catch (\Exception $e) {
+                dd($e->getMessage());
+            }
+        } else {
+            return null;
+        }
     }
 }
