@@ -3,8 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountManagementController;
 use App\Http\Controllers\IssuancesController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\WelcomeController;
+
 // Welcome and Static Pages
-Route::view('/', 'welcome');
+Route::get('/', [WelcomeController::class, 'welcome']);
+
 Route::view('/mission', 'pages.about-mission');
 Route::view('/teacher', 'pages.dashboard-teacher');
 Route::view('/events', 'pages.events');
@@ -49,7 +53,14 @@ Route::prefix('admin')->group(function () {
     Route::view('/landing', 'pages.admin.landing');
     Route::view('/dashboard', 'pages.admin.dashboard');
     Route::view('/subjectmanagement', 'pages.admin.subjectmanagement');
-    Route::view('/postmanagement', 'pages.admin.postmanagement');
+    // posts
+    Route::get('/postmanagement', [PostsController::class, 'index'])->name('posts.index');
+    Route::get('/postmanagement/create', [PostsController::class, 'create'])->name('posts.create');
+    Route::post('/postmanagement', [PostsController::class, 'store'])->name('posts.store');
+    Route::get('/postmanagement/{id}/edit', [PostsController::class, 'edit'])->name('posts.edit');
+    Route::put('/postmanagement/{id}', [PostsController::class, 'update'])->name('posts.update');
+    Route::delete('/postmanagement/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
+
     Route::view('/profile', 'pages.admin.profile');
     
     // Account Management Routes

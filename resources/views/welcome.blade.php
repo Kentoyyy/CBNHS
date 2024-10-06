@@ -292,6 +292,16 @@ hr {
             </div>
         </div>
         <hr>
+        @foreach($posts as $post)
+    <div class="card">
+        <img src="{{ asset($post->image) }}" class="card-img-top" alt="Post Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ $post->title }}</h5>
+            <p class="card-text">{{ $post->content }}</p>
+            <a href="{{ $post->link }}" class="btn btn-primary">Read More</a>
+        </div>
+    </div>
+    @endforeach
         <div class="row">
             <div class="col-md-8">
                 <div class="news-bulletin">

@@ -8,74 +8,43 @@
     <div class="content-wrapper">
         <h1 class="page-title">Post Management</h1>
 
-        <!-- Create Post Form -->
-        <div class="card create-post mb-4">
-            <div class="card-header">
-                <h2>Create New Post</h2>
-            </div>
+        <form method="POST" action="{{ route('posts.store') }}">
+        @csrf
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" class="form -control">
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea id="content" name="content" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="link">Link</label>
+            <input type="text" id="link" name="link" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Post</button>
+    </form>
+
+    @foreach($posts as $post)
+        <div class="card">
+            <img src="{{ asset($post->image) }}" class="card-img-top" alt="Post Image">
             <div class="card-body">
-                <form class="post-form">
-                    <div class="form-group">
-                        <label for="post-title">Post Title</label>
-                        <input type="text" id="post-title" class="form-control" placeholder="Enter post title">
-                    </div>
-                    <div class="form-group">
-                        <label for="post-content">Post Content</label>
-                        <textarea id="post-content" class="form-control" rows="4" placeholder="Enter post content"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Post</button>
+                <h5 class="card-title">{{ $post->title }}</h5>
+                <p class="card-text">{{ $post->content }}</p>
+                <a href="{{ $post->link }}" class="btn btn-primary">Read More</a>
+                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-secondary">Edit</a>
+                <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>
         </div>
-
-        <!-- Post Table -->
-        <div class="table-responsive mt-4">
-            <div class="card table-card">
-                <div class="card-header">
-                    <h2>Post List</h2>
-                </div>
-                <div class="card-body">
-                    <table class="table table-hover table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="small-col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Content</th>
-                                <th scope="col" class="text-center">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Example of post row -->
-                            <tr class="post-row">
-                                <th scope="row">1</th>
-                                <td>Sample Post</td>
-                                <td>This is a sample post content.</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="#" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
-                                </td>
-                            </tr>
-                            <!-- Repeat for each post -->
-                        </tbody>
-                    </table>
-
-                    <!-- Pagination -->
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center mt-4">
-                            <li class="page-item disabled">
-                                <span class="page-link">Previous</span>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+    @endforeach
     </div>
 </div>
 
