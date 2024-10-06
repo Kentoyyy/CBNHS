@@ -1,146 +1,117 @@
 <?php
 
-// app/Http/Controllers/Admin/SlidesController.php
+namespace App\Http\Controllers;
 
-namespace App\Http\Controllers\Admin;
-
+use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Models\Slide;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
-class SlidesController extends Controller
+class PostsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $slides = Slide::all();
-        return view('admin.slides.index', compact('slides'));
+        $posts = Post::all();
+        return view('pages.admin.postmanagement', compact('posts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('admin.slides.create');
+        $post = null;
+        return view('pages.admin.postmanagement', compact('post'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
-    {
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'alt_text' => 'required|string|max:255',
-        ]);
+{
+    // Validate the form data
+    $request->validate([
+        'title' => 'required',
+        'content' => 'required',
+        'link' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        $imagePath = $this->uploadImage($request);
-
-        $slide = new Slide([
-            'image' => $imagePath,
-            'alt_text' => $request->input('alt_text'),
-        ]);
-
-        $slide->save();
-
-        return redirect()->route('slides.index')->with('success', 'Slide created successfully!');
+    // Handle image upload
+    if ($request->hasFile('image')) {
+        try {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images', $imageName);
+            $imagePath = 'images/' . $imageName;
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    } else {
+        $imagePath = null;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $slide = Slide::find($id);
-        return view('admin.slides.show', compact('slide'));
-    }
+    // Create a new post
+    $post = new Post([
+        'title' => $request->input('title'),
+        'content' => $request->input('content'),
+        'link' => $request->input('link'),
+        'image' => $imagePath,
+    ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Save the post
+    $post->save();
+
+    // Redirect to the post management page
+    return redirect()->route('posts.index')->with('status', 'Post created successfully!');
+}
+
     public function edit($id)
     {
-        $slide = Slide::find($id);
-        return view('admin.slides.edit', compact('slide'));
+        $post = Post::find($id);
+        return view('pages.admin.postmanagement', compact('post'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
+        // Validate the form data
         $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'alt_text' => 'required|string|max:255',
+            'title' => 'required',
+            'content' => 'required',
+            'link' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $slide = Slide::find($id);
+        // Get the post
+        $post = Post::find($id);
 
+        // Handle image upload
         if ($request->hasFile('image')) {
-            Storage::delete($slide->image);
-            $slide->image = $this->uploadImage($request);
+            // Get the uploaded file
+            $image = $request->file('image');
+
+            // Generate a unique name for the file
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+            // Move the file to the storage location
+            $image->storeAs('public/images', $imageName);
+
+            // Store the image path in the database
+            $post->image = 'images/' . $imageName;
         }
 
-        $slide->alt_text = $request->input('alt_text');
-        $slide->save();
+        // Update the post
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->link = $request->input('link');
+        $post->save();
 
-        return redirect()->route('slides.index')->with('success', 'Slide updated successfully!');
+        // Redirect to the post management page
+        return redirect()->route('post-management')->with('status', 'Post updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        $slide = Slide::find($id);
-        Storage::delete($slide->image);
-        $slide->delete();
+        // Get the post
+        $post = Post::find($id);
 
-        return redirect()->route('slides.index')->with('success', 'Slide deleted successfully!');
-    }
+        // Delete the post
+        $post->delete();
 
-    /**
-     * Upload image to storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return string
-     */
-    private function uploadImage(Request $request)
-    {
-        if ($request->hasFile('image')) {
-            try {
-                $image = $request->file('image');
-                $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $image->storeAs('public/images', $imageName);
-                return 'images/' . $imageName;
-            } catch (\Exception $e) {
-                dd($e->getMessage());
-            }
-        } else {
-            return null;
-        }
+        // Redirect to the post management page
+        return redirect()->route('posts.index')->with('status', 'Post deleted successfully!');
     }
 }
