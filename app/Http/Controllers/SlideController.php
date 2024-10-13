@@ -13,17 +13,12 @@ class SlideController extends Controller
         $slides = Slide::all();
         return view('pages.admin.slide', compact('slides'));
     }
-    public function index()
-    {
-        $slides = Slide::all(); // Retrieve all slides from the database
-        return view('welcome', compact('slides')); // Pass the $slides variable to the view
-    }
 
     public function store(Request $request)
     {
         // Validate the form data
         $request->validate([    
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10048',
         ]);
 
         // Handle image upload

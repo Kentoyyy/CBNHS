@@ -98,6 +98,7 @@
         <li><a href="{{ url('admin/accountmanagement') }}" class="{{ Request::is('admin/accountmanagement') ? 'active' : '' }}"><i class="fas fa-folder"></i> Account Management</a></li>
         <li><a href="{{ url('admin/profile') }}" class="{{ Request::is('admin/profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
         <li><a href="{{ url('admin/slides') }}" class="{{ Request::is('admin/slide') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Slides Management</a></li>
+        <li><a href="{{ url('admin/facultymanagement') }}" class="{{ Request::is('admin/facultymanagement') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Faculty Management</a></li>
     </ul>
 
     <button class="logout-button">Logout</button>

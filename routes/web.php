@@ -6,6 +6,8 @@ use App\Http\Controllers\IssuancesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\FacultyMemberController;
 
 // Welcome and Static Pages
 Route::get('/', [WelcomeController::class, 'welcome']);
@@ -21,7 +23,7 @@ Route::view('/deped-memo', 'pages.deped-memo');
 Route::view('/advisories', 'pages.deped-advisories');
 Route::view('/orders', 'pages.deped-orders');
 Route::view('/supportservices', 'pages.supportservices');
-Route::view('/faculty', 'pages.faculty');
+Route::get('/faculty', [FacultyController::class, 'index'])->name('faculty.index');
 Route::view('/resources', 'pages.resources');
 Route::get('/issuances', fn() => view('pages.issuances'));
 Route::get('/load-issuances/{year}', [IssuancesController::class, 'show']);
@@ -85,5 +87,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/slide', [SlideController::class, 'adminIndex'])->name('admin.slide.index');
     Route::post('/slide', [SlideController::class, 'store'])->name('admin.slide.store');
     Route::delete('/slide/{id}', [SlideController::class, 'destroy'])->name('admin.slide.destroy');
+
+    Route::get('/facultymanagement', [FacultyMemberController::class, 'index'])->name('admin.facultymanagement');
+    Route::post('/facultymanagement', [FacultyMemberController::class, 'store'])->name('admin.facultymanagement.store');
+    Route::get('/facultymanagement/{facultyMember}/edit', [FacultyMemberController::class, 'edit'])->name('admin.facultymanagement.edit');
+    Route::put('/facultymanagement/{facultyMember}', [FacultyMemberController::class, 'update'])->name('admin.facultymanagement.update');
+    Route::delete('/facultymanagement/{facultyMember}', [FacultyMemberController::class, 'destroy'])->name('admin.facultymanagement.destroy');
+    Route::get('/facultymanagement/{facultyMember}', [FacultyMemberController::class, 'show'])->name('admin.facultymanagement.show');
 
 });
