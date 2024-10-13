@@ -5,6 +5,7 @@ use App\Http\Controllers\AccountManagementController;
 use App\Http\Controllers\IssuancesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\SlideController;
 
 // Welcome and Static Pages
 Route::get('/', [WelcomeController::class, 'welcome']);
@@ -80,5 +81,9 @@ Route::prefix('admin')->group(function () {
     // Routes for managing teachers
     Route::get('/teachers/create', [AccountManagementController::class, 'createTeacher'])->name('teachers.create');
     Route::post('/teachers', [AccountManagementController::class, 'storeTeacher'])->name('teachers.store');
+
+    Route::get('/slide', [SlideController::class, 'adminIndex'])->name('admin.slide.index');
+    Route::post('/slide', [SlideController::class, 'store'])->name('admin.slide.store');
+    Route::delete('/slide/{id}', [SlideController::class, 'destroy'])->name('admin.slide.destroy');
 
 });

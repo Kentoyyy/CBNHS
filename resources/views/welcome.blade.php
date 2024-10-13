@@ -374,21 +374,14 @@ hr {
             <div class="col-lg-8">
                 <div class="slider">
                     <div class="slides">
-                        <img src="{{ asset('images/welcomeslide1.jpg') }}" alt="Image 1">
-                        <img src="{{ asset('images/welcomeslide2.jpg') }}" alt="Image 2">
-                        <img src="{{ asset('images/welcomeslide3.jpg') }}" alt="Image 3">
-                        <img src="{{ asset('images/welcomeslide4.png') }}" alt="Image 4">
-                        <img src="{{ asset('images/welcomeslide5.png') }}" alt="Image 5">
-                        <img src="{{ asset('images/welcomeslide6.jpg') }}" alt="Image 6">
-                        <img src="{{ asset('images/welcomeslide7.gif') }}" alt="Image 7">
-                        <img src="{{ asset('images/welcomeslide8.jpg') }}" alt="Image 8">
-                        <img src="{{ asset('images/welcomeslide9.jpg') }}" alt="Image 9">
-                        <img src="{{ asset('images/welcomeslide10.jpg') }}" alt="Image 10">
+                        @foreach($slides as $slide)
+                            <img src="{{ asset('storage/' . $slide->image) }}" alt="Image">
+                        @endforeach
                     </div>
                     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
                     <button class="next" onclick="moveSlide(1)">&#10095;</button>
                 </div>
-            </div>
+</div>
             <div class="col-lg-4">
                 <div class="schoolDivision">
                     <h3>Welcome to CBNHS - Springville</h3>

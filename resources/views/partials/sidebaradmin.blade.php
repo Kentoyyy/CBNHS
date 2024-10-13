@@ -97,7 +97,7 @@
         <li><a href="{{ url('admin/postmanagement') }}" class="{{ Request::is('admin/postmanagement') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Post Management</a></li>
         <li><a href="{{ url('admin/accountmanagement') }}" class="{{ Request::is('admin/accountmanagement') ? 'active' : '' }}"><i class="fas fa-folder"></i> Account Management</a></li>
         <li><a href="{{ url('admin/profile') }}" class="{{ Request::is('admin/profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="{{ url('admin/slides') }}" class="{{ Request::is('admin/slides') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Slides Management</a></li>
+        <li><a href="{{ url('admin/slides') }}" class="{{ Request::is('admin/slide') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Slides Management</a></li>
     </ul>
 
     <button class="logout-button">Logout</button>
