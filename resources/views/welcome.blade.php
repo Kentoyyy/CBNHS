@@ -424,50 +424,6 @@ hr {
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="featured-videos">
-            <h2>Featured Videos</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="video-card">
-                        <video controls>
-                            <source src="{{ asset('videos/welcomeback.mp4') }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-card-body">
-                            <h5 class="video-card-title"><a href="#">Welcome Back to School - July 29, 2024</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="video-card">
-                        <video controls>
-                            <source src="{{ asset('videos/brigadavid.mp4') }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-card-body">
-                            <h5 class="video-card-title"><a href="#">Brigada Eskwela 2024</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="video-card">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
-                        <div class="video-card-body">
-                            <h5 class="video-card-title"><a href="#">Video Title 3</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="related-links">
-                <h3>Related Links</h3>
-                <a href="https://www.deped.gov.ph/" target="_blank">
-                    <img src="{{ asset('images/depedlogooo.png') }}" alt="DepEd Logo">
-                </a>
-                <a href="https://www.deped.gov.ph/" target="_blank">Visit DepEd Website</a>
-            </div>
-        </div>
     </div>
 @endsection
 
