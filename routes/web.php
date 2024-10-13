@@ -8,6 +8,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\FacultyMemberController;
+use App\Http\Controllers\AdminController;
 
 // Welcome and Static Pages
 Route::get('/', [WelcomeController::class, 'welcome']);
@@ -52,9 +53,10 @@ Route::prefix('teacher')->group(function () {
 });
 
 // Admin Portal Routes
-Route::prefix('admin')->group(function () {
+// Admin Portal Routes
+Route::prefix('admin')->middleware('auth:admin')->group(function () {
+    // All routes here will be authenticated
     Route::view('/landing', 'pages.admin.landing');
-    Route::view('/dashboard', 'pages.admin.dashboard');
     Route::view('/subjectmanagement', 'pages.admin.subjectmanagement');
     // posts
     Route::get('/postmanagement', [PostsController::class, 'index'])->name('posts.index');
@@ -94,5 +96,13 @@ Route::prefix('admin')->group(function () {
     Route::put('/facultymanagement/{facultyMember}', [FacultyMemberController::class, 'update'])->name('admin.facultymanagement.update');
     Route::delete('/facultymanagement/{facultyMember}', [FacultyMemberController::class, 'destroy'])->name('admin.facultymanagement.destroy');
     Route::get('/facultymanagement/{facultyMember}', [FacultyMemberController::class, 'show'])->name('admin.facultymanagement.show');
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
+});
+
+// Login and Authenticate routes
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AdminController::class, 'login'])->name('login');
+    Route::post('/login', [AdminController::class, 'authenticate'])->name('admin.authenticate');
+    Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 });

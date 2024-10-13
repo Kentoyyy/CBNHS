@@ -1,5 +1,3 @@
-<!-- sidebaradmin.blade.php -->
-
 <div class="sidebar">
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
@@ -69,6 +67,19 @@
             font-size: 18px;
         }
 
+        .dropdown {
+            display: none; /* Hide dropdown by default */
+            padding-left: 20px; /* Indent dropdown items */
+        }
+
+        .dropdown.show {
+            display: block; /* Show dropdown when active */
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
         .logout-button {
             margin-top: auto;
             background-color: #2b24b4;
@@ -94,12 +105,30 @@
     <ul class="sidebar-menu">
         <li><a href="{{ url('admin/dashboard') }}" class="{{ Request::is('admin/dashboard') ? 'active' : '' }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
         <li><a href="{{ url('admin/subjectmanagement') }}" class="{{ Request::is('admin/subjectmanagement') ? 'active' : '' }}"><i class="fas fa-graduation-cap"></i> Subject Management</a></li>
-        <li><a href="{{ url('admin/postmanagement') }}" class="{{ Request::is('admin/postmanagement') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Post Management</a></li>
+        
+        <!-- Dropdown for Management -->
+        <li>
+            <a class="dropdown-toggle" onclick="toggleDropdown()"><i class="fas fa-cogs"></i> Management <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown" id="managementDropdown">
+                <li><a href="{{ url('admin/postmanagement') }}" class="{{ Request::is('admin/postmanagement') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Post Management</a></li>
+                <li><a href="{{ url('admin/slide') }}" class="{{ Request::is('admin/slide') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Slides Management</a></li>
+                <li><a href="{{ url('admin/facultymanagement') }}" class="{{ Request::is('admin/facultymanagement') ? 'active' : '' }}"><i class="fas fa-user-friends"></i> Faculty Management</a></li>
+            </ul>
+        </li>
+
         <li><a href="{{ url('admin/accountmanagement') }}" class="{{ Request::is('admin/accountmanagement') ? 'active' : '' }}"><i class="fas fa-folder"></i> Account Management</a></li>
         <li><a href="{{ url('admin/profile') }}" class="{{ Request::is('admin/profile') ? 'active' : '' }}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a href="{{ url('admin/slides') }}" class="{{ Request::is('admin/slide') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Slides Management</a></li>
-        <li><a href="{{ url('admin/facultymanagement') }}" class="{{ Request::is('admin/facultymanagement') ? 'active' : '' }}"><i class="fas fa-slideshare"></i> Faculty Management</a></li>
-    </ul>
 
-    <button class="logout-button">Logout</button>
+        <form action="{{ route('admin.logout') }}" method="POST">
+            @csrf
+            <button class="logout-button" type="submit">Logout</button>
+        </form>
+    </ul>
 </div>
+
+<script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById("managementDropdown");
+        dropdown.classList.toggle("show");
+    }
+</script>
